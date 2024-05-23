@@ -1,0 +1,3 @@
+twoFer: function [name][
+    panic "Please implement the twoFer function"
+]

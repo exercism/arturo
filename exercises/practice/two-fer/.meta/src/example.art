@@ -1,0 +1,6 @@
+twoFer: function [
+    name
+][
+    switch name=""  -> twoFer "you"
+                    -> "One for " ++ name ++ ", one for me."
+]
