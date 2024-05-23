@@ -1,0 +1,3 @@
+pangram?: function [phrase][
+    panic "Please implement the pangram? function"
+]
