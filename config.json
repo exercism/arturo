@@ -32,6 +32,18 @@
       ".meta/src/exemplar.art"
     ]
   },
+  "exercises": {
+    "practice": [
+      {
+        "slug": "hello-world",
+        "name": "Hello World",
+        "uuid": "13ae3cb4-f5ca-421e-be3b-a8f72d4e8606",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      }
+    ]
+  },
   "key_features": [
     {
       "title": "Modern",
