@@ -1,0 +1,11 @@
+pangram?: function [phrase][
+
+    alphabet: "abcdefghijklmnopqrstuvwxyz"
+    lowered: lower phrase
+
+    loop alphabet 'char [
+        if not? contains? lowered char [return false]
+    ]
+
+    true
+]
