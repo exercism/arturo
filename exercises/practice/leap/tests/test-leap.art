@@ -47,4 +47,3 @@ suite "Leap" [
         assert -> false = result
     ]
 ]
-
