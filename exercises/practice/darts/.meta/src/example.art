@@ -1,0 +1,12 @@
+score: function [x y][ 
+    dist: hypot x y
+
+    switch 
+        =< dist 1 -> 10
+                  -> switch 
+                        =< dist 5 -> 5
+                                  -> switch
+                                        =< dist 10 -> 1
+                                                   -> 0 
+]
+
