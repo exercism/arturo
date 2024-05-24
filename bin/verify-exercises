@@ -22,19 +22,35 @@
 # ./bin/verify-exercises two-fer
 
 slug="${1:-*}"
+test_dir=$(mktemp -d)
 
-# Verify the Concept Exercises
-for concept_exercise_dir in ./exercises/concept/${slug}/; do
-    if [ -d $concept_exercise_dir ]; then
-        echo "Checking $(basename "${concept_exercise_dir}") exercise..."
-        # TODO: run command to verify that the exemplar solution passes the tests
-    fi
-done
+cleanup() { rm -rf "$test_dir"; }
+trap cleanup EXIT
+
+function verify_exercise() {
+    local dir="${1}"
+    local slug=$(basename "${dir}")
+    local tmp_dir="${test_dir}/${slug}"
+
+    cp -r "${dir}" "${tmp_dir}"
+    cd "${tmp_dir}"
+
+    sed -i 's/test.skip/test/g' "tests/test-${slug}.art"
+    cp ".meta/src/example.art" "src/${slug}.art"
+
+    arturo tester.art
+}
+
+exit_code=0
 
 # Verify the Practice Exercises
 for practice_exercise_dir in ./exercises/practice/${slug}/; do
     if [ -d $practice_exercise_dir ]; then
-        echo "Checking $(basename "${practice_exercise_dir}") exercise..."
-        # TODO: run command to verify that the example solution passes the tests
+        verify_exercise "${practice_exercise_dir}"
+        if (( $? != 0 )); then
+            exit_code=1
+        fi
     fi
 done
+
+exit $exit_code
