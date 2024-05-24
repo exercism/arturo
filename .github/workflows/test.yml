@@ -15,8 +15,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
 
-      - name: Install arturo
-        uses: curl -sSL https://get.arturo-lang.io/latest | sh
+      - name: Install Arturo
+        uses: arturo-lang/arturo-action@31d082d43fab571e48cd61c8b84fb8f0c66faab4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Verify all exercises
         run: bin/verify-exercises
