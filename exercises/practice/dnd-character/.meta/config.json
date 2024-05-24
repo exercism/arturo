@@ -7,11 +7,13 @@
       "src/dnd-character.art"
     ],
     "test": [
-      "tests/test-dnd-character.art",
-      "tester.art"
+      "tests/test-dnd-character.art"
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Randomly generate Dungeons & Dragons characters.",

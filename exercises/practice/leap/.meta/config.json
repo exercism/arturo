@@ -7,11 +7,13 @@
       "src/leap.art"
     ],
     "test": [
-      "tests/test-leap.art",
-      "tester.art"
+      "tests/test-leap.art"
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Determine whether a given year is a leap year.",

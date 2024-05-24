@@ -7,11 +7,13 @@
       "src/pangram.art"
     ],
     "test": [
-      "tests/test-pangram.art",
-      "tester.art"
+      "tests/test-pangram.art"
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Determine if a sentence is a pangram.",

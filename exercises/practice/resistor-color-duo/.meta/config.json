@@ -7,11 +7,13 @@
       "src/resistor-color-duo.art"
     ],
     "test": [
-      "tests/test-resistor-color-duo.art",
-      "tester.art"
+      "tests/test-resistor-color-duo.art"
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Convert color codes, as used on resistors, to a numeric value.",

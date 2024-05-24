@@ -7,11 +7,13 @@
       "src/hello-world.art"
     ],
     "test": [
-      "tests/test-hello-world.art",
-      "tester.art"
+      "tests/test-hello-world.art"
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Exercism's classic introductory exercise. Just say \"Hello, World!\".",
