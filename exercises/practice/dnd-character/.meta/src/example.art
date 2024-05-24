@@ -1,0 +1,23 @@
+define :character [strength dexterity constitution intelligence wisdom charisma hitpoints]
+
+makeCharacter: function [][
+    constitution: ability
+    hitpoints: + 10 modifier constitution
+    to :character [ability ability constitution ability ability ability hitpoints]
+]
+
+ability: function [][
+    rolls: @[
+            random 1 6
+            random 1 6
+            random 1 6
+            random 1 6
+    ]
+
+    sum take sort.descending rolls 3
+]
+
+modifier: function [score][
+    floor fdiv score - 10 2
+]
+

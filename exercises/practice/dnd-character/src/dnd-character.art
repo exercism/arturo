@@ -1,0 +1,12 @@
+modifier: function [score][  
+    panic "Implement the modifier function" 
+]  
+
+ability: function [][ 
+    panic "Implement the ability function"
+]
+
+makeCharacter: function [][ 
+    panic "Implement the makeCharacter function"
+]
+
