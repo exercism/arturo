@@ -9,4 +9,3 @@ ability: function [][
 makeCharacter: function [][ 
     panic "Implement the makeCharacter function"
 ]
-

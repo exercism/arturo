@@ -115,4 +115,3 @@ suite "D&D Character" [
         assert -> (+ 10 modifier result\constitution) = result\hitpoints
     ]
 ]
-
