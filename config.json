@@ -22,14 +22,16 @@
       "src/%{kebab_slug}.art"
     ],
     "test": [
-      "tests/test-%{kebab_slug}.art",
-      "tester.art"
+      "tests/test-%{kebab_slug}.art"
     ],
     "example": [
       ".meta/src/example.art"
     ],
     "exemplar": [
       ".meta/src/exemplar.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "exercises": {

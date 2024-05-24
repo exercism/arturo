@@ -7,11 +7,13 @@
       "src/two-fer.art"
     ],
     "test": [
-      "tests/test-two-fer.art",
-      "tester.art"
+      "tests/test-two-fer.art"
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Create a sentence of the form \"One for X, one for me.\".",

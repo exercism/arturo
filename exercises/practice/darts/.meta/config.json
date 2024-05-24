@@ -7,11 +7,13 @@
       "src/darts.art"
     ],
     "test": [
-      "tests/test-darts.art",
-      "tester.art"
+      "tests/test-darts.art"
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Calculate the points scored in a single toss of a Darts game.",
