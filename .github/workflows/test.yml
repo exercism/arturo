@@ -15,10 +15,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
 
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install libgtk-3-dev libwebkit2gtk-4.0-dev libmpfr-dev
+
       - name: Install Arturo
-        uses: arturo-lang/arturo-action@31d082d43fab571e48cd61c8b84fb8f0c66faab4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        run: bin/install-arturo
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       - name: Verify all exercises
         run: bin/verify-exercises
