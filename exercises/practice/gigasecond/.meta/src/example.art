@@ -1,1 +1,3 @@
-gigasecond: $ => [after.seconds:1000000000 &]
+gigasecond: function[date][
+    after.seconds:1000000000 date
+]
