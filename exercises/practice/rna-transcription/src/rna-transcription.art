@@ -1,0 +1,3 @@
+rna: function [dnaStrand][
+    panic "Please implement the rna function"
+]
