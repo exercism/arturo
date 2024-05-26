@@ -3,32 +3,32 @@ import {src/rna-transcription}!
 
 suite "RNA Transcription" [
     test "Empty RNA sequence" [
-        result: rna ""
+        result: toRna ""
         assert -> "" = result
     ]
 
     test.skip "RNA complement of cytosine is guanine" [
-        result: rna "C"
+        result: toRna "C"
         assert -> "G" = result
     ]
 
     test.skip "RNA complement of guanine is cytosine" [
-        result: rna "G"
+        result: toRna "G"
         assert -> "C" = result
     ]
 
     test.skip "RNA complement of thymine is adenine" [
-        result: rna "T"
+        result: toRna "T"
         assert -> "A" = result
     ]
 
     test.skip "RNA complement of adenine is uracil" [
-        result: rna "A"
+        result: toRna "A"
         assert -> "U" = result
     ]
 
     test.skip "RNA complement" [
-        result: rna "ACGTGGTCTTAA"
+        result: toRna "ACGTGGTCTTAA"
         assert -> "UGCACCAGAAUU" = result
     ]
 ]
