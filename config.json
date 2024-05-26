@@ -101,6 +101,14 @@
         "difficulty": 2
       },
       {
+        "slug": "high-scores",
+        "name": "High Scores",
+        "uuid": "4a931239-bb21-4ade-8f68-58024eb730db",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "resistor-color",
         "name": "Resistor Color",
         "uuid": "c395b27f-2015-496b-8a72-db430b076458",
