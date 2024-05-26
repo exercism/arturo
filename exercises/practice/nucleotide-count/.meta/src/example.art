@@ -1,0 +1,10 @@
+nucleotideCounts: function [strand][
+    fold strand .seed:#[A: 0, C: 0, G: 0, T: 0] [dict, nucleotide][
+        try? [
+            dict\[nucleotide]: inc dict\[nucleotide]
+            dict
+        ] else [
+            return null
+        ]
+    ]
+]

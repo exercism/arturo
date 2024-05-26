@@ -1,0 +1,29 @@
+import {unitt}!
+import {src/nucleotide-count}!
+
+suite "Nucleotide Count" [
+    test "empty strand" [
+        result: nucleotideCounts ""
+        assert -> #[A: 0, C: 0, G: 0, T: 0] = result
+    ]
+
+    test.skip "can count one nucleotide in single-character input" [
+        result: nucleotideCounts "G"
+        assert -> #[A: 0, C: 0, G: 1, T: 0] = result
+    ]
+
+    test.skip "strand with repeated nucleotide" [
+        result: nucleotideCounts "GGGGGGG"
+        assert -> #[A: 0, C: 0, G: 7, T: 0] = result
+    ]
+
+    test.skip "strand with multiple nucleotides" [
+        result: nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+        assert -> #[A: 20, C: 12, G: 17, T: 21] = result
+    ]
+
+    test.skip "strand with invalid nucleotides" [
+        result: nucleotideCounts "AGXXACT"
+        assert -> null = result
+    ]
+]
