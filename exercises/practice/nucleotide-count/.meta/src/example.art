@@ -1,10 +1,8 @@
-nucleotideCounts: function [strand][
-    fold strand .seed:#[A: 0, C: 0, G: 0, T: 0] [dict, nucleotide][
-        try? [
-            dict\[nucleotide]: inc dict\[nucleotide]
-            dict
-        ] else [
-            return null
-        ]
-    ]
-]
+nucleotideCounts: function [strand][   
+    fold.seed:#[A: 0 C: 0 G: 0 T: 0] strand [acc, nucleotide][  
+        switch not? contains? keys acc to :string nucleotide  
+            -> return null 
+            -> acc\[nucleotide]: inc acc\[nucleotide] 
+        acc   
+    ] 
+]   
