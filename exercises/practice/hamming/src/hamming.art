@@ -1,0 +1,3 @@
+distance: function [strand1 strand2][
+    panic "Please implement the hamming function"
+]
