@@ -1,0 +1,3 @@
+slices: function [series sliceLength][
+    panic "Please implement the slices function"
+]

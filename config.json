@@ -101,6 +101,14 @@
         "difficulty": 2
       },
       {
+        "slug": "series",
+        "name": "Series",
+        "uuid": "8546a842-c58e-4bbb-a965-f015f83102d3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "302f44e4-7b0f-418c-8c03-72a765244c3a",
