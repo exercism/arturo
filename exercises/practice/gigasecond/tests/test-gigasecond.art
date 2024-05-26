@@ -10,7 +10,7 @@ suite "Gigasecond" [
 
     test.skip "second test for date only specification of time" [
         result: gigasecond to :date.format: "yyyy-MM-dd hh:mm:sszz" "1977-06-13 00:00:00+00"
-        expected: to :date.format: "yyyy-MM-dd hh:mm:sszz" "2043-01-01 01:46:40+00"
+        expected: to :date.format: "yyyy-MM-dd hh:mm:sszz" "2009-02-19 01:46:40+00"
         assert -> expected = result
     ]
 
