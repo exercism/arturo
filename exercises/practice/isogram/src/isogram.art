@@ -1,0 +1,3 @@
+isogram?: function [word][
+    panic "Please implement the isogram? function"
+]

@@ -101,6 +101,14 @@
         "difficulty": 2
       },
       {
+        "slug": "isogram",
+        "name": "Isogram",
+        "uuid": "302f44e4-7b0f-418c-8c03-72a765244c3a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "446fe3c2-ac91-4baa-b78f-e83def979eaf",
