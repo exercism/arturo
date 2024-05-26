@@ -9,12 +9,12 @@ suite "Resistor Color" [
 
     test.skip "white" [
         code: colorCode "white"
-        assert -> 9 = result
+        assert -> 9 = code
     ]
 
     test.skip "orange" [
         code: colorCode "orange"
-        assert -> 3 = result
+        assert -> 3 = code
     ]
 
     test.skip "colors" [
