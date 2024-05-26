@@ -1,6 +1,6 @@
 alphabet: "abcdefghijklmnopqrstuvwxyz"
 
 isogram?: function [word][
-    letters: select lower word => [in? & letters]
+    letters: select lower word => [in? & alphabet]
     (size letters) = (size unique letters)
 ]
