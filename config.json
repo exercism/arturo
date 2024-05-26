@@ -101,6 +101,14 @@
         "difficulty": 2
       },
       {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "446fe3c2-ac91-4baa-b78f-e83def979eaf",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "high-scores",
         "name": "High Scores",
         "uuid": "4a931239-bb21-4ade-8f68-58024eb730db",
