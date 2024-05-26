@@ -2,18 +2,6 @@
 
 # Synopsis:
 # Test the track's exercises.
-# 
-# At a minimum, this file must check if the example/exemplar solution of each 
-# Practice/Concept Exercise passes the exercise's tests.
-#
-# To check this, you usually have to (temporarily) replace the exercise's solution files
-# with its exemplar/example files.
-#
-# If your track uses skipped tests, make sure to (temporarily) enable these tests
-# before running the tests.
-#
-# The path to the solution/example/exemplar files can be found in the exercise's
-# .meta/config.json file, or possibly inferred from the exercise's directory name.
 
 # Example: verify all exercises
 # ./bin/verify-exercises
@@ -21,36 +9,41 @@
 # Example: verify single exercise
 # ./bin/verify-exercises two-fer
 
-slug="${1:-*}"
 test_dir=$(mktemp -d)
 
 cleanup() { rm -rf "$test_dir"; }
 trap cleanup EXIT
 
 function verify_exercise() {
-    local dir="${1}"
-    local slug=$(basename "${dir}")
+    local slug="${1}"
+    local dir="./exercises/practice/${slug}"    
     local tmp_dir="${test_dir}/${slug}"
+    
+    (
+        cp -r "${dir}" "${tmp_dir}"
+        cd "${tmp_dir}"
 
-    cp -r "${dir}" "${tmp_dir}"
-    cd "${tmp_dir}"
+        sed -i 's/test.skip/test/g' "tests/test-${slug}.art"
+        cp ".meta/src/example.art" "src/${slug}.art"
 
-    sed -i 's/test.skip/test/g' "tests/test-${slug}.art"
-    cp ".meta/src/example.art" "src/${slug}.art"
-
-    arturo tester.art
+        echo "Verifying exercise: ${slug}"
+        arturo tester.art
+    )
 }
 
-exit_code=0
+if [[ -z "${1}" ]]; then
+    exit_code=0
 
-# Verify the Practice Exercises
-for practice_exercise_dir in ./exercises/practice/${slug}/; do
-    if [ -d $practice_exercise_dir ]; then
-        verify_exercise "${practice_exercise_dir}"
-        if (( $? != 0 )); then
+    shopt -s nullglob
+    for dir in ./exercises/practice/*; do
+        slug=${dir##*/}
+        if ! verify_exercise "${slug}"; then
             exit_code=1
         fi
-    fi
-done
+    done
 
-exit $exit_code
+    exit $exit_code
+else
+    slug=${1}
+    verify_exercise "${slug}"
+fi
