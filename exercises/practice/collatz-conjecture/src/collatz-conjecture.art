@@ -1,0 +1,3 @@
+collatz: function [n][
+    panic "please implement the collatz function"
+]
