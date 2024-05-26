@@ -101,6 +101,14 @@
         "difficulty": 2
       },
       {
+        "slug": "gigasecond",
+        "name": "Gigasecond",
+        "uuid": "a88d3b2d-bb09-4057-abda-73f945d53883",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "9f87d2dd-b46c-437e-8a69-7f3ed44af244",
