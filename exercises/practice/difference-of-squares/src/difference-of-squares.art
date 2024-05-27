@@ -1,0 +1,11 @@
+squareOfSum: function [n][
+    panic "Please implement the squareOfSum function"
+]
+
+sumOfSquares: function [n][
+    panic "Please implement the sumOfSquares function"
+]
+
+differenceOfSquares: function [n][
+    panic "Please implement the differenceOfSquares function"
+]
