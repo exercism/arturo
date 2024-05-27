@@ -57,7 +57,7 @@ suite "Prime Factors" [
         assert -> [5, 17, 23, 461] = result
     ]
     
-    test.skip "primeFactors include a large prime" [
+    test.skip "factors include a large prime" [
         result: primeFactors 93819012551
         assert -> [11, 9539, 894119] = result
     ]
