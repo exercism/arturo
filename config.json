@@ -101,6 +101,14 @@
         "difficulty": 2
       },
       {
+        "slug": "sum-of-multiples",
+        "name": "Sum of Multiples",
+        "uuid": "7a26ff91-0491-4c0b-8d09-2069f9af55f0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "a88d3b2d-bb09-4057-abda-73f945d53883",

@@ -1,0 +1,3 @@
+sumOfMultiples: function [factors limit][
+    panic "Please implement the sumOfMultiples function"
+]
