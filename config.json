@@ -181,6 +181,14 @@
         "difficulty": 3
       },
       {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "59133b68-b71a-44b6-9375-179c77f0e2b5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "1b22613d-d8b4-4423-8054-5f6674efc708",
