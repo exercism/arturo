@@ -1,0 +1,3 @@
+eggCount: function [encodedNumber][
+    panic "Please implement the twoFer function"
+]
