@@ -3,7 +3,7 @@ sumOfMultiples: function [factors limit][
     factors: select filter factors => zero? => [& < limit]
 
     loop factors 'factor ->
-        loop factor..limit .step:factor 'i -> 'multiples ++ i
+        loop factor..limit-1 .step:factor 'i -> 'multiples ++ i
 
     sum unique multiples
 ]

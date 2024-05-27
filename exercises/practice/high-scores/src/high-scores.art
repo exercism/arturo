@@ -1,0 +1,15 @@
+list: function[scores][
+    panic "please implement the list function"
+]
+
+latest: function[scores][
+    panic "please implement the latest function"
+]
+
+personalBest: function[scores][
+    panic "please implement the personalBest function"
+]
+
+personalTopThree: function[scores][
+    panic "please implement the personalTopThree function"
+]

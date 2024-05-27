@@ -1,0 +1,3 @@
+armstrong?: function[n][
+    panic "Please implement the armstrong? function"
+]

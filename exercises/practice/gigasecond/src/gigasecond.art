@@ -1,0 +1,3 @@
+gigasecond: function[date][
+    panic "Please implement the gigasecond function"
+]
