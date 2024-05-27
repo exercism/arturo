@@ -181,6 +181,14 @@
         "difficulty": 3
       },
       {
+        "slug": "prime-factors",
+        "name": "Prime Factors",
+        "uuid": "57e5d645-4759-4b4b-8d33-ebe8c74b9c87",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "reverse-string",
         "name": "Reverse String",
         "uuid": "59133b68-b71a-44b6-9375-179c77f0e2b5",
