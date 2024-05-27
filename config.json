@@ -181,6 +181,14 @@
         "difficulty": 3
       },
       {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "8877f43f-ae4b-4946-957f-5eeb6a4e681f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "prime-factors",
         "name": "Prime Factors",
         "uuid": "57e5d645-4759-4b4b-8d33-ebe8c74b9c87",
