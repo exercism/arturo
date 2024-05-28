@@ -5,8 +5,9 @@ slices: function [arr span][
 
 largestProduct: function [str span][
     if span > size str -> return null
-    if or? empty? str zero? span -> return 1
+    if negative? span -> return null
     unless match? str {/^\d*$/} -> return null
+    if or? empty? str zero? span -> return 1
 
     max map (slices (digits (to :integer str)) span) => product
 ]
