@@ -1,0 +1,3 @@
+largestProduct: function [str span][
+    panic "Please implement the largestProduct function"
+]
