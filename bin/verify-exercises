@@ -32,17 +32,13 @@ function verify_exercise() {
 }
 
 if [[ -z "${1}" ]]; then
-    exit_code=0
-
     shopt -s nullglob
     for dir in ./exercises/practice/*; do
         slug=${dir##*/}
         if ! verify_exercise "${slug}"; then
-            exit_code=1
+            exit 1
         fi
     done
-
-    exit $exit_code
 else
     slug=${1}
     verify_exercise "${slug}"
