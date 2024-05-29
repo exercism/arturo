@@ -229,6 +229,14 @@
         "difficulty": 2
       },
       {
+        "slug": "etl",
+        "name": "ETL",
+        "uuid": "425fdf02-186d-4cdb-96cb-01a4a76cae17",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "largest-series-product",
         "name": "Largest Series Product",
         "uuid": "01180cdd-556c-4476-a71f-083628265000",
