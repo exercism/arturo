@@ -1,0 +1,49 @@
+nationalities: ['English 'Spaniard 'Ukrainian 'Norwegian 'Japanese]
+colors: ['Red 'Green 'Ivory 'Yellow 'Blue]
+drinks: ['Coffee 'Tea 'Milk 'OrangeJuice 'Water]
+smokes: ['OldGold 'Kools 'Chesterfield 'LuckyStrike 'Parliament]
+pets: ['Dog 'Snails 'Fox 'Horse 'Zebra]
+
+nextTo?: function [a b][1 = abs (a - b)]
+
+validNationality?: function [nationality][
+    nationality\0 = 'English
+]
+
+validColor?: function [color nationality][
+    and? (nextTo? (index color 'Blue) (index nationality 'Norwegian))
+    and? (index color 'Red)   = (index nationality 'English)
+         (index color 'Green) = (inc index color 'Ivory)
+]
+
+loop permutate nationalities [nationality][
+    if validNationality? nationality [
+        loop permutate colors [color][
+            if validColor? color nationality[
+                inspect nationality
+                inspect color
+            ]
+        ]
+    ]
+]
+
+
+
+; loop permutate smokes [smoke][
+        ; if (index smoke 'Parliament) = (index nationality 'Japanese) [
+        ; if (index smoke 'Kools) = (index color 'Yellow) [
+        ;     loop permutate animals [animal][
+        ;     if abs ((index animal 'Fox) - (index smoke 'Chesterfield)) = 1[
+        ;     if abs ((index animal 'Horse) - (index smoke 'Kools)) = 1[
+        ;     if (index nationality 'Spaniard) = (index animal 'Dog) [
+        ;     if (index smoke 'OldGold) = (index animal 'Snails) [
+        ;         loop permutate drinks [drink][
+        ;             if drink\2 = 'Milk [
+        ;             if (index drink 'Tea) = (index nationality 'Ukrainian) [
+        ;             if (index drink 'Coffee) = (index color 'Green) [
+        ;             if (index drink 'OrangeJuice) = (index smoke 'LuckyStrike) [
+        ;                 drinksWater: nationality\[index drink 'Water]
+        ;                 ownsZebra: nationality\[index animal 'Zebra]
+        ;         ]]]]]
+        ;     ]]]]]
+        ; ]]]

@@ -1,0 +1,12 @@
+import {unitt}!
+import {src/zebra-puzzle}!
+
+suite "Zebra Puzzle" [
+    test "resident who drinks water" [
+        assert -> "Norwegian" = drinksWater
+    ]
+
+    test.skip "ownsZebra" [
+        assert -> "Japanese" = ownsZebra
+    ]
+]
