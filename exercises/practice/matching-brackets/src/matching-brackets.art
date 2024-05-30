@@ -1,0 +1,3 @@
+paired?: function [str][
+    panic "Please implement the paired? function"
+]

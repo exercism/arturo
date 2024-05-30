@@ -357,6 +357,14 @@
         "difficulty": 2
       },
       {
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
+        "uuid": "d77e2cae-6aff-494c-bd92-d8fc3ab09c16",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "pascals-triangle",
         "name": "Pascal's Triangle",
         "uuid": "24a34f90-7cd8-4383-974e-ffc57af4fe14",
