@@ -1,0 +1,4 @@
+ageOn: function [planet seconds][
+    panic "Please implement the ageOn function"
+]
+

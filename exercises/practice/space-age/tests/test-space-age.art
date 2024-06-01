@@ -1,0 +1,56 @@
+import {unitt}!
+import {src/space-age}!
+
+approximately?: function [value target][ 
+    lower: value - 0.01 
+    upper: value + 0.01  
+ 
+    between? target lower upper 
+] 
+
+suite "Space Age" [
+    test "age on Earth" [
+        result: ageOn "Earth" 1000000000
+        assert -> approximately? result 31.69
+    ]
+    
+    test.skip "age on Mercury" [
+        result: ageOn "Mercury" 2134835688
+        assert -> approximately? result 280.88
+    ]
+    
+    test.skip "age on Venus" [
+        result: ageOn "Venus" 189839836
+        assert -> approximately? result 9.78
+    ]
+    
+    test.skip "age on Mars" [
+        result: ageOn "Mars" 2129871239
+        assert -> approximately? result 35.88
+    ]
+    
+    test.skip "age on Jupiter" [
+        result: ageOn "Jupiter" 901876382
+        assert -> approximately? result 2.41
+    ]
+    
+    test.skip "age on Saturn" [
+        result: ageOn "Saturn" 2000000000
+        assert -> approximately? result 2.15
+    ]
+    
+    test.skip "age on Uranus" [
+        result: ageOn "Uranus" 1210123456
+        assert -> approximately? result 0.46
+    ]
+    
+    test.skip "age on Neptune" [
+        result: ageOn "Neptune" 1821023456
+        assert -> approximately? result 0.35
+    ]
+    
+    test.skip "invalid planet returns null" [
+        result: ageOn "Sun" 680804807
+        assert -> null? result
+    ]
+]
