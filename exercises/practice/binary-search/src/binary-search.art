@@ -1,0 +1,4 @@
+find: function [values value][  
+    panic "Implement the find function" 
+]
+

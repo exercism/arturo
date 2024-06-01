@@ -45,6 +45,14 @@
         "difficulty": 2
       },
       {
+        "slug": "binary-search",
+        "name": "Binary Search",
+        "uuid": "22fe2851-8b68-4b00-94cd-2a78b211e004",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "ca6ddfe1-0355-4316-be0f-fefed9943636",

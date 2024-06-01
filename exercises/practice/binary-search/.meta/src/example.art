@@ -1,0 +1,16 @@
+find: function [values value][  
+    start: 0
+    stop: sub size values 1
+
+    while [=< start stop] [
+        i: div start + stop 2
+        elt: values\[i]
+        case [value]
+            when? [> elt] -> start: i + 1
+            when? [< elt] -> stop: i - 1
+            else  -> return i
+    ]
+
+    null
+]
+
