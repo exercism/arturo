@@ -1,0 +1,16 @@
+commands: function [number][
+    actions: []
+    digits: reverse pad.with:'0' as.binary number 5
+    loop.with:'i digits 'digit [
+        unless digit <> '1' ->
+            case [i]
+                when? [= 0] -> append 'actions "wink"
+                when? [= 1] -> append 'actions "double blink"
+                when? [= 2] -> append 'actions "close your eyes"
+                when? [= 3] -> append 'actions "jump"
+                when? [= 4] -> reverse 'actions
+    ]
+
+    actions
+]
+

@@ -141,6 +141,14 @@
         "difficulty": 3
       },
       {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "41af7d35-de41-4a74-b428-c0802e327a84",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "series",
         "name": "Series",
         "uuid": "8546a842-c58e-4bbb-a965-f015f83102d3",
