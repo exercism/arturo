@@ -1,0 +1,4 @@
+score: function [word][
+    panic "Please implement the score function"
+]
+

@@ -277,6 +277,14 @@
         "difficulty": 3
       },
       {
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "uuid": "7e4c8464-83a2-4d1d-8e97-aed4bbd982b5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "uuid": "d5c5268d-0cec-4663-a26e-015efa19b39f",
