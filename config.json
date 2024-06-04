@@ -293,6 +293,14 @@
         "difficulty": 3
       },
       {
+        "slug": "run-length-encoding",
+        "name": "Run-Length Encoding",
+        "uuid": "64815dad-6422-4416-b771-971e4196f076",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "2d8c1f6d-dd88-4282-bdd8-8a30463ac6d6",
