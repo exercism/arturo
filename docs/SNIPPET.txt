@@ -1,1 +1,2 @@
-TODO: add snippet
+print join.with:"" filter "H1e2l3l4o5, W6o7r8l9d!" 'char -> numeric? char
+; Hello, World!
