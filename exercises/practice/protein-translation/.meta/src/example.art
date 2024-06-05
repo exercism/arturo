@@ -1,0 +1,39 @@
+toProteins: function [strand][
+    results: []
+
+    codons: chunk.with:'i strand [] -> i / 3
+    loop codons 'codon [
+        codon: join codon
+        switch key? codonProteins codon
+            -> do [
+                protein: codonProteins\[codon]
+                switch equal? "STOP" protein
+                    -> return results
+                    -> results: append results protein
+               ]
+            -> return null
+    ]
+
+    results
+]
+
+codonProteins: #[
+    AUG: "Methionine"
+    UUU: "Phenylalanine"
+    UUC: "Phenylalanine"
+    UUA: "Leucine"
+    UUG: "Leucine"
+    UCU: "Serine"
+    UCC: "Serine"
+    UCA: "Serine"
+    UCG: "Serine"
+    UAU: "Tyrosine"
+    UAC: "Tyrosine"
+    UGU: "Cysteine"
+    UGC: "Cysteine"
+    UGG: "Tryptophan"
+    UAA: "STOP"
+    UAG: "STOP"
+    UGA: "STOP"
+]
+
