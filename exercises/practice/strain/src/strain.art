@@ -1,0 +1,7 @@
+keep: function [values fn][
+    panic "Please implement the keep function"
+]
+
+discard: function [values fn][
+    panic "Please implement the discard function"
+]
