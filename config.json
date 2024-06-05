@@ -37,6 +37,14 @@
   "exercises": {
     "practice": [
       {
+        "slug": "anagram",
+        "name": "Anagram",
+        "uuid": "8c2abeec-5d2e-44af-808e-17ae88577a36",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "13ae3cb4-f5ca-421e-be3b-a8f72d4e8606",
