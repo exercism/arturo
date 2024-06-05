@@ -229,6 +229,14 @@
         "difficulty": 2
       },
       {
+        "slug": "protein-translation",
+        "name": "Protein Translation",
+        "uuid": "20a04b44-be05-488e-a499-987a68312973",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "reverse-string",
         "name": "Reverse String",
         "uuid": "59133b68-b71a-44b6-9375-179c77f0e2b5",

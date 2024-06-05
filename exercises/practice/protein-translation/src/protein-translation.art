@@ -1,0 +1,4 @@
+toProteins: function [strand][
+    panic "Please implement the toProteins function"
+]
+
