@@ -1,0 +1,7 @@
+square: function [number][
+    panic "Please implement the square function"
+]
+
+total: function [][
+    panic "Please implement the total function"
+]

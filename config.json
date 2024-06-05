@@ -101,6 +101,14 @@
         "difficulty": 2
       },
       {
+        "slug": "grains",
+        "name": "Grains",
+        "uuid": "891188ea-1270-450f-a44d-c821047a4344",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "rna-transcription",
         "name": "RNA Transcription",
         "uuid": "c76f276e-dd42-4bd9-ac7f-81ecc1a89a09",
