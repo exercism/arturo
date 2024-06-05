@@ -1,0 +1,9 @@
+square: function [number][
+    switch in? number 1..64
+        -> pow 2 sub number 1
+        -> null
+]
+
+total: function [][
+    sub pow 2 64 1
+]
