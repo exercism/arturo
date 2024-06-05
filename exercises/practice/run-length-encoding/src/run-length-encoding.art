@@ -1,0 +1,7 @@
+encode: function [plaintext][
+    panic "Please implement the encode function"
+]
+
+decode: function [ciphertext][
+    panic "Please implement the decode function"    
+]
