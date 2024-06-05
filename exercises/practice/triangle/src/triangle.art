@@ -1,0 +1,11 @@
+equilateral?: function [x y z][
+    panic "Please implement the equilateral? function"
+]
+
+isosceles?: function [x y z][
+    panic "Please implement the isosceles? function"
+]
+
+scalene?: function [x y z][
+    panic "Please implement the scalene? function"
+]
