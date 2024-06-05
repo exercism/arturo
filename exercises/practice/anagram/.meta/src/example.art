@@ -1,0 +1,15 @@
+findAnagrams: function[subject candidates][
+    anagrams: []
+
+    subjectLower: lower subject
+    subjectLetters: sort split subjectLower
+    
+    loop candidates 'candidate [
+        candidateLower: lower candidate
+        candidateLetters: sort split candidateLower
+
+        unless or? (equal? subjectLower candidateLower) (not? equal? subjectLetters candidateLetters)
+            -> anagrams: append anagrams candidate
+    ]
+    anagrams
+]
