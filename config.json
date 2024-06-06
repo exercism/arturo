@@ -357,6 +357,14 @@
         "difficulty": 2
       },
       {
+        "slug": "pascals-triangle",
+        "name": "Pascal's Triangle",
+        "uuid": "24a34f90-7cd8-4383-974e-ffc57af4fe14",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "flatten-array",
         "name": "Flatten Array",
         "uuid": "5b1c58ae-d398-415f-83cd-de2ec5a0de1d",
