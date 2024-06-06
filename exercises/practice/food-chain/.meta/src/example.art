@@ -1,0 +1,29 @@
+animals: ["fly", "spider", "bird", "cat", "dog", "goat", "cow", "horse"]
+
+animalRemarks: #[ 
+  fly: "I don't know why she swallowed the fly. Perhaps she'll die.",
+  spider: "It wriggled and jiggled and tickled inside her.",
+  bird: "How absurd to swallow a bird!",
+  cat: "Imagine that, to swallow a cat!",
+  dog: "What a hog, to swallow a dog!",
+  goat: "Just opened her throat and swallowed a goat!",
+  cow: "I don't know how she swallowed a cow!",
+  horse: "She's dead, of course!"
+]
+
+verseStart: function[n][
+    animal: animals\[n]
+    ~"I know an old lady who swallowed a |animal|."
+]
+
+verseEnd: function[n][
+  animalRemarks\fly
+]
+
+verse: function[n][
+  @[verseStart n verseEnd n]
+]
+
+recite: function[begin end][
+    panic "Please implement the recite function"
+]
