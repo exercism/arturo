@@ -1,0 +1,3 @@
+flattenCollection: function[collection][
+    panic "Please implement the flattenCollection function"
+]
