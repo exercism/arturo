@@ -1,0 +1,174 @@
+import {unitt}!
+import {src/robot-simulator}!
+
+
+suite "Robot Simulator" [
+  suite "Robot Simulator - Rotating clockwise" [
+    test "rotating clockwise changes north to east" [
+        r: to :robot @[0 0 "north"]
+        r\simulate "R"
+        expected: to :robot @[0 0 "east"]
+
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "rotating clockwise changes east to south" [
+        r: to :robot @[0 0 "east"]
+        r\simulate "R"
+        expected: to :robot @[0 0 "south"]
+
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "rotating clockwise changes south to west" [
+        r: to :robot @[0 0 "south"]
+        r\simulate "R"
+        expected: to :robot @[0 0 "west"]
+
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "rotating clockwise changes west to north" [
+        r: to :robot @[0 0 "west"]
+        r\simulate "R"
+        expected: to :robot @[0 0 "north"]
+
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+  ]
+
+  suite "Robot Simulator - Rotating counterclockwise" [
+    test.skip "rotating counterclockwise changes north to west" [
+        r: to :robot @[0 0 "north"]
+        r\simulate "L"
+        expected: to :robot @[0 0 "west"]
+
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "rotating counterclockwise changes west to south" [
+        r: to :robot @[0 0 "west"]
+        r\simulate "L"
+        expected: to :robot @[0 0 "south"]
+
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "rotating counterclockwise changes south to east" [
+        r: to :robot @[0 0 "south"]
+        r\simulate "L"
+        expected: to :robot @[0 0 "east"]
+
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "rotating counterclockwise changes east to north" [
+        r: to :robot @[0 0 "east"]
+        r\simulate "L"
+        expected: to :robot @[0 0 "north"]
+
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+  ]
+
+  suite "Robot Simulator - Moving forward" [
+    test.skip "Moving forward facing north increments Y" [
+        r: to :robot @[0 0 "north"]
+        r\simulate "A"
+        expected: to :robot @[0 1 "north"]
+        
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "Moving forward facing south decrements Y" [
+        r: to :robot @[0 0 "south"]
+        r\simulate "A"
+        expected: to :robot @[0 neg 1 "south"]
+        
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "Moving forward facing east increments X" [
+        r: to :robot @[0 0 "east"]
+        r\simulate "A"
+        expected: to :robot @[1 0 "east"]
+        
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "Moving forward facing west decrements X" [
+        r: to :robot @[0 0 "west"]
+        r\simulate "A"
+        expected: to :robot @[neg 1 0 "west"]
+        
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+  ]
+
+  suite "Robot Simulator - Follow series of instructions" [
+    test.skip "moving east and north from README" [
+        r: to :robot @[7 3 "north"]
+        r\simulate "RAALAL"
+        expected: to :robot @[9 4 "west"]
+        
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "moving west and north" [
+        r: to :robot @[0 0 "north"]
+        r\simulate "LAAARALA"
+        expected: to :robot @[neg 4 1 "west"]
+        
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "moving west and south" [
+        r: to :robot [2 neg 7 "east"]
+        r\simulate "RRAAAAALA"
+        expected: to :robot @[neg 3 neg 8 "south"]
+        
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+
+    test.skip "moving east and north" [
+        r: to :robot [8 4 "south"]
+        r\simulate "LAAARRRALLLL"
+        expected: to :robot @[11 5 "north"]
+        
+        assert -> expected\x = r\x
+        assert -> expected\y = r\y
+        assert -> expected\direction = r\direction
+    ]
+  ]
+]
+
