@@ -1,0 +1,114 @@
+import {unitt}!
+import {src/list-ops}!
+
+suite "List Ops" [
+    test "empty lists" [
+        result: customAppend [] []
+        assert -> [] = result
+    ]
+
+    test.skip "list to empty list" [
+        result: customAppend [] [1, 2, 3, 4]
+        assert -> [1, 2, 3, 4] = result
+    ]
+
+    test.skip "empty list to list" [
+        result: customAppend [1, 2, 3, 4] []
+        assert -> [1, 2, 3, 4] = result
+    ]
+
+    test.skip "non-empty lists" [
+        result: customAppend [1, 2] [2, 3, 4, 5]
+        assert -> [1, 2, 2, 3, 4, 5] = result
+    ]
+
+    test.skip "empty list" [
+        result: customConcat []
+        assert -> [] = result
+    ]
+
+    test.skip "list of lists" [
+        result: customConcat [[1, 2], [3], [], [4, 5, 6]]
+        assert -> [1, 2, 3, 4, 5, 6] = result
+    ]
+
+    test.skip "list of nested lists" [
+        result: customConcat [[[1], [2]], [[3]], [[]], [[4, 5, 6]]]
+        assert -> [[1], [2], [3], [], [4, 5, 6]] = result
+    ]
+
+    test.skip "empty list" [
+        result: customFilter [] 'odd?
+        assert -> [] = result
+    ]
+
+    test.skip "non-empty list" [
+        result: customFilter [1, 2, 3, 5] 'odd?
+        assert -> [1, 3, 5] = result
+    ]
+
+    test.skip "empty list" [
+        result: customLength []
+        assert -> 0 = result
+    ]
+
+    test.skip "non-empty list" [
+        result: customLength [1, 2, 3, 4]
+        assert -> 4 = result
+    ]
+
+    test.skip "empty list" [
+        result: customMap [] 'inc
+        assert -> [] = result
+    ]
+
+    test.skip "non-empty list" [
+        result: customMap [1, 3, 5, 7] 'inc
+        assert -> [2, 4, 6, 8] = result
+    ]
+
+    test.skip "empty list" [
+        result: customFoldl [] 2 'mul
+        assert -> 2 = result
+    ]
+
+    test.skip "direction independent function applied to non-empty list" [
+        result: customFoldl [1, 2, 3, 4] 5 'inc
+        assert -> 15 = result
+    ]
+
+    test.skip "direction dependent function applied to non-empty list" [
+        result: customFoldl [1, 2, 3, 4] 24 'div
+        assert -> 64 = result
+    ]
+
+    test.skip "empty list" [
+        result: customFoldr [] 2 'mul
+        assert -> 2 = result
+    ]
+
+    test.skip "direction independent function applied to non-empty list" [
+        result: customFoldr [1, 2, 3, 4] 5 'inc
+        assert -> 15 = result
+    ]
+
+    test.skip "direction dependent function applied to non-empty list" [
+        result: customFoldr [1, 2, 3, 4] 24 'div
+        assert -> 9 = result
+    ]
+
+    test.skip "empty list" [
+        result: customReverse []
+        assert -> [] = result
+    ]
+
+    test.skip "non-empty list" [
+        result: customReverse [1, 3, 5, 7]
+        assert -> [7, 5, 3, 1] = result
+    ]
+
+    test.skip "list of lists is not flattened" [
+        result: customReverse [[1, 2], [3], [], [4, 5, 6]]
+        assert -> [[4, 5, 6], [], [3], [1, 2]] = result
+    ]
+]

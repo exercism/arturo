@@ -1,0 +1,81 @@
+customAppend: function [left right][
+    appended: left
+
+    loop right 'x [
+        append 'appended x
+    ]
+
+    appended
+]
+
+customConcat: function [blocks][
+    concatenated: []
+
+    loop blocks 'block [
+        customAppend 'concatenated block
+    ]
+
+    concatenated
+]
+
+customFilter: function [block condition][
+    filtered: []
+
+    loop block 'x [
+        if call condition x [
+            append 'filtered x
+        ]
+    ]
+
+    filtered
+]
+
+customLength: function [block][
+    length: 0
+
+    loop block 'x [
+        inc 'length
+    ]
+
+    length
+]
+
+customMap: function [block condition][
+    mapped: []
+
+    loop block 'x [
+        append 'mapped (call condition x)
+    ]
+
+    mapped
+]
+
+customFoldl: function [block seed action][
+    result: seed
+
+    loop block 'x [
+        result: call action result x
+    ]
+
+    result
+]
+
+customFoldr: function [block seed action][
+    result: seed
+
+    loop (customReverse block) 'x [
+        result: call action result
+    ]
+
+    result
+]
+
+customReverse: function [block][
+    reversed: []
+
+    loop block 'x [
+        prepend 'reversed x
+    ]
+
+    reversed
+]

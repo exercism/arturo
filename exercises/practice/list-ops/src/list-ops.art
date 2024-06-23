@@ -1,0 +1,31 @@
+customAppend: function [left right][
+    panic "Please implement the customAppend function"
+]
+
+customConcat: function [blocks][
+    panic "Please implement the customConcat function"
+]
+
+customFilter: function [block condition][
+    panic "Please implement the customFilter function"
+]
+
+customLength: function [block][
+    panic "Please implement the customLength function"
+]
+
+customMap: function [block condition][
+    panic "Please implement the customMap function"
+]
+
+customFoldl: function [block seed action][
+    panic "Please implement the customFoldl function"
+]
+
+customFoldr: function [block seed action][
+    panic "Please implement the customFoldr function"
+]
+
+customReverse: function [block][
+    panic "Please implement the customReverse function"
+]
