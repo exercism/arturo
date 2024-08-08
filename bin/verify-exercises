@@ -11,25 +11,30 @@
 
 set -eo pipefail
 
-slug="${1:-*}"
+required_tool() {
+    command -v "${1}" >/dev/null 2>&1 ||
+        die "${1} is required but not installed. Please install it and make sure it's in your PATH."
+}
 
-function copy_example_or_examplar_to_solution() {
+required_tool jq
+
+copy_example_or_examplar_to_solution() {
     jq -c '[.files.solution, .files.exemplar // .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' .meta/config.json | while read -r src_and_dst; do
         cp "$(echo "${src_and_dst}" | jq -r '.src')" "$(echo "${src_and_dst}" | jq -r '.dst')"
     done
 }
 
-function unskip_tests() {
+unskip_tests() {
     jq -r '.files.test[]' .meta/config.json | while read -r test_file; do
         sed -i 's/test.skip/test/g' "${test_file}"
     done
 }
 
-function run_tests() {
+run_tests() {
     arturo tester.art
 }
 
-function verify_exercise() {
+verify_exercise() {
     local dir
     local slug
     local tmp_dir
@@ -50,8 +55,10 @@ function verify_exercise() {
     )
 }
 
+exercise_slug="${1:-*}"
+
 shopt -s nullglob
-for exercise_dir in ./exercises/{concept,practice}/${slug}/; do
+for exercise_dir in ./exercises/{concept,practice}/${exercise_slug}/; do
     if [ -d "${exercise_dir}" ]; then
         verify_exercise "${exercise_dir}"
     fi
