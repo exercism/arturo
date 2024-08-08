@@ -9,37 +9,50 @@
 # Example: verify single exercise
 # ./bin/verify-exercises two-fer
 
-test_dir=$(mktemp -d)
+set -eo pipefail
 
-cleanup() { rm -rf "$test_dir"; }
-trap cleanup EXIT
+slug="${1:-*}"
+
+function copy_example_or_examplar_to_solution() {
+    jq -c '[.files.solution, .files.exemplar // .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' .meta/config.json | while read -r src_and_dst; do
+        cp "$(echo "${src_and_dst}" | jq -r '.src')" "$(echo "${src_and_dst}" | jq -r '.dst')"
+    done
+}
+
+function unskip_tests() {
+    jq -r '.files.test[]' .meta/config.json | while read -r test_file; do
+        sed -i 's/test.skip/test/g' "${test_file}"
+    done
+}
+
+function run_tests() {
+    arturo tester.art
+}
 
 function verify_exercise() {
-    local slug="${1}"
-    local dir="./exercises/practice/${slug}"    
-    local tmp_dir="${test_dir}/${slug}"
-    
+    local dir
+    local slug
+    local tmp_dir
+
+    dir=$(realpath "${1}")
+    slug=$(basename "${dir}")
+    tmp_dir=$(mktemp -d -t "exercism-verify-${slug}-XXXXX")
+
+    echo "Verifying ${slug} exercise..."
+
     (
-        cp -r "${dir}" "${tmp_dir}"
+        cp -r "${dir}/." "${tmp_dir}"
         cd "${tmp_dir}"
 
-        sed -i 's/test.skip/test/g' "tests/test-${slug}.art"
-        cp ".meta/src/example.art" "src/${slug}.art"
-
-        echo "Verifying exercise: ${slug}"
-        arturo tester.art
+        copy_example_or_examplar_to_solution
+        unskip_tests
+        run_tests
     )
 }
 
-if [[ -z "${1}" ]]; then
-    shopt -s nullglob
-    for dir in ./exercises/practice/*; do
-        slug=${dir##*/}
-        if ! verify_exercise "${slug}"; then
-            exit 1
-        fi
-    done
-else
-    slug=${1}
-    verify_exercise "${slug}"
-fi
+shopt -s nullglob
+for exercise_dir in ./exercises/{concept,practice}/${slug}/; do
+    if [ -d "${exercise_dir}" ]; then
+        verify_exercise "${exercise_dir}"
+    fi
+done
