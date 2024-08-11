@@ -117,6 +117,14 @@
         "difficulty": 2
       },
       {
+        "slug": "phone-number",
+        "name": "Phone Number",
+        "uuid": "2c77675c-95c7-44e1-b33c-0e7786967f10",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "rna-transcription",
         "name": "RNA Transcription",
         "uuid": "c76f276e-dd42-4bd9-ac7f-81ecc1a89a09",
