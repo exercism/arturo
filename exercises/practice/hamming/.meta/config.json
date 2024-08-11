@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Calculate the Hamming difference between two DNA strands.",
