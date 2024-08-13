@@ -1,0 +1,7 @@
+encode: function[phrase][
+    panic "Please implement the encode function"
+]
+
+decode: function[phrase][
+    panic "Please implement the decode function"
+]
