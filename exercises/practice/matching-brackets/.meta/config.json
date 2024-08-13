@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Make sure the brackets and braces all match.",

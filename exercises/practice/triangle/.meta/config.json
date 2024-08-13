@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",

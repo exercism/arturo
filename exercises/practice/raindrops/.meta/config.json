@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Convert a number into its corresponding raindrop sounds - Pling, Plang and Plong.",
