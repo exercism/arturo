@@ -1,0 +1,18 @@
+clean: function [phrase][
+    if match? phrase {/[a-zA-Z]/} -> return null
+    if match? phrase {/[@:!]/} -> return null
+
+    cleaned: replace phrase {/[^0-9]/} ""
+
+    if greater? size cleaned 11 -> return null
+    if less? size cleaned 10 -> return null
+    if and? equal? size cleaned 11 notEqual? cleaned\0 '1' -> return null
+
+    if equal? size cleaned 11 -> cleaned: slice cleaned 1 size cleaned
+    if equal? cleaned\0 '0' -> return null
+    if equal? cleaned\3 '0' -> return null
+    if equal? cleaned\0 '1' -> return null
+    if equal? cleaned\3 '1' -> return null
+
+    cleaned
+]
