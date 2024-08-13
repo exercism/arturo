@@ -365,6 +365,14 @@
         "difficulty": 4
       },
       {
+        "slug": "atbash-cipher",
+        "name": "Atbash Cipher",
+        "uuid": "ef527899-03b7-495c-84f6-b681cbb2c57a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "pascals-triangle",
         "name": "Pascal's Triangle",
         "uuid": "24a34f90-7cd8-4383-974e-ffc57af4fe14",
