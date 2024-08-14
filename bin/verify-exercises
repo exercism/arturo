@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
 
 # Synopsis:
-# Test the track's exercises.
+# Verify that each exercise's example/exemplar solution passes the tests.
+# You can either verify all exercises or a single exercise.
 
 # Example: verify all exercises
-# ./bin/verify-exercises
+# bin/verify-exercises
 
 # Example: verify single exercise
-# ./bin/verify-exercises two-fer
+# bin/verify-exercises two-fer
 
 set -eo pipefail
+
+die() { echo "$*" >&2; exit 1; }
 
 required_tool() {
     command -v "${1}" >/dev/null 2>&1 ||
@@ -20,8 +23,9 @@ required_tool jq
 required_tool arturo
 
 copy_example_or_examplar_to_solution() {
-    jq -c '[.files.solution, .files.exemplar // .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' .meta/config.json | while read -r src_and_dst; do
-        cp "$(echo "${src_and_dst}" | jq -r '.src')" "$(echo "${src_and_dst}" | jq -r '.dst')"
+    jq -c '[.files.solution, .files.exemplar // .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' .meta/config.json \
+    | while read -r src_and_dst; do
+        cp "$(jq -r '.src' <<< "${src_and_dst}")" "$(jq -r '.dst' <<< "${src_and_dst}")"
     done
 }
 
@@ -47,6 +51,7 @@ verify_exercise() {
     echo "Verifying ${slug} exercise..."
 
     (
+        trap 'rm -rf "$tmp_dir"' EXIT    # remove tempdir when subshell ends
         cp -r "${dir}/." "${tmp_dir}"
         cd "${tmp_dir}"
 
@@ -56,11 +61,21 @@ verify_exercise() {
     )
 }
 
-exercise_slug="${1:-*}"
+verify_exercises() {
+    local exercise_slug
 
-shopt -s nullglob
-for exercise_dir in ./exercises/{concept,practice}/${exercise_slug}/; do
-    if [ -d "${exercise_dir}" ]; then
-        verify_exercise "${exercise_dir}"
-    fi
-done
+    exercise_slug="${1}"
+
+    shopt -s nullglob
+    count=0
+    for exercise_dir in ./exercises/{concept,practice}/${exercise_slug}/; do
+        if [[ -d "${exercise_dir}" ]]; then
+            verify_exercise "${exercise_dir}"
+            ((++count))
+        fi
+    done
+    ((count > 0)) || die 'no matching exercises found!'
+}
+
+exercise_slug="${1:-*}"
+verify_exercises "${exercise_slug}"
