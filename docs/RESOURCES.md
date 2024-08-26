@@ -1,13 +1,11 @@
 # Resources
 
-<!-- TODO: write document
+* [Official Documentation][official-docs] covers syntax, language features, and the standard library modules.
+* [Arturo Discord][discord] is Arturo's official Discord server.
+* [Rosetta Code][rosetta-code] has over 770+ Arturo code examples for many different tasks.
+* [Packager][packager] is Arturo's official package registry.
 
-  This document should link to useful resources.
-
-  Feel free to link to any good resources you know, whether they
-  be websites, videos, mailing lists, etc.
-
-  The contents of this document are displayed on the track's documentation
-  page at `https://exercism.org/docs/tracks/<track>/resources`.
-
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+[official-docs]: https://arturo-lang.io/master/documentation/
+[discord]: https://discord.gg/YdVK2CB
+[packager]: https://pkgr.art/
+[rosetta-code]: https://rosettacode.org/wiki/Category:Arturo

@@ -1,15 +1,7 @@
 # Installation
 
-<!-- TODO: write document
+This track uses the [nightly Arturo releases][nightly]. The `full` build is required for package support and is currently supported for only Linux and Windows platforms. An [official Docker image][docker-image] is also available.
 
-  This document should describe what the student needs to install
-  to allow working on the track on their local system using the CLI.
 
-  You can include the installation instructions in this document, but
-  usually it is better to link to a resource with the official installation
-  instructions, to prevent the instructions from becoming outdated.
-
-  The contents of this document are displayed on the track's documentation
-  page at `https://exercism.org/docs/tracks/<track>/installation`.
-
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+[nightly]: https://github.com/arturo-lang/nightly/releases
+[docker-image]: https://hub.docker.com/r/arturolang/arturo
