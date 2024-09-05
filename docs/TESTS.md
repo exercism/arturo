@@ -13,7 +13,7 @@ tests
 ```
 
 Each exercise folder contains a `tester.art` entry point (see below).
-To run the exercise's test suite on the CLI, run `arturo tester.art`.
+To run the exercise's test suite on the CLI, run `arturo tester.art` (or `exercism test`).
 
 This file imports the `unitt` package and runs the test file inside the tests folder.
 This test file is named `test-<slug>.art` and contains one or more test suites.
