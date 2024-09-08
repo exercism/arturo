@@ -1,10 +1,10 @@
 # Tests
 
-This track uses the [unitt unit-testing framework][unitt] which should be installed automatically when you run the tests.
-Some tests are skipped by default when working offline, but all tests are run by the online test runner.
+This track uses the [unitt unit-testing framework][unitt].
+
+Each exercise will have a similar structure as seen below:
 
 ```
-.../arturo/hello-world
 HELP.md
 README.md
 src
@@ -12,17 +12,24 @@ tester.art
 tests
 ```
 
-Each exercise folder contains a `tester.art` entry point (see below).
-To run the exercise's test suite on the CLI, run `arturo tester.art` (or `exercism test`).
+To run the exercise's test suite on the CLI, run `arturo tester.art` (or `exercism test`) inside the exercise folder.
 
-This file imports the `unitt` package and runs the test file inside the tests folder.
-This test file is named `test-<slug>.art` and contains one or more test suites.
-Each test suite contains one or more tests which test your submitted code in `src\<slug>.art`.
-The first test will run every time but subsequent tests are initially marked as `test.skip`.
-Remove the `.skip` attribute and run the tests again.
+## Structure
 
+Your solution goes inside `src\<slug>.art` where `slug` is the exercise slug.
+For the Leap exercise, this is `leap` so your solution goes into `src\leap.art`.
+
+`tester.art` is what Unitt calls a runner which is responsible for locating, finding, and running the tests for each exercise.
+The runner looks inside the `tests` folder to find the test file at `tests\test-<slug>.art` or `tests\test-leap.art` as an example.
+
+This test file contains one or more test suites, noted by the `suite` word and grouping similar tests, each noted by the `test` word.
+The first test is run every time, but subsequent tests are marked with a `skip` attribute.
+To run a skipped test, change `test.skip` to `test` for that test and rerun the test suite as documented above.
+Once all tests pass locally, you can submit your solution with `exercism submit` inside the exercise folder.
 
 ## Test Output
+
+Let's use the following example test file to look at the Unitt test output from running `tester.art`.
 
 ```arturo
 import {unitt}!
@@ -41,8 +48,10 @@ suite "Leap" [
 ]
 ```
 
-This test file defines a single test suite named Leap with two tests, one that runs and one that is skipped.
-Running `arturo tester.art` without changing code in `src\leap.art` results in the following output.
+If we use the starting code in `src\leap.art` without modification,
+running `exercism test` will print out the text below.
+The starting code contains panics that need to be replaced with our own code.
+These panics identify what code needs to be implemented
 
 ```plaintext
 ===== tests\test-leap.art =====
@@ -66,10 +75,9 @@ Suite: Leap
 ===== ========== =====
 ```
 
-0 tests are encountered because the track has Arturo panic if isLeap? hasn't been implemented (i.e. add your code)
+Each test may have one or more assertions, but 0 assertions are reported because Arturo panics before the entire test suite can be processed.
 
-At this point, we should write some code that passes the first test and rerun our code.
-In the output, the expected value is on the left side of the `=` and the returned value is on the right side.
+At this point, we should write some code to pass the first test. When we rerun the tests, we might seen something like this:
 
 ```plaintext
 ===== tests\test-leap.art =====
@@ -84,7 +92,6 @@ Suite: Leap
 
 
 
-
 ===== Statistics =====
 
 ⏏️    TOTAL: 1 assertions
@@ -95,63 +102,13 @@ Suite: Leap
 ===== ========== =====
 ```
 
-We've passed the first test but `unitt` indicates there's a skipped test so we'll unskip it.
+The output prints out the test suite named "Leap" and the results of our two tests.
+For each test, we see a visual symbol for whether that test passed, failed, or was skipped, then the test description, and the values tested on the next line. 
+The expected value is on the left side of the `=` and the returned value is on the right side.
 
-```
-===== tests\test-leap.art =====
+The statistics section will report the total assertions encountered, the total passed, the total skipped, and the total failed.
 
-Suite: Leap 
-
-    ✅ - assert that a year not divisible by 4 is a common year
-         assertion: false = false
-
-    ❌ - assert that a year divisible by 2 and not divisible by 4 is a common year
-         assertion: false = true
-
-
-
-
-===== Statistics =====
-
-⏏️    TOTAL: 2 assertions
-✅  PASSED: 1 assertions
-⏩ SKIPPED: 0 assertions
-❌  FAILED: 1 assertions
-
-===== ========== =====
-
-
-══╡ Program Error ╞══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
-  Some tests failed!
-```
-
-The second test failed because we haven't written the code to make it pass.
-Once we update our code and rerun it, we should see a passing second test.
-
-```plaintext
-===== tests\test-leap.art =====
-
-Suite: Leap 
-
-    ✅ - assert that a year not divisible by 4 is a common year
-         assertion: false = false
-
-    ✅ - assert that a year divisible by 2 and not divisible by 4 is a common year
-         assertion: false = false
-
-
-
-
-===== Statistics =====
-
-⏏️    TOTAL: 2 assertions
-✅  PASSED: 2 assertions
-⏩ SKIPPED: 0 assertions
-❌  FAILED: 0 assertions
-
-===== ========== =====
-```
-
-At this point, all tests are passing so we can submit our solution to the website.
+Once all assertions pass, your solution can be submitted using `exercism submit`.
+The online test runner unskips all tests when checking your solution so a locally passing solution might not pass online.
 
 [unitt]: [https://unitt.pkgr.art/]
