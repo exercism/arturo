@@ -1,35 +1,29 @@
 # Tests
 
-This track uses the [unitt unit-testing framework][unitt].
+This track uses the [Unitt unit-testing package][unitt].
+If not already installed, Arturo will download this package automatically at runtime.
 
-Each exercise will have a similar structure as seen below:
+To run tests, navigate to the exercise folder in your terminal and run either `arturo tester.art` or `exercism test`.
 
-```
-HELP.md
-README.md
-src
-tester.art
-tests
-```
+Each exercse folder contains three key files:
+    `src/<exercise-name>.art` contains the solution to be tested.
+    `tests/test-<exercise-name>.art` contains the exercise tests 
+    `tester.art` is the testing entry-point which runs and reports the tests inside `tests/test-<exercise-name>.art`.
 
-To run the exercise's test suite on the CLI, run `arturo tester.art` (or `exercism test`) inside the exercise folder.
 
-## Structure
+## Test Structure
 
-Your solution goes inside `src\<slug>.art` where `slug` is the exercise slug.
-For the Leap exercise, this is `leap` so your solution goes into `src\leap.art`.
 
-`tester.art` is what Unitt calls a runner which is responsible for locating, finding, and running the tests for each exercise.
-The runner looks inside the `tests` folder to find the test file at `tests\test-<slug>.art` or `tests\test-leap.art` as an example.
+`tests/test-<exercise-name>.art` contains the test cases for the exercise.
+These tests are organized into one or more test suites.
+Each test suite is defined with the `suite` word and contains one or more test cases defined with the `test` word.
+After the first test case, all test cases are initially skipped with the `skip` attribute.
+Replace `test.skip` with `test`, removing the `skip` attribute, for the test case you want to unskip.
 
-This test file contains one or more test suites, noted by the `suite` word and grouping similar tests, each noted by the `test` word.
-The first test is run every time, but subsequent tests are marked with a `skip` attribute.
-To run a skipped test, change `test.skip` to `test` for that test and rerun the test suite as documented above.
-Once all tests pass locally, you can submit your solution with `exercism submit` inside the exercise folder.
+Withn each test case, there will be a descriptive message which is reported when the test case is run.
+There will also be one or more assertions comparing an expected value (on the left) to a value returned by your code (on the right).
 
-## Test Output
-
-Let's use the following example test file to look at the Unitt test output from running `tester.art`.
+For example, the following code is a reduced test suite for the Leap exercise.
 
 ```arturo
 import {unitt}!
@@ -45,13 +39,31 @@ suite "Leap" [
         result: isLeap? 1970
         assert -> false = result
     ]
+
+    test.skip "a year divisible by 4 and not divisible by 100 is a leap year" [
+        result: isLeap? 1996
+        assert -> true = result
+    ]
 ]
 ```
 
-If we use the starting code in `src\leap.art` without modification,
-running `exercism test` will print out the text below.
-The starting code contains panics that need to be replaced with our own code.
-These panics identify what code needs to be implemented
+After both `unitt` and your Leap solution is imported, Arturo evaluates the "Leap" suite, encountering three tests.
+Each test has a description and a message, but only the first one will be run.
+
+## Test Output
+
+Looking at the Leap exercise, let's see what the output of running the test suite is.
+Let's use the following solution as a starting point.
+
+```arturo
+isLeap?: function [year][
+    panic "please implement the isLeap? function"
+]
+```
+
+If we run the tests now, Arturo will panic while evaluating the first test.
+Since it was unsuccessful in evaluating the first test, it will not continue to evaluate the other tests.
+It will also report 0 assertions encountered due to this issue, looking something like this:
 
 ```plaintext
 ===== tests\test-leap.art =====
@@ -75,9 +87,19 @@ Suite: Leap
 ===== ========== =====
 ```
 
-Each test may have one or more assertions, but 0 assertions are reported because Arturo panics before the entire test suite can be processed.
 
-At this point, we should write some code to pass the first test. When we rerun the tests, we might seen something like this:
+At this point, we need to remove the panic and replace it with some code that will pass the first test.
+
+
+```arturo
+isLeap?: function [year][
+    false
+]
+```
+
+If we rerun the tests, we will see output (below) that the first test passes, but the other two tests are skipped.
+The test description and assertions are reported with a leading emoji denoting a passed test (✅), a failed test (❌), or a skipped test (⏩).
+Under the statistics section, the total number of passing or failed assertions is reported, followed by the number of passed assertions, the number of skipped assertions, and finally the number of failed assertions.
 
 ```plaintext
 ===== tests\test-leap.art =====
@@ -90,25 +112,139 @@ Suite: Leap
     ⏩ - assert that a year divisible by 2 and not divisible by 4 is a common year 
          skipped!
 
-
+    ⏩ - assert that a year divisible by 4 and not divisible by 100 is a leap year
+         skipped!
 
 ===== Statistics =====
 
 ⏏️    TOTAL: 1 assertions
 ✅  PASSED: 1 assertions
+⏩ SKIPPED: 2 assertions
+❌  FAILED: 0 assertions
+
+===== ========== =====
+```
+
+
+Unskipping the second test, we'll have the following tests:
+
+```arturo
+import {unitt}!
+import {src/leap}!
+
+suite "Leap" [
+    test "a year not divisible by 4 is a common year" [
+        result: isLeap? 2015
+        assert -> false = result
+    ]
+
+    test "a year divisible by 2 and not divisible by 4 is a common year" [
+        result: isLeap? 1970
+        assert -> false = result
+    ]
+
+    test.skip "a year divisible by 4 and not divisible by 100 is a leap year" [
+        result: isLeap? 1996
+        assert -> true = result
+    ]
+]
+```
+
+
+If we rerun the tests again, the second test passes, but the third test is still skipped.
+
+
+```plaintext
+===== tests\test-leap.art =====
+
+Suite: Leap
+
+    ✅ - assert that a year not divisible by 4 is a common year
+         assertion: false = false
+
+    ✅ - assert that a year divisible by 2 and not divisible by 4 is a common year 
+         assertion: false = false
+
+    ⏩ - assert that a year divisible by 4 and not divisible by 100 is a leap year
+         skipped!
+
+===== Statistics =====
+
+⏏️    TOTAL: 2 assertions
+✅  PASSED: 2 assertions
 ⏩ SKIPPED: 1 assertions
 ❌  FAILED: 0 assertions
 
 ===== ========== =====
 ```
 
-The output prints out the test suite named "Leap" and the results of our two tests.
-For each test, we see a visual symbol for whether that test passed, failed, or was skipped, then the test description, and the values tested on the next line. 
-The expected value is on the left side of the `=` and the returned value is on the right side.
 
-The statistics section will report the total assertions encountered, the total passed, the total skipped, and the total failed.
+Let's unskip the third test and run the tests again.
+At this point, we'll encounter a failing test because the third test expects `true`, not `false`.
 
-Once all assertions pass, your solution can be submitted using `exercism submit`.
-The online test runner unskips all tests when checking your solution so a locally passing solution might not pass online.
+
+```plaintext
+===== tests/test-leap.art =====
+
+Suite: Leap 
+ 
+    ✅ - assert that a year not divisible by 4 is a common year 
+         assertion: false = false
+
+    ✅ - assert that a year divisible by 2 and not divisible by 4 is a common year 
+         assertion: false = false
+
+    ❌ - assert that a year divisible by 4 and not divisible by 100 is a leap year 
+         assertion: true = false
+
+
+
+
+===== Statistics =====
+
+⏏️    TOTAL: 3 assertions
+✅  PASSED: 2 assertions
+⏩ SKIPPED: 0 assertions
+❌  FAILED: 1 assertions
+
+===== ========== =====
+
+
+══╡ Program Error ╞══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ <script> ══
+
+  Some tests failed!
+```
+
+At this point, we need to fix the code to pass the third test. Once that's done, we can rerun the tests and see that all tests pass.
+
+```plaintext
+===== tests/test-leap.art =====
+
+Suite: Leap 
+ 
+    ✅ - assert that a year not divisible by 4 is a common year 
+         assertion: false = false
+
+    ✅ - assert that a year divisible by 2 and not divisible by 4 is a common year 
+         assertion: false = false
+
+    ✅ - assert that a year divisible by 4 and not divisible by 100 is a leap year 
+         assertion: false = false
+
+
+
+
+===== Statistics =====
+
+⏏️    TOTAL: 3 assertions
+✅  PASSED: 3 assertions
+⏩ SKIPPED: 0 assertions
+❌  FAILED: 0 assertions
+
+===== ========== =====
+```
+
+At this point, your solution can be submitted using `exercism submit` and the online test runner will test your code.
+The online test runner unskips and runs all the tests every time so make sure you're not skipping any tests before submitting.
 
 [unitt]: [https://unitt.pkgr.art/]
