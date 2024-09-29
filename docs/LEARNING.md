@@ -1,13 +1,7 @@
 # Learning
 
-<!-- TODO: write document
+* [Arturo In A Nutshell][nutshell] is a concise "Learn X in Y Minutes"-style overview of basic Arturo syntax and features
+* [Rosetta Code][rosetta-code] has over 770+ Arturo code examples for many different tasks.
 
-  This document should link to learning resources.
-
-  Feel free to link to any good learning resources you know, whether they
-  be websites, blogs, books, videos or courses.
-
-  The contents of this document are displayed on the track's documentation
-  page at `https://exercism.org/docs/tracks/<track>/learning`.
-
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+[nutshell]: https://arturo-lang.io/master/documentation/in-a-nutshell/
+[rosetta-code]: https://rosettacode.org/wiki/Category:Arturo
