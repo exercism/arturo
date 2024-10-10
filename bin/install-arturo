@@ -11,13 +11,13 @@
 
 function download_nightly() {
     local install_dir="${1}"
-    local install_file="${install_dir}/arturo-full.tar.gz"
+    local install_file="${install_dir}/arturo-full.zip"
     local repo="arturo-lang/nightly"
 
     tag=$(gh release view --repo "${repo}" --json tagName --jq '.tagName')
-    gh release download --repo "${repo}" --pattern '*-full.tar.gz' --output "${install_file}" --skip-existing "${tag}"
+    gh release download --repo "${repo}" --pattern '*-full.zip' --output "${install_file}" --skip-existing "${tag}"
 
-    tar -xzf "${install_file}" -C "${install_dir}"
+    unzip -q "${install_file}" -d "${install_dir}"
     rm -f "${install_file}"
 }
 
