@@ -1,0 +1,14 @@
+keep: function [values fn][ 
+    results: [] 
+ 
+    loop values 'value [ 
+        if call 'fn [value] 
+            -> results: append results value 
+    ] 
+    results 
+] 
+
+discard: function [values fn][
+    newFn: $[x] -> not? call 'fn [x] 
+    keep values 'newFn
+]
