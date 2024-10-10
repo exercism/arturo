@@ -46,6 +46,14 @@
         "difficulty": 2
       },
       {
+        "slug": "allergies",
+        "name": "Allergies",
+        "uuid": "5603ca5c-8021-41a3-9c58-abb64569fdfc",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "13ae3cb4-f5ca-421e-be3b-a8f72d4e8606",
