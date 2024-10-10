@@ -21,9 +21,9 @@ jobs:
           sudo apt-get install libgtk-3-dev libwebkit2gtk-4.0-dev libmpfr-dev
 
       - name: Install Arturo
-        run: bin/install-arturo
-        env:
-          GH_TOKEN: ${{ github.token }}
+        uses: arturo-lang/arturo-action@main
+        with: 
+          token: ${{ github.token }}
 
       - name: Verify all exercises
         run: bin/verify-exercises
