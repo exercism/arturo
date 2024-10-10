@@ -1,4 +1,5 @@
 slices: function [arr span][
+    if span > size arr -> return @[arr]
     numSlices: (size arr) - span
     map 0..numSlices 'i -> slice arr i (i + span - 1)
 ]
