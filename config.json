@@ -326,6 +326,14 @@
         "difficulty": 3
       },
       {
+        "slug": "robot-simulator",
+        "name": "Robot Simulator",
+        "uuid": "beae3683-46fc-4d4d-bacf-e3bd453d9c17",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "run-length-encoding",
         "name": "Run-Length Encoding",
         "uuid": "64815dad-6422-4416-b771-971e4196f076",
