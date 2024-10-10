@@ -7,7 +7,7 @@
 # Once the next stable version has been released, we can use that.
 
 # Uncomment the below line once https://github.com/arturo-lang/arturo/issues/1644 is fixed
-# curl -sSL https://get.arturo-lang.io/latest | sh
+curl -sSL https://get.arturo-lang.io/latest | sh -s -- --nightly
 
 function download_nightly() {
     local install_dir="${1}"
@@ -33,7 +33,7 @@ function update_shell {
 
 install_dir="${HOME}/.arturo/bin"
 
-download_nightly "${install_dir}"
+#download_nightly "${install_dir}"
 
 if [[ -z "${GITHUB_ACTIONS}" ]]; then
     update_shell "${install_dir}" ".bashrc" 
