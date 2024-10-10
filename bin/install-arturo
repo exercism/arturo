@@ -7,7 +7,7 @@
 # Once the next stable version has been released, we can use that.
 
 # Uncomment the below line once https://github.com/arturo-lang/arturo/issues/1644 is fixed
-curl -sSL https://get.arturo-lang.io/latest | sh -s -- --nightly
+curl -sSL https://get.arturo-lang.io | sh -s -- --nightly
 
 function download_nightly() {
     local install_dir="${1}"
