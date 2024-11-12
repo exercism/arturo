@@ -1,6 +1,8 @@
 import {unitt}!
 import {src/anagram}!
 
+; stray comment for test
+
 suite "Anagram" [
     test "no matches" [
         subject: "diaper"
