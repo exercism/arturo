@@ -13,7 +13,8 @@
       ".meta/src/example.art"
     ],
     "invalidator": [
-      "tester.art"
+      "tester.art",
+      "tests.toml"
     ]
   },
   "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
