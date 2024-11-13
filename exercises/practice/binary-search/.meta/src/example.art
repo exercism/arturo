@@ -5,7 +5,7 @@ find: function [values value][
     while [=< start stop] [
         i: div start + stop 2
         elt: values\[i]
-        when.has: values\[i] [
+        when.has: value [
             [> elt] -> start: i + 1
             [< elt] -> stop: i - 1
             true  -> return i
@@ -14,4 +14,3 @@ find: function [values value][
 
     null
 ]
-
