@@ -39,18 +39,14 @@ decode: function[phrase][
 
 
 letter?: function [chr][
-    or? in? chr 'a' .. 'z' in? chr 'A' .. 'Z'
+    in? chr alphabet.lower.upper'en
 ]
 
 punctuation?: function [chr][
-    case [chr]
-        when? [ caseIn? '!' .. '/' ] -> return true
-        when? [ caseIn? ':' .. '@' ] -> return true
-        when? [ caseIn? '[' .. '`' ] -> return true
-        when? [ caseIn? '{' .. '~' ] -> return true
-        else -> return false
-]
-
-caseIn?: function [range chr][
-    in? chr range
+    any? @[
+        in? chr '!' .. '/'
+        in? chr ':' .. '@'
+        in? chr '[' .. '`'
+        in? chr '{' .. '~'
+    ]
 ]
