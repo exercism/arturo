@@ -5,10 +5,11 @@ find: function [values value][
     while [=< start stop] [
         i: div start + stop 2
         elt: values\[i]
-        case [value]
-            when? [> elt] -> start: i + 1
-            when? [< elt] -> stop: i - 1
-            else  -> return i
+        when.has: values\[i] [
+            [> elt] -> start: i + 1
+            [< elt] -> stop: i - 1
+            true  -> return i
+        ]
     ]
 
     null
