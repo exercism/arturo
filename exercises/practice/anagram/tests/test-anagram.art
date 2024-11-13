@@ -10,6 +10,14 @@ suite "Anagram" [
         assert -> expected = results
     ]
 
+    test "no matches duplicate" [
+        subject: "diaper"
+        candidates: ["hello" "world" "zombies" "pants"]
+        results: findAnagrams subject candidates
+        expected: []
+        assert -> expected = results
+    ]
+
     test.skip "detects two anagrams" [
         subject: "solemn"
         candidates: ["lemons" "cherry" "melons"]
