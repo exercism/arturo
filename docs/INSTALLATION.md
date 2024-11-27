@@ -7,7 +7,7 @@ This full build is only supported for `x86_64` Linux and Windows platforms.
 ## Downloading Nightly
 
 On the [nightly Arturo build page][nightly], find the latest `full` release for your current platform (Linux or Windows only).
-The page lists the pre-built releases as `arturo_0.9.83-<year>-<month>-<date>-<platform>-full`.
+The page lists the pre-built releases as `arturo_<version>-<year>-<month>-<date>-<platform>-full`.
 For example, the latest `full` build for Linux as of this writing is `arturo_0.9.83-2024-06-12-linux-full`.
 Download the correct release for your platform and extract the `arturo` binary from the archive.
 Move that binary to a directory on your system's PATH environment variable.
@@ -16,7 +16,7 @@ You can verify the binary is on your PATH by running `arturo --version` at the c
 That should print something like `arturo v/0.9.83 b/3112 (amd64/linux)`, and the specific version and platform identifiers may be different for you.
 
 ## Running Arturo code
-At that point, you're reaady to start writing Arturo code!
+At that point, you're ready to start writing Arturo code!
 To access the Arturo REPL interactive console, run `arturo` at the command-line.
 To execute an Arturo script, run `arturo <file>` at the command-line inside.
 To import packages, run `import "<package-name>"!` inside the REPL.
