@@ -5,7 +5,7 @@ If not already installed, Arturo will download this package automatically at run
 
 To run tests, navigate to the exercise folder in your terminal and run either `arturo tester.art` or `exercism test`.
 
-Each exercse folder contains three key files:
+Each exercise folder contains three key files:
     `src/<exercise-name>.art` contains the solution to be tested.
     `tests/test-<exercise-name>.art` contains the exercise tests 
     `tester.art` is the testing entry-point which runs and reports the tests inside `tests/test-<exercise-name>.art`.
