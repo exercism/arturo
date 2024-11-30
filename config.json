@@ -436,6 +436,7 @@
     "execution_mode/interpreted",
     "paradigm/functional",
     "paradigm/procedural",
+    "paradigm/stack_oriented",
     "platform/linux",
     "platform/mac",
     "platform/windows",
