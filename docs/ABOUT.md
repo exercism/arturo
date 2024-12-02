@@ -1,14 +1,9 @@
 # About
 
-<!-- TODO: write document
+Arturo is an independently-developed, modern programming language following some very simple and straightforward principles:
 
-  This document contains a short introduction to the language.
-
-  The introduction should be relatively brief and touch upon what
-  makes the language interesting (and possibly unique). The goal
-  is to help students decide if they want to join this track.
-
-  The contents of this document are displayed on the track page,
-  provided the student has not joined the track.
-
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+* Code is just a list of words, symbols and literal values.
+  
+* Words and symbols within a block are interpreted - when needed - according to the context.
+  
+* No reserved words or keywords - look for them as hard as you can; there are absolutely none.
