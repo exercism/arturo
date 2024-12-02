@@ -4,6 +4,8 @@ Arturo comes with pre-built binaries for Linux, MacOS, and Windows in both `full
 For this track, we'll be using [the nightly `full` build release of Arturo][nightly] which includes the entire standard library and mostly notably package manager support.
 This full build is only supported for `x86_64` Linux and Windows platforms.
 
+For further assistance installing Arturo, please consult the [official Arturo Discord][discord].
+
 ## Downloading Nightly
 
 On the [nightly Arturo build page][nightly], find the latest `full` release for your current platform (Linux or Windows only).
@@ -25,3 +27,4 @@ You can find packages using [Packager, the official Arturo package registry][pac
 
 [nightly]: https://github.com/arturo-lang/nightly/releases
 [packager]: https://pkgr.art/
+[discord]: https://discord.gg/YdVK2CB
