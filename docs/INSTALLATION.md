@@ -2,7 +2,6 @@
 
 Arturo comes with pre-built binaries for Linux, MacOS, and Windows in both `full` and `mini` build flavors.
 For this track, we'll be using [the nightly `full` build release of Arturo][nightly] which includes the entire standard library and mostly notably package manager support.
-This full build is only supported for `x86_64` Linux and Windows platforms.
 
 For further assistance installing Arturo, please consult the [official Arturo Discord][discord].
 
@@ -18,6 +17,7 @@ You can verify the binary is on your PATH by running `arturo --version` at the c
 That should print something like `arturo v/0.9.83 b/3112 (amd64/linux)`, and the specific version and platform identifiers may be different for you.
 
 ## Running Arturo code
+
 At that point, you're ready to start writing Arturo code!
 To access the Arturo REPL interactive console, run `arturo` at the command-line.
 To execute an Arturo script, run `arturo <file>` at the command-line inside.
