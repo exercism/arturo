@@ -1,13 +1,13 @@
 # Installation
 
-Arturo comes with pre-built binaries for Linux, MacOS, and Windows in both `full` and `mini` build flavors.
+Arturo comes with pre-built binaries for Linux, MacOS, and Windows in `full', `mini`, and `safe` build flavors.
 For this track, we'll be using [the nightly `full` build release of Arturo][nightly] which includes the entire standard library and mostly notably package manager support.
 
 For further assistance installing Arturo, please consult the [official Arturo Discord][discord].
 
 ## Downloading Nightly
 
-On the [nightly Arturo build page][nightly], find the latest `full` release for your current platform (Linux or Windows only).
+On the [nightly Arturo build page][nightly], find the latest `full` release for your current platform.
 The page lists the pre-built releases as `arturo_<version>-<year>-<month>-<date>-<platform>-full`.
 For example, the latest `full` build for Linux as of this writing is `arturo_0.9.83-2024-06-12-linux-full`.
 Download the correct release for your platform and extract the `arturo` binary from the archive.
