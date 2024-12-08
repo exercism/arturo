@@ -1,6 +1,5 @@
 keep: function [values :block fn :literal :function][
     fold.seed:[] values [acc value] [
-        print value
         switch call var 'fn @[value] -> insert acc size acc value
                                      -> acc
     ]
