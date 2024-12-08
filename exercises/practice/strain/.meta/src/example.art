@@ -1,14 +1,14 @@
-keep: function [values fn][ 
-    results: [] 
- 
-    loop values 'value [ 
-        if call 'fn [value] 
-            -> results: append results value 
-    ] 
-    results 
-] 
+keep: function [values fn][
+    fold.seed:[] values [acc value] [
+        print value
+        switch call var 'fn @[value] -> insert acc size acc value
+                                     -> acc
+    ]
+]
 
 discard: function [values fn][
-    newFn: $[x] -> not? call 'fn [x] 
-    keep values 'newFn
+    fold.seed:[] values [acc value][
+        switch not? call var 'fn @[value] -> insert acc size acc value
+                                          -> acc
+    ]
 ]
