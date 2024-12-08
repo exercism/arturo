@@ -1,7 +1,7 @@
-keep: function [values fn][
+keep: function [values :block fn :literal :function][
     panic "Please implement the keep function"
 ]
 
-discard: function [values fn][
+discard: function [values :block fn :literal :function][
     panic "Please implement the discard function"
 ]
