@@ -1,21 +1,23 @@
-earthOrbitLength: 31557600.0
+specify 'earthYear 31557600`s
+specify 'mercuryYear 0.2408467`earthYear
+specify 'venusYear 0.61519726`earthYear
+specify 'marsYear 1.8808158`earthYear
+specify 'jupiterYear 11.862615`earthYear
+specify 'saturnYear 29.447498`earthYear
+specify 'uranusYear 84.016846`earthYear
+specify 'neptuneYear 164.79132`earthYear
 
-orbitRatios: #[
-    earth:      1.0
-    mercury:    0.2408467
-    venus:      0.61519726
-    mars:       1.8808158
-    jupiter:    11.862615
-    saturn:     29.447498
-    uranus:     84.016846
-    neptune:    164.79132
+ageOn: function [planet :literal seconds :quantity][
+    earthYears: in`earthYear seconds
+    case planet [
+        'earth -> earthYears
+        'mercury -> convert earthYears `mercuryYear
+        'venus -> convert earthYears `venusYear
+        'mars -> convert earthYears `marsYear
+        'jupiter -> convert earthYears `jupiterYear
+        'saturn -> convert earthYears `saturnYear
+        'uranus -> convert earthYears `uranusYear
+        'neptune -> convert earthYears `neptuneYear
+        any -> null
+    ]
 ]
-
-ageOn: function [planet seconds][
-    planet: lower planet
-    earthAge: seconds / earthOrbitLength
-    switch key? orbitRatios planet
-        -> earthAge / orbitRatios\[planet]
-        -> null
-]
-
