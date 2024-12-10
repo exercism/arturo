@@ -1,4 +1,4 @@
-specify 'earthYear 31557600`s
+specify 'earthYear 31557600`second
 specify 'mercuryYear 0.2408467`earthYear
 specify 'venusYear 0.61519726`earthYear
 specify 'marsYear 1.8808158`earthYear
