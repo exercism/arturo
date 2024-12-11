@@ -1,56 +1,64 @@
 import {unitt}!
 import {src/space-age}!
 
-approximately?: function [value target][ 
-    lower: value - 0.01 
-    upper: value + 0.01  
- 
-    between? target lower upper 
-] 
+approximatelyEqual?: function [value :floating target :floating][
+    lower: value - 0.01
+    upper: value + 0.01
+
+    between? target lower upper
+]
 
 suite "Space Age" [
     test "age on Earth" [
-        result: ageOn "Earth" 1000000000
-        assert -> approximately? result 31.69
+        result: to :floating ageOn 'earth 1000000000`second
+        expected: to :floating 31.69`earthYear
+        assert -> approximatelyEqual? result expected
     ]
     
     test.skip "age on Mercury" [
-        result: ageOn "Mercury" 2134835688
-        assert -> approximately? result 280.88
+        result: to :floating ageOn 'mercury 2134835688`second
+        expected: to :floating 280.88`mercuryYear
+        assert -> approximatelyEqual? result expected
     ]
     
     test.skip "age on Venus" [
-        result: ageOn "Venus" 189839836
-        assert -> approximately? result 9.78
+        result: to :floating ageOn 'venus 189839836`second
+        expected: to :floating 9.78`venusYear
+        assert -> approximatelyEqual? result expected
     ]
     
     test.skip "age on Mars" [
-        result: ageOn "Mars" 2129871239
-        assert -> approximately? result 35.88
+        result: to :floating ageOn 'mars 2129871239`second
+        expected: to :floating 35.88`marsYear
+        assert -> approximatelyEqual? result expected
     ]
     
     test.skip "age on Jupiter" [
-        result: ageOn "Jupiter" 901876382
-        assert -> approximately? result 2.41
+        result: to :floating ageOn 'jupiter 901876382`second
+        expected: to :floating 2.41`jupiterYear
+        assert -> approximatelyEqual? result expected
     ]
     
     test.skip "age on Saturn" [
-        result: ageOn "Saturn" 2000000000
-        assert -> approximately? result 2.15
+        result: to :floating ageOn 'saturn 2000000000`second
+        expected: to :floating 2.15`saturnYear
+        assert -> approximatelyEqual? result expected
     ]
     
     test.skip "age on Uranus" [
-        result: ageOn "Uranus" 1210123456
-        assert -> approximately? result 0.46
+        result: to :floating ageOn 'uranus 1210123456`second
+        expected: to :floating 0.46`uranusYear
+        assert -> approximatelyEqual? result expected
     ]
     
     test.skip "age on Neptune" [
-        result: ageOn "Neptune" 1821023456
-        assert -> approximately? result 0.35
+        result: to :floating ageOn 'neptune 1821023456`second
+        expected: to :floating 0.35`neptuneYear
+        assert -> approximatelyEqual? result expected
     ]
     
     test.skip "invalid planet returns null" [
-        result: ageOn "Sun" 680804807
+        result: ageOn 'sun 680804807`second
         assert -> null? result
     ]
 ]

@@ -1,4 +1,7 @@
-ageOn: function [planet seconds][
+; Define your custom units here to represent each planet's year
+; Be careful. We're defining a year on Earth as 31557600 seconds,
+; but the built-in `yr unit uses 31556952 seconds.
+
+ageOn: function [planet :literal seconds :quantity][
     panic "Please implement the ageOn function"
 ]
-
