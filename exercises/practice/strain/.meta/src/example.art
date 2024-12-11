@@ -1,0 +1,13 @@
+keep: function [values :block fn :literal :function][
+    fold.seed:[] values [acc value] [
+        switch call var 'fn @[value] -> insert acc size acc value
+                                     -> acc
+    ]
+]
+
+discard: function [values :block fn :literal :function][
+    fold.seed:[] values [acc value][
+        switch not? call var 'fn @[value] -> insert acc size acc value
+                                          -> acc
+    ]
+]
