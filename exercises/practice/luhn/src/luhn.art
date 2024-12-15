@@ -1,0 +1,3 @@
+luhn?: function [value][
+    panic "Please implement the luhn? function"
+]
