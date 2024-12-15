@@ -1,0 +1,3 @@
+abbreviate: function[phrase][
+    panic "Please implement the abbreviate function"
+]
