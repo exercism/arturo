@@ -62,6 +62,14 @@
         "difficulty": 2
       },
       {
+        "slug": "queen-attack",
+        "name": "Queen Attack",
+        "uuid": "5f16c3c5-a9e3-4387-81be-a9e5b24af091",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "ca6ddfe1-0355-4316-be0f-fefed9943636",

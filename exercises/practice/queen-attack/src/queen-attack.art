@@ -1,0 +1,7 @@
+define :queen [
+    init: constructor [row column]
+
+    attackable?: method [other] [
+        panic "Please implement the attackable? method"
+    ]
+]
