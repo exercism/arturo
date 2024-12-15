@@ -1,0 +1,49 @@
+import {unitt}!
+import {src/acronym}!
+
+suite "Acronym" [
+    test "basic" [
+        result: abbreviate "Portable Network Graphics"
+        assert -> "PNG" = result
+    ]
+
+    test.skip "lowercase words" [
+        result: abbreviate "Ruby on Rails"
+        assert -> "ROR" = result
+    ]
+
+    test.skip "punctuation" [
+        result: abbreviate "First In, First Out"
+        assert -> "FIFO" = result
+    ]
+
+    test.skip "all uppercase word" [
+        result: abbreviate "GNU Image Manipulation Program"
+        assert -> "GIMP" = result
+    ]
+
+    test.skip "punctuation without whitespace" [
+        result: abbreviate "Complementary metal-oxide semiconductor"
+        assert -> "CMOS" = result
+    ]
+
+    test.skip "very long abbreviation" [
+        result: abbreviate "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
+        assert -> "ROTFLSHTMDCOALM" = result
+    ]
+
+    test.skip "consecutive delimiters" [
+        result: abbreviate "Something - I made up from thin air"
+        assert -> "SIMUFTA" = result
+    ]
+
+    test.skip "apostrophes" [
+        result: abbreviate "Halley\'s Comet"
+        assert -> "HC" = result
+    ]
+
+    test.skip "underscore emphasis" [
+        result: abbreviate "The Road _Not_ Taken"
+        assert -> "TRNT" = result
+    ]
+]
