@@ -198,6 +198,14 @@
         "difficulty": 2
       },
       {
+        "slug": "luhn",
+        "name": "Luhn",
+        "uuid": "b3694bc0-727b-4b48-b568-de39e8d2c4aa",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "6fc1e4ab-157d-4237-b5dd-9686d3b03feb",

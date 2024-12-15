@@ -1,0 +1,15 @@
+luhn?: function [value][
+    cleaned: replace value " " ""
+    if 2 > size cleaned -> return false
+    if not? every? cleaned 'x -> between? x '0' '9' -> return false
+    sum: 0
+
+    sum: fold.seed:0.with:'i reverse cleaned [acc, x] [
+        n: to :integer to :string x
+        if odd? i -> n: n * 2
+        if n > 9 -> n: n - 9
+        acc + n
+    ]
+
+    0 = sum % 10
+]
