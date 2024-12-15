@@ -1,4 +1,3 @@
-
 luhn?: function [value][
     cleaned: replace value " " ""
     if 2 > size cleaned -> return false
