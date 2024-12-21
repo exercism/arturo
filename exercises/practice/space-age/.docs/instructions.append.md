@@ -1,6 +1,7 @@
 # Track-specific information
 
-In this exercise, you will be expected to return the ages using a [physical quantity] with a custom unit. In Arturo, a quantity consists of a numerical amount and an associated [unit of measurement][unit-of-measurement].
+In this exercise, you will be expected to return the ages using a [physical quantity] with a custom unit representing the length of a single year on a that planet.
+In Arturo, a quantity consists of a numerical amount and an associated [unit of measurement][unit-of-measurement].
 
 ```arturo
 length: 10`m
