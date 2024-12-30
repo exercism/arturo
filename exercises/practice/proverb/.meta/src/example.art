@@ -1,0 +1,10 @@
+recite: function [strings][ 
+    if empty? strings -> return "" 
+ 
+    pieces: first.n: dec size strings strings
+    phrases: fold.seed:[] .with:'i  pieces [acc elem] [ 
+        acc ++ ~"For want of a |elem| the |strings\[i + 1]| was lost." 
+    ] 
+    'phrases ++ ~"And all for the want of a |first strings|." 
+    join.with:"\n" phrases 
+] 
