@@ -1,0 +1,27 @@
+define :clock [ 
+    init: method [hour :quantity minute :quantity][ 
+        this\minutes: in`min mod scalar ((in`min hour) + minute) scalar (in`min 1`day) 
+    ] 
+   
+    increment: method [time :quantity] [ 
+        add 'this\minutes time 
+    ]   
+   
+    decrement: method [time :quantity] [ 
+        sub 'this\minutes time 
+    ]   
+   
+    equal?: method [that] [ 
+        equal? to :string this to :string that 
+    ] 
+  
+    string: method [] [ 
+        working: this\minutes  
+        while [working < 0] [  
+            add 'working in`min 1`day 
+        ] 
+        total: mod scalar working scalar (in`min 1`day) 
+        [h, m]: divmod total scalar (in`min 1`hour) 
+        ~"|pad.with:'0' to :string h 2|:|pad.with:'0' to :string m 2|" 
+    ] 
+] 

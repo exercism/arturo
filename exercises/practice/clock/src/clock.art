@@ -1,0 +1,21 @@
+define :clock [
+    init: method [hour :quantity minute :quantity][
+        panic "Please implement the initialize method"
+    ]
+
+    increment: method [time :quantity] [
+        panic "Please implement the increment method"
+    ]
+
+    decrement: method [time :quantity] [
+        panic "Please implement the decrement method"
+    ]
+
+    equal?: method [that] [
+        panic "Please implement the equal? magic method"
+    ]
+
+    string: method [] [
+        panic "Please implement the string? magic method"
+    ]
+]
