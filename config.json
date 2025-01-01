@@ -430,6 +430,14 @@
         "difficulty": 4
       },
       {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "a293accd-1504-42dc-8a09-1a6a5833afd8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "run-length-encoding",
         "name": "Run-Length Encoding",
         "uuid": "64815dad-6422-4416-b771-971e4196f076",

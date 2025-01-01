@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "BNAndras",
+    "drkameleon"
+  ],
+  "files": {
+    "solution": [
+      "src/clock.art"
+    ],
+    "test": [
+      "tests/test-clock.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ]
+  },
+  "blurb": "Implement a clock that handles times without dates.",
+  "source": "Pairing session with Erin Drummond"
+}
