@@ -10,14 +10,14 @@ suite "Kindergarten Garden" [
             assert -> expected = result
         ]   
 
-        test "different garden with single student" [
+        test.skip "different garden with single student" [
             diagram: "VC\nRC"
             result: plants diagram 'Alice
             expected: ['violets 'clover 'radishes 'clover]
             assert -> expected = result
         ]
 
-        test "garden with two students" [
+        test.skip "garden with two students" [
             diagram: "VVCG\nVVRC"
             result: plants diagram 'Bob
             expected: ['clover 'grass 'radishes 'clover]
@@ -26,14 +26,14 @@ suite "Kindergarten Garden" [
     ]
 
     suite "multiple students for the same garden" [
-        test "second student's garden" [
+        test.skip "second student's garden" [
             diagram: "VVCCGG\nVVCCGG"
             result: plants diagram 'Bob
             expected: ['clover 'clover 'clover 'clover]
             assert -> expected = result
         ]
 
-        test "third student's garden" [
+        test.skip "third student's garden" [
             diagram: "VVCCGG\nVVCCGG"
             result: plants diagram 'Charlie
             expected: ['grass 'grass 'grass 'grass]
@@ -42,84 +42,84 @@ suite "Kindergarten Garden" [
     ]
 
     suite "full garden" [
-        test "For Alice, first student's garden" [
+        test.skip "For Alice, first student's garden" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'Alice
             expected: ['violets 'radishes 'violets 'radishes]
             assert -> expected = result
         ]
 
-        test "for Bob, second student's garden" [
+        test.skip "for Bob, second student's garden" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'Bob
             expected: ['clover 'grass 'clover 'clover]
             assert -> expected = result
         ]
 
-        test "for Charlie" [
+        test.skip "for Charlie" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'Charlie
             expected: ['violets 'violets 'clover 'grass]
             assert -> expected = result
         ]
 
-        test "for David" [
+        test.skip "for David" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'David
             expected: ['radishes 'violets 'clover 'radishes]
             assert -> expected = result
         ]
 
-        test "for Eve" [
+        test.skip "for Eve" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'Eve
             expected: ['clover 'grass 'radishes 'grass]
             assert -> expected = result
         ]
 
-        test "for Fred" [
+        test.skip "for Fred" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'Fred
             expected: ['grass 'clover 'violets 'clover]
             assert -> expected = result
         ]
 
-        test "for Ginny" [
+        test.skip "for Ginny" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'Ginny
             expected: ['clover 'grass 'grass 'clover]
             assert -> expected = result
         ]
 
-        test "for Harriet" [
+        test.skip "for Harriet" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'Harriet
             expected: ['violets 'radishes 'radishes 'violets]
             assert -> expected = result
         ]
 
-        test "for Ileana" [
+        test.skip "for Ileana" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'Ileana
             expected: ['grass 'clover 'violets 'clover]
             assert -> expected = result
         ]
 
-        test "for Joseph" [
+        test.skip "for Joseph" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'Joseph
             expected: ['violets 'clover 'violets 'grass]
             assert -> expected = result
         ]
 
-        test "for Kincaid, second to last student's garden" [
+        test.skip "for Kincaid, second to last student's garden" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'Kincaid
             expected: ['grass 'clover 'clover 'grass]
             assert -> expected = result
         ]
 
-        test "for Larry, last student's garden" [
+        test.skip "for Larry, last student's garden" [
             diagram: "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
             result: plants diagram 'Larry
             expected: ['grass 'violets 'clover 'violets]
