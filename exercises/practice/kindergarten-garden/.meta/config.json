@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "src/kindergarten-garden.art"
+    ],
+    "test": [
+      "tests/test-kindergarten-garden.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ]
+  },
+  "blurb": "Given a diagram, determine which plants each child in the kindergarten class is responsible for.",
+  "source": "Exercise by the JumpstartLab team for students at The Turing School of Software and Design.",
+  "source_url": "https://turing.edu"
+}

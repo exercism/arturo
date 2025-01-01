@@ -1,0 +1,17 @@
+students: ['Alice 'Bob 'Charlie 'David 'Eve 'Fred 
+           'Ginny 'Harriet 'Ileana 'Joseph 'Kincaid 'Larry]
+
+plantCodes: #[ 
+    V: 'violets 
+    R: 'radishes 
+    C: 'clover 
+    G: 'grass 
+] 
+
+plants: function [diagram student][ 
+    i: 2 * index students student
+    fold.seed:[] split.lines diagram [acc, row] [
+        plots: split take (rotate.left row i) 2
+        acc ++ map plots 'plot -> plantCodes\[plot]
+    ] 
+]
