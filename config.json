@@ -406,6 +406,14 @@
         "difficulty": 5
       },
       {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "a293accd-1504-42dc-8a09-1a6a5833afd8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "d77e2cae-6aff-494c-bd92-d8fc3ab09c16",
@@ -428,14 +436,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
-      },
-      {
-        "slug": "clock",
-        "name": "Clock",
-        "uuid": "a293accd-1504-42dc-8a09-1a6a5833afd8",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
       },
       {
         "slug": "run-length-encoding",
