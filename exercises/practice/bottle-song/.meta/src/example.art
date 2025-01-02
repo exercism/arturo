@@ -1,0 +1,28 @@
+decimalOrdinal: ["no" "one" "two" "three" "four" "five" "six" "seven" "eight" "nine" "ten"]
+
+recite: function [startBottles takeDown][
+    verses: fold.seed:[] 1..takeDown [acc i] [
+        currentBottle: startBottles - dec i
+        nextBottle: dec currentBottle
+        bottles:  case currentBottle [
+            2 -> "bottle"
+            any -> "bottles"
+        ]
+        case currentBottle [
+            1 -> acc ++ [{
+One green bottle hanging on the wall,
+One green bottle hanging on the wall,
+And if one green bottle should accidentally fall,
+There'll be no green bottles hanging on the wall.
+}]
+            any -> acc ++ join.with:"\n" @[
+                    ~"|capitalize decimalOrdinal\[currentBottle]| green bottles hanging on the wall,"
+                    ~"|capitalize decimalOrdinal\[currentBottle]| green bottles hanging on the wall,"
+                    "And if one green bottle should accidentally fall,"
+                    ~"There'll be |decimalOrdinal\[nextBottle]| green |bottles| hanging on the wall."
+                ]
+        ]
+    ]
+
+    join.with:"\n\n" verses
+]

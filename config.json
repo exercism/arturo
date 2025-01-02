@@ -78,6 +78,14 @@
         "difficulty": 3
       },
       {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "d2c47bdd-5871-48bb-a552-e61abca3cf64",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "0f6c0e26-4197-4b0d-9bc4-8aff7d615141",
