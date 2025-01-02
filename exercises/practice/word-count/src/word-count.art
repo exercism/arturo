@@ -1,0 +1,3 @@
+countWords: function [sentence][
+    panic "Please implement the countWords function"
+]
