@@ -14,7 +14,7 @@ There'll be nine green bottles hanging on the wall.
             assert -> expected = result
         ]
 
-        test "last generic verse" [
+        test.skip "last generic verse" [
             result: recite 3 1
             expected: {
 Three green bottles hanging on the wall,
@@ -25,7 +25,7 @@ There'll be two green bottles hanging on the wall.
             assert -> expected = result
         ]
 
-        test "verse with 2 bottles" [
+        test.skip "verse with 2 bottles" [
             result: recite 2 1
             expected: {
 Two green bottles hanging on the wall,
@@ -36,7 +36,7 @@ There'll be one green bottle hanging on the wall.
             assert -> expected = result
         ]
 
-        test "verse with 1 bottle" [
+        test.skip "verse with 1 bottle" [
             result: recite 1 1
             expected: {
 One green bottle hanging on the wall,
@@ -49,7 +49,7 @@ There'll be no green bottles hanging on the wall.
     ]
 
     suite "multiple verses" [
-        test "first two verses" [
+        test.skip "first two verses" [
             result: recite 10 2
             expected: {
 Ten green bottles hanging on the wall,
@@ -65,7 +65,7 @@ There'll be eight green bottles hanging on the wall.
             assert -> expected = result
         ]
 
-        test "last three verses" [
+        test.skip "last three verses" [
             result: recite 3 3
             expected: {
 Three green bottles hanging on the wall,
@@ -86,7 +86,7 @@ There'll be no green bottles hanging on the wall.
             assert -> expected = result
         ]
 
-        test "all verses" [
+        test.skip "all verses" [
             result: recite 10 10
             expected: {
 Ten green bottles hanging on the wall,
