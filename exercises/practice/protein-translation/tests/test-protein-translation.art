@@ -158,6 +158,12 @@ suite "Protein Translation" [
         assert -> expected = result
     ]
 
+    test.skip "Sequence of two non-STOP codons does not translate to a STOP codon" [
+        result: toProteins "AUGAUG"
+        expected: ["Methionine" "Methionine"]
+        assert -> expected = result
+    ]
+
     test.skip "Non-existing codon can't translate" [
         result: toProteins "AAA"
         assert -> null = result
