@@ -1,0 +1,37 @@
+days: [
+    "first"
+    "second"
+    "third"
+    "fourth"
+    "fifth"
+    "sixth" 
+    "seventh"
+    "eighth"
+    "ninth"
+    "tenth"
+    "eleventh"
+    "twelfth"
+]
+    
+gifts: [
+    "a Partridge in a Pear Tree."
+    "two Turtle Doves, and"
+    "three French Hens,"
+    "four Calling Birds,"
+    "five Gold Rings,"
+    "six Geese-a-Laying,"
+    "seven Swans-a-Swimming,"
+    "eight Maids-a-Milking,"
+    "nine Ladies Dancing,"
+    "ten Lords-a-Leaping,"
+    "eleven Pipers Piping,"
+    "twelve Drummers Drumming,"
+]
+
+recite: function [startVerse endVerse][
+    join.with:"\n" fold.seed:[] startVerse..endVerse  [acc verse] [
+        giftList: reverse take gifts verse
+        fragment: ~"On the |days\[dec verse]| day of Christmas my true love gave to me: |join.with:' ' giftList|"
+        acc ++ fragment
+    ]
+]

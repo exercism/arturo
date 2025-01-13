@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "src/twelve-days.art"
+    ],
+    "test": [
+      "tests/test-twelve-days.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ]
+  },
+  "blurb": "Output the lyrics to 'The Twelve Days of Christmas'.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)"
+}
