@@ -1,0 +1,16 @@
+valid?: function [isbn][
+    isbn: replace isbn ["-" "."] ""
+    if not? 10 = size isbn -> return false
+    sum: fold .seed:0 .with:'i isbn [acc char] [
+        switch and? char = 'X' i = 9
+            -> acc + 10
+            -> switch not? numeric? char
+                -> return false
+                [
+                    digit: to :integer to :string char
+                    acc + digit * (10 - i)
+                ]
+    ]
+
+    0 = sum % 11
+]

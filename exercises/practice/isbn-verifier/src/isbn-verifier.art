@@ -1,0 +1,3 @@
+valid?: function [isbn][
+    panic "Please implement the valid? function"
+]
