@@ -1,0 +1,11 @@
+transpose: function [data][
+    if empty? data -> return ""
+    
+    lines: split.lines lines
+    maxLength: max map lines 'line -> size line
+    paddedLines: map lines 'line -> pad.right line maxLength
+
+   join.with:"\n" fold.seed:[] range 0 dec maxLength [outerAcc i] [
+        outerAcc ++ fold.seed:"" paddedLines [acc line] -> acc ++ line\[i]
+    ]
+]

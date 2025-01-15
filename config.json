@@ -398,6 +398,14 @@
         "difficulty": 3
       },
       {
+        "slug": "transpose",
+        "name": "Transpose",
+        "uuid": "4690579a-db1b-4b09-aafc-bd436bfe869e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "5ef8ccc8-c0ce-46cb-b46e-2ae636f357c9",
