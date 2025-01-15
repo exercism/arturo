@@ -1,0 +1,7 @@
+row: function [matrix position][
+    panic "Please implement the row function"
+]
+
+column: function [matrix position][
+    panic "Please implement the column function"
+]
