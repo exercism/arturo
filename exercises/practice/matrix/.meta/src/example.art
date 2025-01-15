@@ -1,0 +1,12 @@
+row: function [matrix position][
+    lines: split.lines matrix
+    map split.words lines\[dec position] 'elt -> to :integer elt
+]
+
+column: function [matrix position][
+    lines: split.lines matrix
+    map lines 'line [
+        nums: to [:integer] split.words line
+        nums\[dec position]
+    ]   
+]

@@ -230,6 +230,14 @@
         "difficulty": 2
       },
       {
+        "slug": "matrix",
+        "name": "Matrix",
+        "uuid": "1de866bf-2b12-4f4e-906d-03d5783e8cb8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "6fc1e4ab-157d-4237-b5dd-9686d3b03feb",
