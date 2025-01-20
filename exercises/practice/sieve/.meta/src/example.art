@@ -1,0 +1,23 @@
+primes: function [limit][
+    if limit < 2 -> return []
+    isPrime: array.of: inc limit true
+    isPrime\0: false
+    isPrime\1: false
+
+    loop 2..limit 'num [
+        if isPrime\[num] [
+            multiple: num * num
+            while [multiple =< limit] [
+                isPrime\[multiple]: false
+                'multiple + num
+            ]
+        ]
+    ]
+
+    results: []
+    loop 2..limit 'num [
+        if isPrime\[num] -> 'results ++ num
+    ]
+
+    results
+]
