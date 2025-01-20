@@ -478,6 +478,14 @@
         "difficulty": 5
       },
       {
+        "slug": "food-chain",
+        "name": "Food Chain",
+        "uuid": "2ebe1be9-7cd5-4fcc-a420-fee670a7a4b0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "house",
         "name": "House",
         "uuid": "03887d7d-0635-4175-8753-b06efb8a424b",

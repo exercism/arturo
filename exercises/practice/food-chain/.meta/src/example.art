@@ -1,0 +1,35 @@
+foodChain: [
+    ["fly" "I don't know why she swallowed the fly. Perhaps she'll die."]
+    ["spider" "It wriggled and jiggled and tickled inside her."]
+    ["bird" "How absurd to swallow a bird!"]
+    ["cat" "Imagine that, to swallow a cat!"]
+    ["dog" "What a hog, to swallow a dog!"]
+    ["goat" "Just opened her throat and swallowed a goat!"]
+    ["cow" "I don't know how she swallowed a cow!"]
+    ["horse" "She's dead, of course!"]
+]
+
+recite: function [start end][
+    join.with:"\n" fold.seed:[] start..end [acc verse] [
+        lines: []
+        [animal comment]: foodChain\[dec verse]
+        
+        lines: @[~"I know an old lady who swallowed a |animal|." comment]
+        if verse = 8 -> return join.with:"\n" acc ++ join.with:"\n" lines
+        if verse > 1 [
+            loop range dec verse 1 'i [
+                current: foodChain\[i]\0
+                previous: foodChain\[dec i]\0
+                case i [
+                    2 -> 'lines ++ ~"She swallowed the |current| to catch the |previous| that wriggled and jiggled and tickled inside her."
+                    any -> 'lines ++ ~"She swallowed the |current| to catch the |previous|."
+                ]
+            ]
+            'lines ++ "I don't know why she swallowed the fly. Perhaps she'll die."
+        ]
+        
+        if verse < end -> 'lines ++ ""
+
+        acc ++ join.with:"\n" lines
+    ]
+]
