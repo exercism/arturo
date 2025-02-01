@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
     ]
   },
   "blurb": "Take input text and output it transposed.",
