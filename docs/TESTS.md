@@ -26,7 +26,7 @@ There will also be one or more assertions comparing an expected value (on the le
 For example, the following code is a reduced test suite for the Leap exercise.
 
 ```arturo
-import {unitt}!
+import.version:1.1.2 {unitt}! 
 import {src/leap}!
 
 suite "Leap" [
@@ -129,7 +129,7 @@ Suite: Leap
 Unskipping the second test, we'll have the following tests:
 
 ```arturo
-import {unitt}!
+import.version:1.1.2 {unitt}! 
 import {src/leap}!
 
 suite "Leap" [
