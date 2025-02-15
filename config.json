@@ -350,14 +350,6 @@
         "difficulty": 2
       },
       {
-        "slug": "robot-simulator",
-        "name": "Robot Simulator",
-        "uuid": "beae3683-46fc-4d4d-bacf-e3bd453d9c17",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
         "uuid": "d4b3a9da-46c7-496a-bfa3-8a4bbc339889",
@@ -516,6 +508,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
+      },
+      {
+        "slug": "robot-simulator",
+        "name": "Robot Simulator",
+        "uuid": "beae3683-46fc-4d4d-bacf-e3bd453d9c17",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       },
       {
         "slug": "roman-numerals",
