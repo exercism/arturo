@@ -1,0 +1,12 @@
+ define :allergies [  
+    init: constructor [score :integer] 
+  
+    allergicTo?: method [allergen][
+        panic "Please implement the allergicTo? method"
+     ]  
+  
+    list: method [][
+        panic "Please implement the list method"
+    ] 
+] 
+ 
