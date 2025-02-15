@@ -1,0 +1,39 @@
+directions: ['north 'east 'south 'west]
+
+steps: #[
+    north:  @[0 1]
+    east:   @[1 0]
+    south:  @[0 neg 1]
+    west:   @[neg 1 0]
+]
+
+define :robot [
+    init: constructor [x :integer y :integer direction :literal]
+
+    simulate: method [commands :string] [
+        loop commands 'command [
+            case command [
+                'L'-> this\turnLeft
+                'R' -> this\turnRight
+                'A' -> this\advance
+            ]
+        ]
+    ]
+
+    turnLeft: method [] [
+        currentIndex: index directions this\direction
+        newIndex: mod (add currentIndex 3) 4
+        this\direction: directions\[newIndex]
+    ]
+
+    turnRight: method [] [
+        currentIndex: index directions this\direction
+        newIndex: mod (add currentIndex 1) 4
+        this\direction: directions\[newIndex]
+    ]
+
+    advance: method [] [
+        this\x: add this\x first steps\[this\direction]
+        this\y: add this\y last steps\[this\direction]
+    ]
+]

@@ -1,0 +1,7 @@
+define :robot [
+    init: constructor [x :integer y :integer direction :literal]
+
+    simulate: method [commands :string] [
+        panic "Please implement the simulate method"
+    ]
+]
