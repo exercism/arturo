@@ -134,6 +134,14 @@
         "difficulty": 3
       },
       {
+        "slug": "strain",
+        "name": "Strain",
+        "uuid": "9a7c65ae-14c1-41d2-bb4a-f46d74a158e1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "flatten-array",
         "name": "Flatten Array",
         "uuid": "5b1c58ae-d398-415f-83cd-de2ec5a0de1d",
@@ -412,6 +420,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
+      },
+      {
+        "slug": "strain",
+        "name": "Strain",
+        "uuid": "9a7c65ae-14c1-41d2-bb4a-f46d74a158e1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "transpose",
