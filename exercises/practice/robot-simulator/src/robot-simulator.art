@@ -1,5 +1,5 @@
 define :robot [
-    init: constructor [x :integer y :integer direction :literal]
+    init: constructor [x :integer y :integer direction :string]
 
     simulate: method [commands :string] [
         panic "Please implement the simulate method"

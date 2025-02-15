@@ -1,4 +1,4 @@
-directions: ['north 'east 'south 'west]
+directions: ["north" "east" "south" "west"]
 
 steps: #[
     north:  @[0 1]
@@ -8,7 +8,7 @@ steps: #[
 ]
 
 define :robot [
-    init: constructor [x :integer y :integer direction :literal]
+    init: constructor [x :integer y :integer direction :string]
 
     simulate: method [commands :string] [
         loop commands 'command [
