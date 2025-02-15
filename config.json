@@ -134,14 +134,6 @@
         "difficulty": 3
       },
       {
-        "slug": "strain",
-        "name": "Strain",
-        "uuid": "9a7c65ae-14c1-41d2-bb4a-f46d74a158e1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
         "slug": "flatten-array",
         "name": "Flatten Array",
         "uuid": "5b1c58ae-d398-415f-83cd-de2ec5a0de1d",
@@ -414,20 +406,20 @@
         "difficulty": 1
       },
       {
-        "slug": "sum-of-multiples",
-        "name": "Sum of Multiples",
-        "uuid": "7a26ff91-0491-4c0b-8d09-2069f9af55f0",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
-      },
-      {
         "slug": "strain",
         "name": "Strain",
         "uuid": "9a7c65ae-14c1-41d2-bb4a-f46d74a158e1",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
+      },
+      {
+        "slug": "sum-of-multiples",
+        "name": "Sum of Multiples",
+        "uuid": "7a26ff91-0491-4c0b-8d09-2069f9af55f0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       },
       {
         "slug": "transpose",
