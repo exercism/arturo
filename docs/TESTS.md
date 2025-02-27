@@ -129,7 +129,7 @@ Suite: Leap
 Unskipping the second test, we'll have the following tests:
 
 ```arturo
-import.version:1.1.2 {unitt}!
+import {unitt}!
 import {src/leap}!
 
 suite "Leap" [
