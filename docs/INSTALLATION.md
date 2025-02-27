@@ -1,6 +1,6 @@
 # Installation
 
-Arturo comes with pre-built binaries for Linux, MacOS, and Windows in `full', `mini`, and `safe` build flavors.
+Arturo comes with pre-built binaries for Linux, MacOS, and Windows in `full`, `mini`, and `safe` build flavors.
 For this track, we'll be using [the nightly `full` build release of Arturo][nightly] which includes the entire standard library and mostly notably package manager support.
 
 For further assistance installing Arturo, please consult the [official Arturo Discord][discord].
