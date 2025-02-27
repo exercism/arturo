@@ -247,4 +247,4 @@ Suite: Leap
 At this point, your solution can be submitted using `exercism submit` and the online test runner will test your code.
 The online test runner unskips and runs all the tests every time so make sure you're not skipping any tests before submitting.
 
-[unitt]: [https://unitt.pkgr.art/]
+[unitt]: https://unitt.pkgr.art/
