@@ -37,22 +37,22 @@ suite "Flatten Array" [
         assert -> [1 2] = result
     ]
 
-    test.skip "consecutive null values at the front of the list are omitted from the final result" [
+    test.skip "consecutive null values at the front of the array are omitted from the final result" [
         result: flattenCollection @[null null 3]
         assert -> [3] = result
     ]
 
-    test.skip "consecutive null values in the middle of the list are omitted from the final result" [
+    test.skip "consecutive null values in the middle of the array are omitted from the final result" [
         result: flattenCollection @[1 null null 4]
         assert -> [1 4] = result
     ]
 
-    test.skip "6 level nest list with null values" [
+    test.skip "6 level nested array with null values" [
         result: flattenCollection @[0 2 @[[2 3] 8 @[@[100]] null @[@[null]]] 2]
         assert -> [0 2 2 3 8 100 2] = result
     ]
 
-    test.skip "all values in nested list are null" [
+    test.skip "all values in nested array are null" [
         result: flattenCollection @[null @[@[@[null]]] null null @[@[null null] null] null]
         assert -> [] = result
     ]
