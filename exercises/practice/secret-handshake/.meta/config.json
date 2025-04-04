@@ -2,6 +2,9 @@
   "authors": [
     "BNAndras"
   ],
+  "contributors": [
+    "drkameleon"
+  ],
   "files": {
     "solution": [
       "src/secret-handshake.art"
