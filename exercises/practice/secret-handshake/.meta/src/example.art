@@ -1,6 +1,6 @@
 commands: function [number][
     actions: []
-    digits: reverse pad.with:'0' as.binary number 5
+    digits: reverse pad.with:'0' to :string as.binary number 5
     loop.with:'i digits 'digit [
         unless digit <> '1' ->
             case i [
@@ -14,4 +14,3 @@ commands: function [number][
 
     actions
 ]
-
