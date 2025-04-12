@@ -1,0 +1,155 @@
+import.version:1.1.2 {unitt}!
+import {src/minesweeper}!
+
+suite "Minesweeper"[
+  test "no rows" [
+    minefield: []
+    result: annotate minefield
+    expected: []
+    assert -> expected = result
+  ]
+
+  test.skip "no columns" [
+    minefield: [""]
+    result: annotate minefield
+    expected: [""]
+    assert -> expected = result
+  ]
+
+  test.skip "no mines" [
+    minefield: [
+      "   "
+      "   "
+      "   "
+    ]
+    result: annotate minefield
+    expected: [
+      "   "
+      "   "
+      "   "
+    ]
+    assert -> expected = result
+  ]
+
+  test.skip "mine surrounded by spaces" [
+    minefield: [
+      "   "
+      " * "
+      "   "
+    ]
+    result: annotate minefield
+    expected: [
+      "111"
+      "1*1"
+      "111"
+    ]
+    assert -> expected = result
+  ]
+
+  test.skip "space surrounded by mines" [
+    minefield: [
+      "***"
+      "* *"
+      "***"
+    ]
+    result: annotate minefield
+    expected: [
+      "***"
+      "*8*"
+      "***"
+    ]
+    assert -> expected = result
+  ]
+
+  test.skip "horizontal line" [
+    minefield: [" * * "]
+    result: annotate minefield
+    expected: ["1*2*1"]
+    assert -> expected = result
+  ]
+
+  test.skip "horizontal line, mines at edges" [
+    minefield: ["*   *"]
+    result: annotate minefield
+    expected: ["*1 1*"]
+    assert -> expected = result
+  ]
+
+  test.skip "vertical line" [
+    minefield: [
+      " "
+      "*"
+      " "
+      "*"
+      " "
+    ]
+    result: annotate minefield
+    expected: [
+      "1"
+      "*"
+      "2"
+      "*"
+      "1"
+    ]
+    assert -> expected = result
+  ]
+
+  test.skip "vertical line, mines at edges" [
+    minefield: [
+      "*"
+      " "
+      " "
+      " "
+      "*"
+    ]
+    result: annotate minefield
+    expected: [
+      "*"
+      "1"
+      " "
+      "1"
+      "*"
+    ]
+    assert -> expected = result
+  ]
+
+  test.skip "cross" [
+    minefield: [
+      "  *  "
+      "  *  "
+      "*****"
+      "  *  "
+      "  *  "
+    ]
+    result: annotate minefield
+    expected: [
+      " 2*2 "
+      "25*52"
+      "*****"
+      "25*52"
+      " 2*2 "
+    ]
+    assert -> expected = result
+  ]
+
+  test.skip "large minefield" [
+    minefield: [
+      " *  * "
+      "  *   "
+      "    * "
+      "   * *"
+      " *  * "
+      "      "
+    ]
+    result: annotate minefield
+    expected: [
+      "1*22*1"
+      "12*322"
+      " 123*2"
+      "112*4*"
+      "1*22*2"
+      "111111"
+    ]
+    assert -> expected = result
+  ]
+]

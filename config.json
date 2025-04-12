@@ -526,6 +526,14 @@
         "difficulty": 4
       },
       {
+        "slug": "minesweeper",
+        "name": "Minesweeper",
+        "uuid": "2fb79b29-f139-434c-91d1-6801f2745ebd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "pascals-triangle",
         "name": "Pascal's Triangle",
         "uuid": "24a34f90-7cd8-4383-974e-ffc57af4fe14",

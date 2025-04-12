@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "src/minesweeper.art"
+    ],
+    "test": [
+      "tests/test-minesweeper.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ]
+  },
+  "blurb": "Add the numbers to a minesweeper board."
+}
