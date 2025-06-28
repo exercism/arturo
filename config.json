@@ -494,6 +494,14 @@
         "difficulty": 5
       },
       {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "2fb79b29-f139-434c-91d1-6801f2745ebd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "2ebe1be9-7cd5-4fcc-a420-fee670a7a4b0",
@@ -524,14 +532,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
-      },
-      {
-        "slug": "minesweeper",
-        "name": "Minesweeper",
-        "uuid": "2fb79b29-f139-434c-91d1-6801f2745ebd",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
       },
       {
         "slug": "pascals-triangle",

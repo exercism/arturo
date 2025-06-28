@@ -4,14 +4,14 @@
   ],
   "files": {
     "solution": [
-      "src/minesweeper.art"
+      "src/flower-field.art"
     ],
     "test": [
-      "tests/test-minesweeper.art"
+      "tests/test-flower-field.art"
     ],
     "example": [
       ".meta/src/example.art"
     ]
   },
-  "blurb": "Add the numbers to a minesweeper board."
+  "blurb": "Mark all the flowers in a garden."
 }

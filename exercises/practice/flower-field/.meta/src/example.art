@@ -1,14 +1,14 @@
-annotate: function [minefield][
-    if empty? minefield -> return []
-    if empty? minefield\[0] -> return [""]
+annotate: function [garden][
+    if empty? garden -> return []
+    if empty? garden\[0] -> return [""]
 
-    rows: size minefield
-    cols: size first minefield
+    rows: size garden
+    cols: size first garden
     result: []
     loop range 0 dec rows 'i [
         newRow: []
         loop range 0 dec cols 'j [
-            cell: minefield\[i]\[j]
+            cell: garden\[i]\[j]
             if? cell='*' -> 'newRow ++ '*'
             else [
                 count: 0
@@ -19,7 +19,7 @@ annotate: function [minefield][
                 loop range minRow maxRow 'ni [
                     loop range minCol maxCol 'nj [
                         if and? ni=i nj=j -> continue
-                        if minefield\[ni]\[nj]='*' -> inc 'count
+                        if garden\[ni]\[nj]='*' -> inc 'count
                     ]
                 ]
                 if? zero? count -> 'newRow ++ ' '
