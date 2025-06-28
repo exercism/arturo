@@ -5,7 +5,8 @@ For this track, we'll be using [the nightly `full` build release of Arturo][nigh
 
 ~~~~exercism/warning
 Homebrew is a popular third-party method of installing software on macOS and Linux platforms.
-However, it installs the `mini` Arturo build which is incompatible with this track. Please follow the instructions below instead.
+However, it installs the `mini` Arturo build which is incompatible with this track.
+Please follow the instructions below instead.
 ~~~~
 
 For further assistance installing Arturo, please consult the [official Arturo Discord][discord].
