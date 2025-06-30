@@ -1,0 +1,32 @@
+annotate: function [garden][
+    if empty? garden -> return []
+    if empty? garden\[0] -> return [""]
+
+    rows: size garden
+    cols: size first garden
+    result: []
+    loop range 0 dec rows 'i [
+        newRow: []
+        loop range 0 dec cols 'j [
+            cell: garden\[i]\[j]
+            if? cell='*' -> 'newRow ++ '*'
+            else [
+                count: 0
+                minRow: max @[0 dec i]
+                maxRow: min @[dec rows inc i]
+                minCol: max @[0 dec j]
+                maxCol: min @[dec cols inc j]
+                loop range minRow maxRow 'ni [
+                    loop range minCol maxCol 'nj [
+                        if and? ni=i nj=j -> continue
+                        if garden\[ni]\[nj]='*' -> inc 'count
+                    ]
+                ]
+                if? zero? count -> 'newRow ++ ' '
+                else -> 'newRow ++ to :string count
+            ]
+        ]
+        'result ++ join newRow
+    ]
+    result
+]
