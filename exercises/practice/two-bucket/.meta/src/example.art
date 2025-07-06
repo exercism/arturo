@@ -1,0 +1,60 @@
+measure: function [params][
+    if not? validate params\goal params\bucketOne params\bucketTwo -> return null
+
+    b1: #[name: "one" size: params\bucketOne amount: 0]
+    b2: #[name: "two" size: params\bucketTwo amount: 0]
+
+    case params\startBucket [
+        "one" -> solve b1 b2 params\goal
+        "two" -> solve b2 b1 params\goal
+    ]
+]
+
+validate: function [goal a b][
+    if goal > (max @[a b]) -> return false
+    g: gcd @[a b]
+    or? [one? g] [zero? goal % g]
+]
+
+solve: function [start other goal][
+    moves: 0
+    result: function [winner loser] -> #[
+        moves: moves
+        goalBucket: winner\name
+        otherBucket: loser\amount
+    ]
+
+    fill start
+    inc 'moves
+
+    if and? [other\size = goal] [start\size <> goal] [
+        fill other
+        inc 'moves
+    ]
+
+    while [true][
+        if goal = start\amount -> return result start other
+        if goal = other\amount -> return result other start
+
+        when [
+            isempty start -> fill start
+            isfull other -> empty other
+            true -> pour start other
+        ]
+        inc 'moves
+    ]
+]
+
+fill: function [bucket] -> bucket\amount: bucket\size
+empty: function [bucket] -> bucket\amount: 0
+
+isfull: function [bucket] -> bucket\amount = bucket\size
+isempty: function [bucket] -> bucket\amount = 0
+capacity: function [bucket] -> bucket\size - bucket\amount
+
+pour: function [frombucket tobucket][
+    quantity: min @[frombucket\amount capacity tobucket]
+
+    frombucket\amount: frombucket\amount - quantity
+    tobucket\amount: tobucket\amount + quantity
+]
