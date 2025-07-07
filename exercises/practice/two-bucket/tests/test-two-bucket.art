@@ -15,7 +15,7 @@ suite "Two Bucket" [
         assert -> result\otherBucket = 5
     ]
 
-    test "Measure using bucket one of size 3 and bucket two of size 5 - start with bucket two" [
+    test.skip "Measure using bucket one of size 3 and bucket two of size 5 - start with bucket two" [
 
         result: measure #[
             bucketOne: 3
@@ -28,7 +28,7 @@ suite "Two Bucket" [
         assert -> result\otherBucket = 3
     ]
 
-    test "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket one" [
+    test.skip "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket one" [
         result: measure #[
             bucketOne: 7
             bucketTwo: 11
@@ -40,7 +40,7 @@ suite "Two Bucket" [
         assert -> result\otherBucket = 11
     ]
 
-    test "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket two" [
+    test.skip "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket two" [
         result: measure #[
             bucketOne: 7
             bucketTwo: 11
@@ -52,7 +52,7 @@ suite "Two Bucket" [
         assert -> result\otherBucket = 7
     ]
 
-    test "Measure one step using bucket one of size 1 and bucket two of size 3 - start with bucket two" [
+    test.skip "Measure one step using bucket one of size 1 and bucket two of size 3 - start with bucket two" [
         result: measure #[
             bucketOne: 1
             bucketTwo: 3
@@ -64,7 +64,7 @@ suite "Two Bucket" [
         assert -> result\otherBucket = 0
     ]
 
-    test "Measure using bucket one of size 2 and bucket two of size 3 - start with bucket one and end with bucket two" [
+    test.skip "Measure using bucket one of size 2 and bucket two of size 3 - start with bucket one and end with bucket two" [
         result: measure #[
             bucketOne: 2
             bucketTwo: 3
@@ -76,7 +76,7 @@ suite "Two Bucket" [
         assert -> result\otherBucket = 2
     ]
 
-    test "Not possible to reach the goal" [
+    test.skip "Not possible to reach the goal" [
         result: measure #[
             bucketOne: 6
             bucketTwo: 15
@@ -86,7 +86,7 @@ suite "Two Bucket" [
         assert -> null? result
     ]
 
-    test "With the same buckets but a different goal, then it is possible" [
+    test.skip "With the same buckets but a different goal, then it is possible" [
         result: measure #[
             bucketOne: 6
             bucketTwo: 15
@@ -98,7 +98,7 @@ suite "Two Bucket" [
         assert -> result\otherBucket = 0
     ]
 
-    test "Goal larger than both buckets is impossible" [
+    test.skip "Goal larger than both buckets is impossible" [
         result: measure #[
             bucketOne: 5
             bucketTwo: 7
