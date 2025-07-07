@@ -1,0 +1,21 @@
+meetup: function [year month week dayofweek][
+    day: to :date .format:"yyyy-M-d" ~"|year|-|month|-1"
+
+    days: []
+    while [month = day\month][
+        if dayofweek = to :string .format:"dddd" day
+            -> 'days ++ day
+        day: after .days:1 day
+    ]
+
+    meetupday: case week [
+        "first"  -> first days
+        "last"   -> last days
+        "second" -> days\1
+        "third"  -> days\2
+        "fourth" -> days\3
+        "teenth" -> first select days 'd [in? d\day 13..19]
+    ]
+
+    to :string .format:"yyyy-MM-dd" meetupday
+]
