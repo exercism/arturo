@@ -5,7 +5,17 @@ transpose: function [data][
     maxLength: max map lines 'line -> size line
     paddedLines: map lines 'line -> pad.right line maxLength
 
-   join.with:"\n" fold.seed:[] range 0 dec maxLength [outerAcc i] [
+    transposed: fold.seed:[] range 0 dec maxLength [outerAcc i] [
         outerAcc ++ fold.seed:"" paddedLines [acc line] -> acc ++ line\[i]
     ]
+
+    ; from the bottom up, trim trailing spaces judiciously
+    width: 0
+    trimmed: map reverse transposed [line] [
+        t: strip.end line
+        width: max @[width size t]
+        pad.right t width
+    ]
+
+    join.with:"\n" reverse trimmed
 ]
