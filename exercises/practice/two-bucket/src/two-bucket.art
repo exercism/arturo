@@ -1,0 +1,3 @@
+measure: function [parameters][
+    panic "Please implement the measure function"
+]
