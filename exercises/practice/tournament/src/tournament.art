@@ -1,0 +1,3 @@
+tally: function [lines][
+    panic "Please implement the tally function"
+]
