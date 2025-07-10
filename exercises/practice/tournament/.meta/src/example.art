@@ -1,0 +1,56 @@
+tally: function [input][
+    fmt: function [team][
+        join.with:" | " @[
+            (pad.right team\name 30)
+            (pad to :string team\mp 2)
+            (pad to :string team\w 2)
+            (pad to :string team\d 2)
+            (pad to :string team\l 2)
+            (pad to :string team\p 2)
+        ]
+    ]
+
+    header: fmt #[name:"Team" mp:"MP" w:"W" d:"D" l:"L" p:"P"]
+
+    if empty? input -> return header
+
+    data: input | split.lines | map => [split.by:";" &]
+    teams: #[]
+
+    initialize: function [name][
+        if not? key? teams name -> teams\[name]: #[w:0 d:0 l:0]
+    ]
+
+    loop data 'result [
+        initialize result\0
+        initialize result\1
+
+        case result\2 [
+            "win" [
+                teams\[result\0]\w: inc teams\[result\0]\w
+                teams\[result\1]\l: inc teams\[result\1]\l
+            ]
+            "draw" [
+                teams\[result\0]\d: inc teams\[result\0]\d
+                teams\[result\1]\d: inc teams\[result\1]\d
+            ]
+            "loss" [
+                teams\[result\0]\l: inc teams\[result\0]\l
+                teams\[result\1]\w: inc teams\[result\1]\w
+            ]
+        ]
+    ]
+
+    standings: map teams [name stats][
+        extend stats #[
+            name: name
+            mp: stats\w + stats\d + stats\l
+            p: (3 * stats\w) + 1 * stats\d
+        ]
+    ]
+    | sort .by:"name"
+    | sort .descending .by:"p"
+    | map => fmt
+
+    prepend standings header | join.with:"\n"
+]

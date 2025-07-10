@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "src/tournament.art"
+    ],
+    "test": [
+      "tests/test-tournament.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ]
+  },
+  "blurb": "Tally the results of a small football competition."
+}
