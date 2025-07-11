@@ -1,6 +1,6 @@
 # Exercism Arturo Track
 
-[![configlet](https://github.com/exercism/arturo/workflows/configlet/badge.svg)](https://github.com/exercism/arturo/actions?query=workflow%3Aconfiglet) [![tests](https://github.com/exercism/arturo/workflows/test/badge.svg)](https://github.com/exercism/arturo/actions?query=workflow%3Atest)
+[![Configlet](https://github.com/exercism/arturo/actions/workflows/configlet.yml/badge.svg)](https://github.com/exercism/arturo/actions/workflows/configlet.yml) [![Test](https://github.com/exercism/arturo/actions/workflows/test.yml/badge.svg)](https://github.com/exercism/arturo/actions/workflows/test.yml)
 
 Exercism exercises in Arturo.
 
