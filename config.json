@@ -43,7 +43,7 @@
         "uuid": "f143475b-7a63-4a93-b3eb-156402e69fef",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "allergies",
@@ -51,7 +51,7 @@
         "uuid": "5603ca5c-8021-41a3-9c58-abb64569fdfc",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "anagram",
@@ -67,7 +67,7 @@
         "uuid": "9f87d2dd-b46c-437e-8a69-7f3ed44af244",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 5
       },
       {
         "slug": "binary-search",
@@ -75,7 +75,7 @@
         "uuid": "22fe2851-8b68-4b00-94cd-2a78b211e004",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "bob",
@@ -83,7 +83,7 @@
         "uuid": "7e51204c-486d-4e7e-bece-37b83f0b9c28",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 5
       },
       {
         "slug": "bottle-song",
@@ -91,7 +91,7 @@
         "uuid": "d2c47bdd-5871-48bb-a552-e61abca3cf64",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "collatz-conjecture",
@@ -99,7 +99,7 @@
         "uuid": "0f6c0e26-4197-4b0d-9bc4-8aff7d615141",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "dnd-character",
@@ -139,7 +139,7 @@
         "uuid": "425fdf02-186d-4cdb-96cb-01a4a76cae17",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "flatten-array",
@@ -147,7 +147,7 @@
         "uuid": "5b1c58ae-d398-415f-83cd-de2ec5a0de1d",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 5
       },
       {
         "slug": "gigasecond",
@@ -155,7 +155,7 @@
         "uuid": "a88d3b2d-bb09-4057-abda-73f945d53883",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "grains",
@@ -163,7 +163,7 @@
         "uuid": "891188ea-1270-450f-a44d-c821047a4344",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "hamming",
@@ -179,7 +179,7 @@
         "uuid": "13ae3cb4-f5ca-421e-be3b-a8f72d4e8606",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 1
       },
       {
         "slug": "high-scores",
@@ -187,7 +187,7 @@
         "uuid": "4a931239-bb21-4ade-8f68-58024eb730db",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "isbn-verifier",
@@ -195,7 +195,7 @@
         "uuid": "89d15094-fb34-42c8-b3d5-9fef5dcb9430",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "isogram",
@@ -203,7 +203,7 @@
         "uuid": "302f44e4-7b0f-418c-8c03-72a765244c3a",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "kindergarten-garden",
@@ -211,7 +211,7 @@
         "uuid": "047a0af4-bdfd-42c4-9b09-60cc60c46c90",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "largest-series-product",
@@ -219,7 +219,7 @@
         "uuid": "01180cdd-556c-4476-a71f-083628265000",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 5
       },
       {
         "slug": "leap",
@@ -235,7 +235,7 @@
         "uuid": "b3694bc0-727b-4b48-b568-de39e8d2c4aa",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "matrix",
@@ -243,7 +243,7 @@
         "uuid": "1de866bf-2b12-4f4e-906d-03d5783e8cb8",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "nth-prime",
@@ -251,7 +251,7 @@
         "uuid": "8cf8f184-0b62-4a2d-ba0f-042d069e4d1d",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "nucleotide-count",
@@ -259,7 +259,7 @@
         "uuid": "6fc1e4ab-157d-4237-b5dd-9686d3b03feb",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "pangram",
@@ -267,7 +267,7 @@
         "uuid": "3aa1e43b-e199-4295-9990-ec5d37d5cb30",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "perfect-numbers",
@@ -275,7 +275,7 @@
         "uuid": "d5c5268d-0cec-4663-a26e-015efa19b39f",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "phone-number",
@@ -291,7 +291,7 @@
         "uuid": "57e5d645-4759-4b4b-8d33-ebe8c74b9c87",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "protein-translation",
@@ -299,7 +299,7 @@
         "uuid": "20a04b44-be05-488e-a499-987a68312973",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "proverb",
@@ -307,7 +307,7 @@
         "uuid": "07d140c8-0eeb-4c8a-837b-c99a840cb715",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "queen-attack",
@@ -323,7 +323,7 @@
         "uuid": "446fe3c2-ac91-4baa-b78f-e83def979eaf",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "resistor-color",
@@ -363,7 +363,7 @@
         "uuid": "d4b3a9da-46c7-496a-bfa3-8a4bbc339889",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 5
       },
       {
         "slug": "scrabble-score",
@@ -371,7 +371,7 @@
         "uuid": "7e4c8464-83a2-4d1d-8e97-aed4bbd982b5",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "secret-handshake",
@@ -379,7 +379,7 @@
         "uuid": "41af7d35-de41-4a74-b428-c0802e327a84",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "series",
@@ -387,7 +387,7 @@
         "uuid": "8546a842-c58e-4bbb-a965-f015f83102d3",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 2
       },
       {
         "slug": "sieve",
@@ -395,7 +395,7 @@
         "uuid": "dcb4854d-0ec9-48a9-82ec-3e60f9f0433e",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "space-age",
@@ -403,7 +403,7 @@
         "uuid": "4566ed23-4c05-4a1a-86b3-536111ac3d13",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "square-root",
@@ -411,7 +411,7 @@
         "uuid": "2d8c1f6d-dd88-4282-bdd8-8a30463ac6d6",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 5
       },
       {
         "slug": "strain",
@@ -427,7 +427,7 @@
         "uuid": "7a26ff91-0491-4c0b-8d09-2069f9af55f0",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 5
       },
       {
         "slug": "transpose",
@@ -435,7 +435,7 @@
         "uuid": "4690579a-db1b-4b09-aafc-bd436bfe869e",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "triangle",
@@ -459,7 +459,7 @@
         "uuid": "29055b87-905f-43cf-99f4-6d8cff97f8b5",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "word-count",
@@ -467,7 +467,7 @@
         "uuid": "82b4b6f7-79eb-448f-bc4e-dea413da71e8",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5
       },
       {
         "slug": "yacht",
@@ -475,7 +475,7 @@
         "uuid": "3c3399eb-bd57-4b16-80b4-25788035d024",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 5
       },
       {
         "slug": "atbash-cipher",
@@ -531,7 +531,7 @@
         "uuid": "d77e2cae-6aff-494c-bd92-d8fc3ab09c16",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4
+        "difficulty": 5
       },
       {
         "slug": "pascals-triangle",
@@ -539,7 +539,7 @@
         "uuid": "24a34f90-7cd8-4383-974e-ffc57af4fe14",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4
+        "difficulty": 5
       },
       {
         "slug": "robot-simulator",
@@ -555,7 +555,7 @@
         "uuid": "cc456335-2007-4bde-a733-f554209bfa14",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4
+        "difficulty": 5
       },
       {
         "slug": "run-length-encoding",
@@ -563,7 +563,7 @@
         "uuid": "64815dad-6422-4416-b771-971e4196f076",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4
+        "difficulty": 5
       },
       {
         "slug": "meetup",
@@ -571,7 +571,7 @@
         "uuid": "e49814cf-4fd8-4886-b73a-bf7b19e30559",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4
+        "difficulty": 5
       },
       {
         "slug": "two-bucket",
