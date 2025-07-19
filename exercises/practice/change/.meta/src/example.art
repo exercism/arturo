@@ -1,0 +1,31 @@
+findFewestCoins: function[coins target][
+    if? negative? target -> return null
+    if? zero? target -> return []
+
+    availableCoins: sort.descending coins
+    queue: [0]
+    visited: #["0": []]
+
+    while [not? empty? queue] [
+        startingBalance: first queue
+        drop 'queue
+        loop availableCoins 'coin [
+            updatedBalance: startingBalance + coin
+
+            if? or? (updatedBalance > target)
+                    (key? visited updatedBalance)
+                -> continue
+            usedCoins:  visited\[startingBalance] ++ coin
+
+            if? equal? updatedBalance target [
+                sort 'usedCoins
+                return usedCoins
+            ]
+
+            visited\[updatedBalance]: usedCoins
+            'queue ++ updatedBalance
+        ]
+    ]
+
+    null
+]

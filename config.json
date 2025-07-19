@@ -286,6 +286,14 @@
         "difficulty": 5
       },
       {
+        "slug": "change",
+        "name": "Change",
+        "uuid": "f9c492df-8875-4dcd-81e3-bb363447b997",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "clock",
         "name": "Clock",
         "uuid": "a293accd-1504-42dc-8a09-1a6a5833afd8",
