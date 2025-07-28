@@ -1,0 +1,25 @@
+diamond: function[letter][
+    if letter = 'A' -> return "A"
+
+    start: to :integer 'A'
+    end: to :integer letter
+    size: inc sub end start
+    rows: []
+
+    widestLength: inc (2 * (end - start))
+
+    loop 0..(dec size) 'i [
+        currentChar: to :char (start + i)
+        if? zero? i [
+             'rows ++ pad.center .with:' ' to :string currentChar widestLength
+        ] else [
+            innerPadding: dec (2 * i)
+            line: currentChar ++ (repeat " " innerPadding) ++ currentChar
+            'rows ++ pad.center .with:' ' line widestLength
+        ]
+    ]
+
+    loop (size - 2)..0 'i -> 'rows ++ rows\[i]
+
+    join.with:"\n" rows
+]
