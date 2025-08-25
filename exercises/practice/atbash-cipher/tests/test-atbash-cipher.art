@@ -3,90 +3,104 @@ import {src/atbash-cipher}!
 
 describe "Atbash Cipher" [
   describe "Atbash Cipher - Encode" [
-    it "encode yes" [
-      phrase: "yes"
-      expected: "bvh"
-      expects.be:'equal? @[expected encode phrase]
+    it.skip "encode yes" [
+      expects.be:'equal? @[
+        express "bvh"
+        express encode "yes"
+      ]
     ]
 
     it.skip "encode no" [
-      phrase: "no"
-      expected: "ml"
-      expects.be:'equal? @[expected encode phrase]
+      expects.be:'equal? @[
+        express "ml"
+        express encode "no"
+      ]
     ]
 
     it.skip "encode OMG" [
-      phrase: "OMG"
-      expected: "lnt"
-      expects.be:'equal? @[expected encode phrase]
+      expects.be:'equal? @[
+        express "lnt"
+        express encode "OMG"
+      ]
     ]
 
     it.skip "encode spaces" [
-      phrase: "O M G"
-      expected: "lnt"
-      expects.be:'equal? @[expected encode phrase]
+      expects.be:'equal? @[
+        express "lnt"
+        express encode "O M G"
+      ]
     ]
 
     it.skip "encode mindblowingly" [
-      phrase: "mindblowingly"
-      expected: "nrmwy oldrm tob"
-      expects.be:'equal? @[expected encode phrase]
+      expects.be:'equal? @[
+        express "nrmwy oldrm tob"
+        express encode "mindblowingly"
+      ]
     ]
 
     it.skip "encode numbers" [
-      phrase: "Testing,1 2 3, testing."
-      expected: "gvhgr mt123 gvhgr mt"
-      expects.be:'equal? @[expected encode phrase]
+      expects.be:'equal? @[
+        express "gvhgr mt123 gvhgr mt"
+        express encode "Testing,1 2 3, testing."
+      ]
     ]
 
     it.skip "encode deep thought" [
-      phrase: "Truth is fiction."
-      expected: "gifgs rhurx grlm"
-      expects.be:'equal? @[expected encode phrase]
+      expects.be:'equal? @[
+        express "gifgs rhurx grlm"
+        express encode "Truth is fiction."
+      ]
     ]
 
     it.skip "encode all the letters" [
-      phrase: "The quick brown fox jumps over the lazy dog."
-      expected: "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
-      expects.be:'equal? @[expected encode phrase]
+      expects.be:'equal? @[
+        express "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
+        express encode "The quick brown fox jumps over the lazy dog."
+      ]
     ]
   ]
 
   describe "Atbash Cipher - Decode" [
     it.skip "decode exercism" [
-      phrase: "vcvix rhn"
-      expected: "exercism"
-      expects.be:'equal? @[expected decode phrase]
+      expects.be:'equal? @[
+        express "exercism"
+        express decode "vcvix rhn"
+      ]
     ]
 
     it.skip "decode a sentence" [
-      phrase: "zmlyh gzxov rhlug vmzhg vkkrm thglm v"
-      expected: "anobstacleisoftenasteppingstone"
-      expects.be:'equal? @[expected decode phrase]
+      expects.be:'equal? @[
+        express "anobstacleisoftenasteppingstone"
+        express decode "zmlyh gzxov rhlug vmzhg vkkrm thglm v"
+      ]
     ]
 
     it.skip "decode numbers" [
-      phrase: "gvhgr mt123 gvhgr mt"
-      expected: "testing123testing"
-      expects.be:'equal? @[expected decode phrase]
+      expects.be:'equal? @[
+        express "testing123testing"
+        express decode "gvhgr mt123 gvhgr mt"
+      ]
     ]
 
     it.skip "decode all the letters" [
-      phrase: "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
-      expected: "thequickbrownfoxjumpsoverthelazydog"
-      expects.be:'equal? @[expected decode phrase]
+      expects.be:'equal? @[
+        express "thequickbrownfoxjumpsoverthelazydog"
+        express decode "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
+      ]
     ]
 
     it.skip "decode with too many spaces" [
-      phrase: "vc vix    r hn"
-      expected: "exercism"
-      expects.be:'equal? @[expected decode phrase]
+      expects.be:'equal? @[
+        express "exercism"
+        express decode "vc vix    r hn"
+      ]
     ]
 
     it.skip "decode with no spaces" [
-      phrase: "zmlyhgzxovrhlugvmzhgvkkrmthglmv"
-      expected: "anobstacleisoftenasteppingstone"
-      expects.be:'equal? @[expected decode phrase]
+      expects.be:'equal? @[
+        express "anobstacleisoftenasteppingstone"
+        express decode "zmlyhgzxovrhlugvmzhgvkkrmthglmv"
+      ]
     ]
   ]
 ]
