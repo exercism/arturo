@@ -3,47 +3,74 @@ import {src/acronym}!
 
 describe "Acronym" [
     it "basic" [
-        result: abbreviate "Portable Network Graphics"
-        expects.be: 'equal? @["PNG" result]
+        phrase: "Portable Network Graphics"
+        expects.be: 'equal? @[
+            express "PNG"
+            express abbreviate phrase 
+        ]
     ]
 
     it.skip "lowercase words" [
-        result: abbreviate "Ruby on Rails"
-        expects.be: 'equal? @["ROR" result]
+        phrase: "Ruby on Rails"
+        expects.be: 'equal? @[
+            express "ROR"
+            express abbreviate phrase 
+        ]
     ]
 
     it.skip "punctuation" [
-        result: abbreviate "First In, First Out"
-        expects.be: 'equal? @["FIFO" result]
+        phrase: "First In, First Out"
+        expects.be: 'equal? @[
+            express "FIFO"
+            express abbreviate phrase 
+        ]
     ]
 
     it.skip "all uppercase word" [
-        result: abbreviate "GNU Image Manipulation Program"
-        expects.be: 'equal? @["GIMP" result]
+        phrase: "GNU Image Manipulation Program"
+        expects.be: 'equal? @[
+            express "GIMP"
+            express abbreviate phrase 
+        ]
     ]
 
     it.skip "punctuation without whitespace" [
-        result: abbreviate "Complementary metal-oxide semiconductor"
-        expects.be: 'equal? @["CMOS" result]
+        phrase: "Complementary metal-oxide semiconductor"
+        expects.be: 'equal? @[
+            express "CMOS"
+            express abbreviate phrase 
+        ]
     ]
 
     it.skip "very long abbreviation" [
-        result: abbreviate "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
-        expects.be: 'equal? @["ROTFLSHTMDCOALM" result]
+        phrase: "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
+        expects.be: 'equal? @[
+            express "ROTFLSHTMDCOALM"
+            express abbreviate phrase 
+        ]
     ]
 
     it.skip "consecutive delimiters" [
-        result: abbreviate "Something - I made up from thin air"
-        expects.be: 'equal? @["SIMUFTA" result]
+        phrase: "Something - I made up from thin air"
+        expects.be: 'equal? @[
+            express "SIMUFTA"
+            express abbreviate phrase 
+        ]
     ]
 
     it.skip "apostrophes" [
-        result: abbreviate "Halley\'s Comet"
-        expects.be: 'equal? @["HC" result]
+        phrase: "Halley\'s Comet"
+        expects.be: 'equal? @[
+            express "HC"
+            express abbreviate phrase 
+        ]
     ]
 
     it.skip "underscore emphasis" [
-        result: abbreviate "The Road _Not_ Taken"
-        expects.be: 'equal? @["TRNT" result]
+        phrase: "The Road _Not_ Taken"
+        expects.be: 'equal? @[
+            express "TRNT"
+            express abbreviate phrase 
+        ]
     ]
 ]
