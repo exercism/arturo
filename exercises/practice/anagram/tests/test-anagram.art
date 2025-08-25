@@ -3,128 +3,130 @@ import {src/anagram}!
 
 describe "Anagram" [
     it "no matches" [
-        subject: "diaper"
-        candidates: ["hello" "world" "zombies" "pants"]
-        expected: []
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "diaper" ["hello" "world" "zombies" "pants"]
+        ]
     ]
 
     it "detects two anagrams" [
-        subject: "solemn"
-        candidates: ["lemons" "cherry" "melons"]
-        expected: ["lemons" "melons"]
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express ["lemons" "melons"]
+            express findAnagrams "solemn" ["lemons" "cherry" "melons"]
+        ]
     ]
 
     it "does not detect anagram subsets" [
-        subject: "good"
-        candidates: ["dog" "goody"]
-        expected: []
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "good" ["dog" "goody"]
+        ]
     ]
 
     it "detects anagram" [
-        subject: "listen"
-        candidates: ["enlists" "google" "inlets" "banana"]
-        expected: ["inlets"]
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express ["inlets"]
+            express findAnagrams "listen" ["enlists" "google" "inlets" "banana"]
+        ]
     ]
     
     it "detects three anagrams" [
-        subject: "allergy"
-        candidates: ["gallery" "ballerina" "regally" "clergy" "largely" "leading"]
-        expected: ["gallery" "regally" "largely"]
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express ["gallery" "regally" "largely"]
+            express findAnagrams "allergy" ["gallery" "ballerina"
+                                            "regally" "clergy" 
+                                            "largely" "leading"]
+        ]
     ]
 
     it "detects multiple anagrams with different case" [
-        subject: "nose"
-        candidates: ["Eons" "ONES"]
-        expected: ["Eons" "ONES"]
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express ["Eons" "ONES"]
+            express findAnagrams "nose" ["Eons" "ONES"]
+        ]
     ]
 
     it "does not detect non-anagrams with identical checksum" [
-        subject: "mass"
-        candidates: ["last"]
-        expected: []
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "mass" ["last"]
+        ]
     ]
 
     it "detects anagrams case-insensitively" [
-        subject: "Orchestra"
-        candidates: ["cashregister" "Carthorse" "radishes"]
-        expected: ["Carthorse"]
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express ["Carthorse"]
+            express findAnagrams "Orchestra" ["cashregister" "Carthorse" "radishes"]
+        ]
     ]
 
     it "detects anagrams using case-insensitive subject" [
-        subject: "Orchestra"
-        candidates: ["cashregister" "carthorse" "radishes"]
-        expected: ["carthorse"]
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express ["carthorse"]
+            express findAnagrams "Orchestra" ["cashregister" "carthorse" "radishes"]
+        ]
     ]
 
     it "detects anagrams using case-insensitive possible matches" [
-        subject: "orchestra"
-        candidates: ["cashregister" "Carthorse" "radishes"]
-        expected: ["Carthorse"]
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express ["Carthorse"]
+            express findAnagrams "orchestra" ["cashregister" "Carthorse" "radishes"]
+        ]
     ]
 
     it "does not detect an anagram if the original word is repeated" [
-        subject: "go"
-        candidates: ["goGoGO"]
-        expected: []
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "go" ["goGoGO"]
+        ]
     ]
 
     it "anagrams must use all letters exactly once" [
-        subject: "tapper"
-        candidates: ["patter"]
-        expected: []
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "tapper" ["patter"]
+        ]
     ]
 
     it "words are not anagrams of themselves" [
-        subject: "BANANA"
-        candidates: ["BANANA"]
-        expected: []
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "BANANA" ["BANANA"]
+        ]
     ]
 
     it "words are not anagrams of themselves even if letter case is partially different" [
-        subject: "BANANA"
-        candidates: ["Banana"]
-        expected: []
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "BANANA" ["Banana"]
+        ]
     ]
 
     it "words are not anagrams of themselves even if letter case is completely different" [
-        subject: "BANANA"
-        candidates: ["banana"]
-        expected: []
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "BANANA" ["banana"]
+        ]
     ]
 
     it "words other than themselves can be anagrams" [
-        subject: "LISTEN"
-        candidates: ["Listen" "Silent" "LISTEN"]
-        expected: ["Silent"]
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express ["Silent"]
+            express findAnagrams "LISTEN" ["Listen" "Silent" "LISTEN"]
+        ]
     ]
 
     it "handles case of greek letters" [
-        subject: "ΑΒΓ"
-        candidates: ["ΒΓΑ" "ΒΓΔ" "γβα" "αβγ"]
-        expected: ["ΒΓΑ" "γβα"]
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            ["ΒΓΑ" "γβα"]
+            findAnagrams "ΑΒΓ" ["ΒΓΑ" "ΒΓΔ" "γβα" "αβγ"]
+        ]
     ]
 
     it "different characters may have the same bytes" [
-        subject: "a⬂"
-        candidates: ["€a"]
-        expected: []
-        expects.be:'equal? @[expected findAnagrams subject candidates]
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "a⬂" ["€a"]
+        ]
     ]
 ]
