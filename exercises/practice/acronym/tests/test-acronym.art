@@ -1,49 +1,49 @@
 import.version:2.0.1 {unitt}!
 import {src/acronym}!
 
-suite "Acronym" [
-    test "basic" [
+describe "Acronym" [
+    it "basic" [
         result: abbreviate "Portable Network Graphics"
-        assert -> "PNG" = result
+        expects.be: 'equal? @["PNG" result]
     ]
 
-    test.skip "lowercase words" [
+    it.skip "lowercase words" [
         result: abbreviate "Ruby on Rails"
-        assert -> "ROR" = result
+        expects.be: 'equal? @["ROR" result]
     ]
 
-    test.skip "punctuation" [
+    it.skip "punctuation" [
         result: abbreviate "First In, First Out"
-        assert -> "FIFO" = result
+        expects.be: 'equal? @["FIFO" result]
     ]
 
-    test.skip "all uppercase word" [
+    it.skip "all uppercase word" [
         result: abbreviate "GNU Image Manipulation Program"
-        assert -> "GIMP" = result
+        expects.be: 'equal? @["GIMP" result]
     ]
 
-    test.skip "punctuation without whitespace" [
+    it.skip "punctuation without whitespace" [
         result: abbreviate "Complementary metal-oxide semiconductor"
-        assert -> "CMOS" = result
+        expects.be: 'equal? @["CMOS" result]
     ]
 
-    test.skip "very long abbreviation" [
+    it.skip "very long abbreviation" [
         result: abbreviate "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
-        assert -> "ROTFLSHTMDCOALM" = result
+        expects.be: 'equal? @["ROTFLSHTMDCOALM" result]
     ]
 
-    test.skip "consecutive delimiters" [
+    it.skip "consecutive delimiters" [
         result: abbreviate "Something - I made up from thin air"
-        assert -> "SIMUFTA" = result
+        expects.be: 'equal? @["SIMUFTA" result]
     ]
 
-    test.skip "apostrophes" [
+    it.skip "apostrophes" [
         result: abbreviate "Halley\'s Comet"
-        assert -> "HC" = result
+        expects.be: 'equal? @["HC" result]
     ]
 
-    test.skip "underscore emphasis" [
+    it.skip "underscore emphasis" [
         result: abbreviate "The Road _Not_ Taken"
-        assert -> "TRNT" = result
+        expects.be: 'equal? @["TRNT" result]
     ]
 ]
