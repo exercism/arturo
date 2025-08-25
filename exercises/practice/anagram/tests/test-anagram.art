@@ -9,28 +9,28 @@ describe "Anagram" [
         ]
     ]
 
-    it "detects two anagrams" [
+    it.skip "detects two anagrams" [
         expects.be:'equal? @[
             express ["lemons" "melons"]
             express findAnagrams "solemn" ["lemons" "cherry" "melons"]
         ]
     ]
 
-    it "does not detect anagram subsets" [
+    it.skip "does not detect anagram subsets" [
         expects.be:'equal? @[
             express []
             express findAnagrams "good" ["dog" "goody"]
         ]
     ]
 
-    it "detects anagram" [
+    it.skip "detects anagram" [
         expects.be:'equal? @[
             express ["inlets"]
             express findAnagrams "listen" ["enlists" "google" "inlets" "banana"]
         ]
     ]
     
-    it "detects three anagrams" [
+    it.skip "detects three anagrams" [
         expects.be:'equal? @[
             express ["gallery" "regally" "largely"]
             express findAnagrams "allergy" ["gallery" "ballerina"
@@ -39,91 +39,91 @@ describe "Anagram" [
         ]
     ]
 
-    it "detects multiple anagrams with different case" [
+    it.skip "detects multiple anagrams with different case" [
         expects.be:'equal? @[
             express ["Eons" "ONES"]
             express findAnagrams "nose" ["Eons" "ONES"]
         ]
     ]
 
-    it "does not detect non-anagrams with identical checksum" [
+    it.skip "does not detect non-anagrams with identical checksum" [
         expects.be:'equal? @[
             express []
             express findAnagrams "mass" ["last"]
         ]
     ]
 
-    it "detects anagrams case-insensitively" [
+    it.skip "detects anagrams case-insensitively" [
         expects.be:'equal? @[
             express ["Carthorse"]
             express findAnagrams "Orchestra" ["cashregister" "Carthorse" "radishes"]
         ]
     ]
 
-    it "detects anagrams using case-insensitive subject" [
+    it.skip "detects anagrams using case-insensitive subject" [
         expects.be:'equal? @[
             express ["carthorse"]
             express findAnagrams "Orchestra" ["cashregister" "carthorse" "radishes"]
         ]
     ]
 
-    it "detects anagrams using case-insensitive possible matches" [
+    it.skip "detects anagrams using case-insensitive possible matches" [
         expects.be:'equal? @[
             express ["Carthorse"]
             express findAnagrams "orchestra" ["cashregister" "Carthorse" "radishes"]
         ]
     ]
 
-    it "does not detect an anagram if the original word is repeated" [
+    it.skip "does not detect an anagram if the original word is repeated" [
         expects.be:'equal? @[
             express []
             express findAnagrams "go" ["goGoGO"]
         ]
     ]
 
-    it "anagrams must use all letters exactly once" [
+    it.skip "anagrams must use all letters exactly once" [
         expects.be:'equal? @[
             express []
             express findAnagrams "tapper" ["patter"]
         ]
     ]
 
-    it "words are not anagrams of themselves" [
+    it.skip "words are not anagrams of themselves" [
         expects.be:'equal? @[
             express []
             express findAnagrams "BANANA" ["BANANA"]
         ]
     ]
 
-    it "words are not anagrams of themselves even if letter case is partially different" [
+    it.skip "words are not anagrams of themselves even if letter case is partially different" [
         expects.be:'equal? @[
             express []
             express findAnagrams "BANANA" ["Banana"]
         ]
     ]
 
-    it "words are not anagrams of themselves even if letter case is completely different" [
+    it.skip "words are not anagrams of themselves even if letter case is completely different" [
         expects.be:'equal? @[
             express []
             express findAnagrams "BANANA" ["banana"]
         ]
     ]
 
-    it "words other than themselves can be anagrams" [
+    it.skip "words other than themselves can be anagrams" [
         expects.be:'equal? @[
             express ["Silent"]
             express findAnagrams "LISTEN" ["Listen" "Silent" "LISTEN"]
         ]
     ]
 
-    it "handles case of greek letters" [
+    it.skip "handles case of greek letters" [
         expects.be:'equal? @[
             ["ΒΓΑ" "γβα"]
             findAnagrams "ΑΒΓ" ["ΒΓΑ" "ΒΓΔ" "γβα" "αβγ"]
         ]
     ]
 
-    it "different characters may have the same bytes" [
+    it.skip "different characters may have the same bytes" [
         expects.be:'equal? @[
             express []
             express findAnagrams "a⬂" ["€a"]
