@@ -3,7 +3,7 @@ import {src/atbash-cipher}!
 
 describe "Atbash Cipher" [
   describe "Atbash Cipher - Encode" [
-    it.skip "encode yes" [
+    it "encode yes" [
       expects.be:'equal? @[
         express "bvh"
         express encode "yes"
