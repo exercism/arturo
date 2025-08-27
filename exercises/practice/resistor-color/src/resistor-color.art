@@ -1,5 +1,5 @@
 ; Define the colors variable
 
 colorCode: function [color][
-    panic "Please implement the twoFer function"
+    panic "Please implement the colorCode function"
 ]
