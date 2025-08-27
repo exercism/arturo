@@ -2,6 +2,9 @@
   "authors": [
     "BNAndras"
   ],
+  "contributors": [
+    "glennj"
+  ],
   "files": {
     "solution": [
       "src/game-of-life.art"

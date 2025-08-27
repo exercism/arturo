@@ -1,11 +1,10 @@
+; sourced from https://exercism.org/tracks/arturo/exercises/flatten-array/solutions/glennj
+
 flattenCollection: function[collection][
-    flattened: []
-
-    loop collection [element][
-        switch null? element  -> continue ->
-        switch block? element -> append 'flattened flattenCollection element
-                              -> append 'flattened element
+    fold.seed:[] collection [flattened elem][
+        flattened ++
+            switch block? elem
+                -> flattenCollection elem
+                -> (null? elem)? -> [] -> elem
     ]
-
-    flattened
 ]
