@@ -1,96 +1,108 @@
 import.version:2.0.1 {unitt}!
 import {src/flower-field}!
 
-suite "Flower Field"[
-  test "no rows" [
-    garden: []
-    result: annotate garden
-    expected: []
-    assert -> expected = result
+describe "Flower Field"[
+  it "no rows" [
+    expects.be:'equal? @[
+      express []
+      express annotate []
+    ]
   ]
 
-  test.skip "no columns" [
-    garden: [""]
-    result: annotate garden
-    expected: [""]
-    assert -> expected = result
+  it.skip "no columns" [
+    expects.be:'equal? @[
+      express [""]
+      express annotate [""]
+    ]
   ]
 
-  test.skip "no flowers" [
+  it.skip "no flowers" [
     garden: [
       "   "
       "   "
       "   "
     ]
-    result: annotate garden
     expected: [
       "   "
       "   "
       "   "
     ]
-    assert -> expected = result
+    expects.be:'equal? @[
+      express expected
+      express annotate garden
+    ]
   ]
 
-  test.skip "garden full of flowers" [
+  it.skip "garden full of flowers" [
     garden: [
       "***"
       "***"
       "***"
     ]
-    result: annotate garden
     expected: [
       "***"
       "***"
       "***"
     ]
-    assert -> expected = result
+    expects.be:'equal? @[
+      express expected
+      express annotate garden
+    ]
   ]
 
-  test.skip "flower surrounded by spaces" [
+  it.skip "flower surrounded by spaces" [
     garden: [
       "   "
       " * "
       "   "
     ]
-    result: annotate garden
     expected: [
       "111"
       "1*1"
       "111"
     ]
-    assert -> expected = result
+    expects.be:'equal? @[
+      express expected
+      express annotate garden
+    ]
   ]
 
-  test.skip "space surrounded by flowers" [
+  it.skip "space surrounded by flowers" [
     garden: [
       "***"
       "* *"
       "***"
     ]
-    result: annotate garden
     expected: [
       "***"
       "*8*"
       "***"
     ]
-    assert -> expected = result
+    expects.be:'equal? @[
+      express expected
+      express annotate garden
+    ]
   ]
 
-  test.skip "horizontal line" [
+  it.skip "horizontal line" [
     garden: [" * * "]
-    result: annotate garden
     expected: ["1*2*1"]
-    assert -> expected = result
+    expects.be:'equal? @[
+      express expected
+      express annotate garden
+    ]
   ]
 
-  test.skip "horizontal line, flowers at edges" [
+  it.skip "horizontal line, flowers at edges" [
     garden: ["*   *"]
-    result: annotate garden
     expected: ["*1 1*"]
-    assert -> expected = result
+    expects.be:'equal? @[
+      express expected
+      express annotate garden
+    ]
   ]
 
-  test.skip "vertical line" [
+  it.skip "vertical line" [
     garden: [
       " "
       "*"
@@ -98,7 +110,6 @@ suite "Flower Field"[
       "*"
       " "
     ]
-    result: annotate garden
     expected: [
       "1"
       "*"
@@ -106,10 +117,13 @@ suite "Flower Field"[
       "*"
       "1"
     ]
-    assert -> expected = result
+    expects.be:'equal? @[
+      express expected
+      express annotate garden
+    ]
   ]
 
-  test.skip "vertical line, flowers at edges" [
+  it.skip "vertical line, flowers at edges" [
     garden: [
       "*"
       " "
@@ -117,7 +131,6 @@ suite "Flower Field"[
       " "
       "*"
     ]
-    result: annotate garden
     expected: [
       "*"
       "1"
@@ -125,10 +138,13 @@ suite "Flower Field"[
       "1"
       "*"
     ]
-    assert -> expected = result
+    expects.be:'equal? @[
+      express expected
+      express annotate garden
+    ]
   ]
 
-  test.skip "cross" [
+  it.skip "cross" [
     garden: [
       "  *  "
       "  *  "
@@ -136,7 +152,6 @@ suite "Flower Field"[
       "  *  "
       "  *  "
     ]
-    result: annotate garden
     expected: [
       " 2*2 "
       "25*52"
@@ -144,10 +159,13 @@ suite "Flower Field"[
       "25*52"
       " 2*2 "
     ]
-    assert -> expected = result
+    expects.be:'equal? @[
+      express expected
+      express annotate garden
+    ]
   ]
 
-  test.skip "large garden" [
+  it.skip "large garden" [
     garden: [
       " *  * "
       "  *   "
@@ -156,7 +174,6 @@ suite "Flower Field"[
       " *  * "
       "      "
     ]
-    result: annotate garden
     expected: [
       "1*22*1"
       "12*322"
@@ -165,6 +182,9 @@ suite "Flower Field"[
       "1*22*2"
       "111111"
     ]
-    assert -> expected = result
+    expects.be:'equal? @[
+      express expected
+      express annotate garden
+    ]
   ]
 ]
