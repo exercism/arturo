@@ -2,6 +2,9 @@
   "authors": [
     "erikschierboom"
   ],
+  "contributors": [
+    "chunes3"
+  ],
   "files": {
     "solution": [
       "src/matching-brackets.art"
