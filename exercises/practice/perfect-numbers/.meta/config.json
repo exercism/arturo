@@ -2,6 +2,9 @@
   "authors": [
     "erikschierboom"
   ],
+  "contributors": [
+    "drkameleon"
+  ],
   "files": {
     "solution": [
       "src/perfect-numbers.art"
