@@ -2,6 +2,9 @@
   "authors": [
     "BNAndras"
   ],
+  "contributors": [
+    "glennj"
+  ],
   "files": {
     "solution": [
       "src/protein-translation.art"
