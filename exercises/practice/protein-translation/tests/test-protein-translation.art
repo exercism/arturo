@@ -1,187 +1,214 @@
 import.version:2.0.1 {unitt}!
 import {src/protein-translation}!
 
-suite "Protein Translation" [
-    test "Empty RNA sequence results in no proteins" [
-        result: toProteins ""
-        expected: []
-        assert -> expected = result
+describe "Protein Translation" [
+    it "Empty RNA sequence results in no proteins" [
+        expects.be:'equal? @[
+            express []
+            express toProteins ""
+        ]
     ]
 
-    test.skip "Methionine RNA sequence" [
-        result: toProteins "AUG"
-        expected: ["Methionine"]
-        assert -> expected = result
+    it.skip "Methionine RNA sequence" [
+        expects.be:'equal? @[
+            express ["Methionine"]
+            express toProteins "AUG"
+        ]
     ]
 
-    test.skip "Phenylalanine RNA sequence 1" [
-        result: toProteins "UUU"
-        expected: ["Phenylalanine"]
-        assert -> expected = result
+    it.skip "Phenylalanine RNA sequence 1" [
+        expects.be:'equal? @[
+            express ["Phenylalanine"]
+            express toProteins "UUU"
+        ]
     ]
 
-    test.skip "Phenylalanine RNA sequence 2" [
-        result: toProteins "UUC"
-        expected: ["Phenylalanine"]
-        assert -> expected = result
+    it.skip "Phenylalanine RNA sequence 2" [
+        expects.be:'equal? @[
+            express ["Phenylalanine"]
+            express toProteins "UUC"
+        ]
     ]
 
-    test.skip "Leucine RNA sequence 1" [
-        result: toProteins "UUA"
-        expected: ["Leucine"]
-        assert -> expected = result
+    it.skip "Leucine RNA sequence 1" [
+        expects.be:'equal? @[
+            express ["Leucine"]
+            express toProteins "UUA"
+        ]
     ]
 
-    test.skip "Leucine RNA sequence 2" [
-        result: toProteins "UUG"
-        expected: ["Leucine"]
-        assert -> expected = result
+    it.skip "Leucine RNA sequence 2" [
+        expects.be:'equal? @[
+            express ["Leucine"]
+            express toProteins "UUG"
+        ]
     ]
 
-    test.skip "Serine RNA sequence 1" [
-        result: toProteins "UCU"
-        expected: ["Serine"]
-        assert -> expected = result
+    it.skip "Serine RNA sequence 1" [
+        expects.be:'equal? @[
+            express ["Serine"]
+            express toProteins "UCU"
+        ]
     ]
 
-    test.skip "Serine RNA sequence 2" [
-        result: toProteins "UCC"
-        expected: ["Serine"]
-        assert -> expected = result
+    it.skip "Serine RNA sequence 2" [
+        expects.be:'equal? @[
+            express ["Serine"]
+            express toProteins "UCC"
+        ]
     ]
 
-    test.skip "Serine RNA sequence 3" [
-        result: toProteins "UCA"
-        expected: ["Serine"]
-        assert -> expected = result
+    it.skip "Serine RNA sequence 3" [
+        expects.be:'equal? @[
+            express ["Serine"]
+            express toProteins "UCA"
+        ]
     ]
 
-    test.skip "Serine RNA sequence 4" [
-        result: toProteins "UCG"
-        expected: ["Serine"]
-        assert -> expected = result
+    it.skip "Serine RNA sequence 4" [
+        expects.be:'equal? @[
+            express ["Serine"]
+            express toProteins "UCG"
+        ]
     ]
 
-    test.skip "Tyrosine RNA sequence 1" [
-        result: toProteins "UAU"
-        expected: ["Tyrosine"]
-        assert -> expected = result
+    it.skip "Tyrosine RNA sequence 1" [
+        expects.be:'equal? @[
+            express ["Tyrosine"]
+            express toProteins "UAU"
+        ]
     ]
 
-    test.skip "Tyrosine RNA sequence 2" [
-        result: toProteins "UAC"
-        expected: ["Tyrosine"]
-        assert -> expected = result
+    it.skip "Tyrosine RNA sequence 2" [
+        expects.be:'equal? @[
+            express ["Tyrosine"]
+            express toProteins "UAC"
+        ]
     ]
 
-    test.skip "Cysteine RNA sequence 1" [
-        result: toProteins "UGU"
-        expected: ["Cysteine"]
-        assert -> expected = result
+    it.skip "Cysteine RNA sequence 1" [
+        expects.be:'equal? @[
+            express ["Cysteine"]
+            express toProteins "UGU"
+        ]
     ]
 
-    test.skip "Cysteine RNA sequence 2" [
-        result: toProteins "UGC"
-        expected: ["Cysteine"]
-        assert -> expected = result
+    it.skip "Cysteine RNA sequence 2" [
+        expects.be:'equal? @[
+            express ["Cysteine"]
+            express toProteins "UGC"
+        ]
     ]
 
-    test.skip "Tryptophan RNA sequence" [
-        result: toProteins "UGG"
-        expected: ["Tryptophan"]
-        assert -> expected = result
+    it.skip "Tryptophan RNA sequence" [
+        expects.be:'equal? @[
+            express ["Tryptophan"]
+            express toProteins "UGG"
+        ]
     ]
 
-    test.skip "STOP codon RNA sequence 1" [
-        result: toProteins "UAA"
-        expected: []
-        assert -> expected = result
+    it.skip "STOP codon RNA sequence 1" [
+        expects.be:'equal? @[
+            express []
+            express toProteins "UAA"
+
+        ]
     ]
 
-    test.skip "STOP codon RNA sequence 2" [
-        result: toProteins "UAG"
-        expected: []
-        assert -> expected = result
+    it.skip "STOP codon RNA sequence 2" [
+        expects.be:'equal? @[
+            express []
+            express toProteins "UAG"
+        ]
     ]
 
-    test.skip "STOP codon RNA sequence 3" [
-        result: toProteins "UGA"
-        expected: []
-        assert -> expected = result
+    it.skip "STOP codon RNA sequence 3" [
+        expects.be:'equal? @[
+            express []
+            express toProteins "UGA"
+        ]
     ]
 
-    test.skip "Sequence of two protein codons translates into proteins" [
-        result: toProteins "UUUUUU"
-        expected: ["Phenylalanine" "Phenylalanine"]
-        assert -> expected = result
+    it.skip "Sequence of two protein codons translates into proteins" [
+        expects.be:'equal? @[
+            express ["Phenylalanine" "Phenylalanine"]
+            express toProteins "UUUUUU"
+        ]
     ]
 
-    test.skip "Sequence of two different protein codons translates into proteins" [
-        result: toProteins "UUAUUG"
-        expected: ["Leucine" "Leucine"]
-        assert -> expected = result
+    it.skip "Sequence of two different protein codons translates into proteins" [
+        expects.be:'equal? @[
+            express ["Leucine" "Leucine"]
+            express toProteins "UUAUUG"
+        ]
     ]
 
-    test.skip "Translate RNA strand into correct protein list" [
-        result: toProteins "AUGUUUUGG"
-        expected: ["Methionine" "Phenylalanine" "Tryptophan"]
-        assert -> expected = result
+    it.skip "Translate RNA strand into correct protein list" [
+        expects.be:'equal? @[
+            express ["Methionine" "Phenylalanine" "Tryptophan"]
+            express toProteins "AUGUUUUGG"
+        ]
     ]
 
-    test.skip "Translation stops if STOP codon at beginning of sequence" [
-        result: toProteins "UAGUGG"
-        expected: []
-        assert -> expected = result
+    it.skip "Translation stops if STOP codon at beginning of sequence" [
+        expects.be:'equal? @[
+            express []
+            express toProteins "UAGUGG"
+
+        ]
     ]
 
-    test.skip "Translation stops if STOP codon at end of two-codon sequence" [
-        result: toProteins "UGGUAG"
-        expected: ["Tryptophan"]
-        assert -> expected = result
+    it.skip "Translation stops if STOP codon at end of two-codon sequence" [
+        expects.be:'equal? @[
+            express ["Tryptophan"]
+            express toProteins "UGGUAG"
+        ]
     ]
 
-    test.skip "Translation stops if STOP codon at end of three-codon sequence" [
-        result: toProteins "AUGUUUUAA"
-        expected: ["Methionine" "Phenylalanine"]
-        assert -> expected = result
+    it.skip "Translation stops if STOP codon at end of three-codon sequence" [
+        expects.be:'equal? @[
+            express ["Methionine" "Phenylalanine"]
+            express toProteins "AUGUUUUAA"
+        ]
     ]
 
-    test.skip "Translation stops if STOP codon in middle of three-codon sequence" [
-        result: toProteins "UGGUAGUGG"
-        expected: ["Tryptophan"]
-        assert -> expected = result
+    it.skip "Translation stops if STOP codon in middle of three-codon sequence" [
+        expects.be:'equal? @[
+            express ["Tryptophan"]
+            express toProteins "UGGUAGUGG"
+        ]
     ]
 
-    test.skip "Translation stops if STOP codon in middle of six-codon sequence" [
-        result: toProteins "UGGUGUUAUUAAUGGUUU"
-        expected: ["Tryptophan" "Cysteine" "Tyrosine"]
-        assert -> expected = result
+    it.skip "Translation stops if STOP codon in middle of six-codon sequence" [
+        expects.be:'equal? @[
+            express ["Tryptophan" "Cysteine" "Tyrosine"]
+            express toProteins "UGGUGUUAUUAAUGGUUU"
+        ]
     ]
 
-    test.skip "Sequence of two non-STOP codons does not translate to a STOP codon" [
-        result: toProteins "AUGAUG"
-        expected: ["Methionine" "Methionine"]
-        assert -> expected = result
+    it.skip "Sequence of two non-STOP codons does not translate to a STOP codon" [
+        expects.be:'equal? @[
+            express ["Methionine" "Methionine"]
+            express toProteins "AUGAUG"
+        ]
     ]
 
-    test.skip "Non-existing codon can't translate" [
-        result: toProteins "AAA"
-        assert -> null = result
+    it.skip "Non-existing codon can't translate" [
+        expects.be:'null? @[toProteins "AAA"]
     ]
 
-    test.skip "Unknown amino acids, not part of a codon, can't translate" [
-        result: toProteins "XYZ"
-        assert -> null = result
+    it.skip "Unknown amino acids, not part of a codon, can't translate" [
+        expects.be:'null? @[toProteins "XYZ"]
     ]
 
-    test.skip "Incomplete RNA sequence can't translate" [
-        result: toProteins "AUGU"
-        assert -> null = result
+    it.skip "Incomplete RNA sequence can't translate" [
+        expects.be:'null? @[toProteins "AUGU"]
     ]
 
-    test.skip "Incomplete RNA sequence can translate if valid until a STOP codon" [
-        result: toProteins "UUCUUCUAAUGGU"
-        expected: ["Phenylalanine" "Phenylalanine"]
-        assert -> expected = result
+    it.skip "Incomplete RNA sequence can translate if valid until a STOP codon" [
+        expects.be:'equal? @[
+            express ["Phenylalanine" "Phenylalanine"]
+            express toProteins "UUCUUCUAAUGGU"
+        ]
     ]
 ]
