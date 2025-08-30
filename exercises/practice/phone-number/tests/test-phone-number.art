@@ -27,10 +27,6 @@ describe "Phone Number" [
         expects.be:'null? @[clean "123456789"]
     ]
 
-    it.skip "invalid when 9 digits" [
-        expects.be:'null? @[clean "123456789"]
-    ]
-
     it.skip "invalid when 11 digits does not start with a 1" [
         expects.be:'null? @[clean "22234567890"]
     ]
@@ -53,20 +49,8 @@ describe "Phone Number" [
         expects.be:'null? @[clean "321234567890"]
     ]
 
-    it.skip "invalid when more than 11 digits" [
-        expects.be:'null? @[clean "321234567890"]
-    ]
-
-    it.skip "invalid with letters" [
-        expects.be:'null? @[clean "123-abc-7890"]
-    ]
-
     it.skip "invalid with letters" [
         expects.be:'null? @[clean "523-abc-7890"]
-    ]
-
-    it.skip "invalid with punctuations" [
-        expects.be:'null? @[clean "123-@:!-7890"]
     ]
 
     it.skip "invalid with punctuations" [
