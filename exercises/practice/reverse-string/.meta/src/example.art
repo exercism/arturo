@@ -1,5 +1,7 @@
-reverseString: function [str][
-    result: ""
-    loop str 'c -> prepend 'result c
-    result
+reverseString: function [string][
+    if empty? string -> return ""
+
+    fold.seed:"" string [acc chr] [
+        chr ++ acc
+    ]
 ]
