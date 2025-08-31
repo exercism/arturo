@@ -1,156 +1,157 @@
 import.version:2.0.1 {unitt}!
 import {src/robot-simulator}!
 
-suite "Robot Simulator" [
-  suite "Robot Simulator - Rotating clockwise" [
-    test "rotating clockwise changes north to east" [
+describe "Robot Simulator" [
+  describe "Robot Simulator - Rotating clockwise" [
+    it "rotating clockwise changes north to east" [
         r: to :robot @[0 0 "north"]
         do [r\simulate "R"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 0 = x
-        assert -> 0 = y
-        assert -> "east" = direction
+        expects.be:'equal? @[
+            express [0 0 "east"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "rotating clockwise changes east to south" [
+    it.skip "rotating clockwise changes east to south" [
         r: to :robot @[0 0 "east"]
         do [r\simulate "R"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 0 = x
-        assert -> 0 = y
-        assert -> "south" = direction
+        expects.be:'equal? @[
+            express [0 0 "south"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "rotating clockwise changes south to west" [
+    it.skip "rotating clockwise changes south to west" [
         r: to :robot @[0 0 "south"]
         do [r\simulate "R"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 0 = x
-        assert -> 0 = y
-        assert -> "west" = r\direction
+        expects.be:'equal? @[
+            express [0 0 "west"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "rotating clockwise changes west to north" [
+    it.skip "rotating clockwise changes west to north" [
         r: to :robot @[0 0 "west"]
         do [r\simulate "R"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 0 = x
-        assert -> 0 = y
-        assert -> "north" = direction
+        expects.be:'equal? @[
+            express [0 0 "north"]
+            express @[r\x r\y r\direction]
+        ]
     ]
   ]
 
-  suite "Robot Simulator - Rotating counterclockwise" [
-    test.skip "rotating counterclockwise changes north to west" [
+  describe "Robot Simulator - Rotating counterclockwise" [
+    it.skip "rotating counterclockwise changes north to west" [
         r: to :robot @[0 0 "north"]
         do [r\simulate "L"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 0 = x
-        assert -> 0 = y
-        assert -> "west" = direction
+        expects.be:'equal? @[
+            express [0 0 "west"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "rotating counterclockwise changes west to south" [
+    it.skip "rotating counterclockwise changes west to south" [
         r: to :robot @[0 0 "west"]
         do [r\simulate "L"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 0 = x
-        assert -> 0 = y
-        assert -> "south" = direction
+        expects.be:'equal? @[
+            express [0 0 "south"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "rotating counterclockwise changes south to east" [
+    it.skip "rotating counterclockwise changes south to east" [
         r: to :robot @[0 0 "south"]
         do [r\simulate "L"]
         [x y direction]: @[r\x r\y r\direction]
-        assert -> 0 = x
-        assert -> 0 = y
-        assert -> "east" = direction
+        expects.be:'equal? @[
+            express [0 0 "east"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "rotating counterclockwise changes east to north" [
+    it.skip "rotating counterclockwise changes east to north" [
         r: to :robot @[0 0 "east"]
         do [r\simulate "L"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 0 = x
-        assert -> 0 = y
-        assert -> "north" = direction
+        expects.be:'equal? @[
+            express [0 0 "north"]
+            express @[r\x r\y r\direction]
+        ]
     ]
   ]
 
-  suite "Robot Simulator - Moving forward" [
-    test.skip "Moving forward facing north increments Y" [
+  describe "Robot Simulator - Moving forward" [
+    it.skip "Moving forward facing north increments Y" [
         r: to :robot @[0 0 "north"]
         do [r\simulate "A"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 0 = x
-        assert -> 1 = y
-        assert -> "north" = direction
+        expects.be:'equal? @[
+            express [0 1 "north"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "Moving forward facing south decrements Y" [
+    it.skip "Moving forward facing south decrements Y" [
         r: to :robot @[0 0 "south"]
         do [r\simulate "A"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 0 = x
-        assert -> (neg 1) = y
-        assert -> "south" = direction
+        expects.be:'equal? @[
+            express @[0 neg 1 "south"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "Moving forward facing east increments X" [
+    it.skip "Moving forward facing east increments X" [
         r: to :robot @[0 0 "east"]
         do [r\simulate "A"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 1 = x
-        assert -> 0 = y
-        assert -> "east" = direction
+        expects.be:'equal? @[
+            express [1 0 "east"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "Moving forward facing west decrements X" [
+    it.skip "Moving forward facing west decrements X" [
         r: to :robot @[0 0 "west"]
         do [r\simulate "A"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> (neg 1) = x
-        assert -> 0 = y
-        assert -> "west" = direction
+        expects.be:'equal? @[
+            express @[neg 1 0 "west"]
+            express @[r\x r\y r\direction]
+        ]
     ]
   ]
 
-  suite "Robot Simulator - Follow series of instructions" [
-    test.skip "moving east and north from README" [
+  describe "Robot Simulator - Follow series of instructions" [
+    it.skip "moving east and north from README" [
         r: to :robot @[7 3 "north"]
         do [r\simulate "RAALAL"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 9 = x
-        assert -> 4 = y
-        assert -> "west" = direction
+        expects.be:'equal? @[
+            express @[9 4 "west"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "moving west and north" [
+    it.skip "moving west and north" [
         r: to :robot @[0 0 "north"]
         do [r\simulate "LAAARALA"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> (neg 4) = x
-        assert -> 1 = y
-        assert -> "west" = direction
+        expects.be:'equal? @[
+            express @[neg 4 1 "west"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "moving west and south" [
+    it.skip "moving west and south" [
         r: to :robot [2 neg 7 "east"]
         do [r\simulate "RRAAAAALA"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> (neg 3) = x
-        assert -> (neg 8) = y
-        assert -> "south" = direction
+        expects.be:'equal? @[
+            express @[neg 3 neg 8 "south"]
+            express @[r\x r\y r\direction]
+        ]
     ]
 
-    test.skip "moving east and north" [
+    it.skip "moving east and north" [
         r: to :robot [8 4 "south"]
         do [r\simulate "LAAARRRALLLL"]
-        [x y direction]: @[r\x r\y r\direction]
-        assert -> 11 = x
-        assert -> 5 = y
-        assert -> "north" = direction
+        expects.be:'equal? @[
+            express @[11 5 "north"]
+            express @[r\x r\y r\direction]
+        ]
     ]
   ]
 ]
