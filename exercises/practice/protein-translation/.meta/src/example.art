@@ -1,39 +1,29 @@
-toProteins: function [strand][
-    results: []
+; sourced from https://exercism.org/tracks/arturo/exercises/protein-translation/solutions/glennj
 
-    codons: chunk.with:'i strand [] -> i / 3
-    loop codons 'codon [
-        codon: join codon
-        switch key? codonProteins codon
-            -> do [
-                protein: codonProteins\[codon]
-                switch equal? "STOP" protein
-                    -> return results
-                    -> results: append results protein
-               ]
-            -> return null
+toProteins: function [strand][
+    helper: function [str result][
+        if empty? str -> return result
+
+        codon: take str 3
+        if not? key? proteins codon -> return null
+
+        protein: proteins\[codon]
+        switch protein = "STOP"
+            -> return result
+            -> helper (drop.times:3 str) result ++ protein
     ]
 
-    results
+    helper strand []
 ]
 
-codonProteins: #[
-    AUG: "Methionine"
-    UUU: "Phenylalanine"
-    UUC: "Phenylalanine"
-    UUA: "Leucine"
-    UUG: "Leucine"
-    UCU: "Serine"
-    UCC: "Serine"
-    UCA: "Serine"
+proteins: #[
+    AUG: "Methionine"     UAU: "Tyrosine"
+    UUU: "Phenylalanine"  UAC: "Tyrosine"
+    UUC: "Phenylalanine"  UGU: "Cysteine"
+    UUA: "Leucine"        UGC: "Cysteine"
+    UUG: "Leucine"        UGG: "Tryptophan"
+    UCU: "Serine"         UAA: "STOP"
+    UCC: "Serine"         UAG: "STOP"
+    UCA: "Serine"         UGA: "STOP"
     UCG: "Serine"
-    UAU: "Tyrosine"
-    UAC: "Tyrosine"
-    UGU: "Cysteine"
-    UGC: "Cysteine"
-    UGG: "Tryptophan"
-    UAA: "STOP"
-    UAG: "STOP"
-    UGA: "STOP"
 ]
-
