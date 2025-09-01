@@ -1,60 +1,60 @@
 import.version:2.0.1 {unitt}!
 import {src/space-age}!
 
-approximatelyEqual?: function [value :floating target :floating][
-    lower: value - 0.01
-    upper: value + 0.01
-
-    between? target lower upper
-]
+approximatelyEqual?: function [expected result][ 
+    expectedScalar: to :floating expected 
+    resultScalar: to :floating convert result units expected
+    difference: abs sub expectedScalar resultScalar
+    between? difference 0 0.01 
+] 
 
 suite "Space Age" [
     test "age on Earth" [
-        result: to :floating ageOn 'earth 1000000000`second
-        expected: to :floating 31.69`earthYear
-        assert -> approximatelyEqual? result expected
+        result: ageOn 'earth 1000000000`second
+        expected: 31.69`earthYear
+        assert -> approximatelyEqual? expected result
     ]
     
     test.skip "age on Mercury" [
-        result: to :floating ageOn 'mercury 2134835688`second
-        expected: to :floating 280.88`mercuryYear
-        assert -> approximatelyEqual? result expected
+        result: ageOn 'mercury 2134835688`second
+        expected: 280.88`mercuryYear
+        assert -> approximatelyEqual? expected result
     ]
     
     test.skip "age on Venus" [
-        result: to :floating ageOn 'venus 189839836`second
-        expected: to :floating 9.78`venusYear
-        assert -> approximatelyEqual? result expected
+        result: ageOn 'venus 189839836`second
+        expected: 9.78`venusYear
+        assert -> approximatelyEqual? expected result
     ]
     
     test.skip "age on Mars" [
-        result: to :floating ageOn 'mars 2129871239`second
-        expected: to :floating 35.88`marsYear
-        assert -> approximatelyEqual? result expected
+        result: ageOn 'mars 2129871239`second
+        expected: 35.88`marsYear
+        assert -> approximatelyEqual? expected result
     ]
     
     test.skip "age on Jupiter" [
-        result: to :floating ageOn 'jupiter 901876382`second
-        expected: to :floating 2.41`jupiterYear
-        assert -> approximatelyEqual? result expected
+        result: ageOn 'jupiter 901876382`second
+        expected: 2.41`jupiterYear
+        assert -> approximatelyEqual? expected result
     ]
     
     test.skip "age on Saturn" [
-        result: to :floating ageOn 'saturn 2000000000`second
-        expected: to :floating 2.15`saturnYear
-        assert -> approximatelyEqual? result expected
+        result: ageOn 'saturn 2000000000`second
+        expected: 2.15`saturnYear
+        assert -> approximatelyEqual? expected result
     ]
     
     test.skip "age on Uranus" [
-        result: to :floating ageOn 'uranus 1210123456`second
-        expected: to :floating 0.46`uranusYear
-        assert -> approximatelyEqual? result expected
+        result: ageOn 'uranus 1210123456`second
+        expected: 0.46`uranusYear
+        assert -> approximatelyEqual? expected result
     ]
     
     test.skip "age on Neptune" [
-        result: to :floating ageOn 'neptune 1821023456`second
-        expected: to :floating 0.35`neptuneYear
-        assert -> approximatelyEqual? result expected
+        result: ageOn 'neptune 1821023456`second
+        expected: 0.35`neptuneYear
+        assert -> approximatelyEqual? expected result
     ]
     
     test.skip "invalid planet returns null" [
