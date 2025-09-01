@@ -10,6 +10,7 @@ scores: #[
 ]
 
 score: function [word][
+    if empty? word -> return 0
     value: 0
     loop lower word 'char [
         value: value + scores\[char]
