@@ -1,59 +1,48 @@
 import.version:2.0.1 {unitt}!
 import {src/scrabble-score}!
 
-suite "Scrabble Score" [
-    test "lowercase letter" [
-        result: score "a"
-        assert -> 1 = result
+describe "Scrabble Score" [
+    it "lowercase letter" [
+        expects.be:'equal? @[1 score "a"]
     ]
 
-    test.skip "uppercase letter" [
-        result: score "A"
-        assert -> 1 = result
+    it.skip "uppercase letter" [
+        expects.be:'equal? @[1 score "A"]
     ]
 
-    test.skip "valuable letter" [
-        result: score "f"
-        assert -> 4 = result
+    it.skip "valuable letter" [
+        expects.be:'equal? @[4 score "f"]
     ]
 
-    test.skip "short word" [
-        result: score "at"
-        assert -> 2 = result
+    it.skip "short word" [
+        expects.be:'equal? @[2 score "at"]
     ]
 
-    test.skip "short, valuable word" [
-        result: score "zoo"
-        assert -> 12 = result
+    it.skip "short, valuable word" [
+        expects.be:'equal? @[12 score "zoo"]
     ]
 
-    test.skip "medium word" [
-        result: score "street"
-        assert -> 6 = result
+    it.skip "medium word" [
+        expects.be:'equal? @[6 score "street"]
     ]
 
-    test.skip "medium, valuable word" [
-        result: score "quirky"
-        assert -> 22 = result
+    it.skip "medium, valuable word" [
+        expects.be:'equal? @[22 score "quirky"]
     ]
 
-    test.skip "long, mixed-case word" [
-        result: score "OxyphenButazone"
-        assert -> 41 = result
+    it.skip "long, mixed-case word" [
+        expects.be:'equal? @[41 score "OxyphenButazone"]
     ]
 
-    test.skip "english-like word" [
-        result: score "pinata"
-        assert -> 8 = result
+    it.skip "english-like word" [
+        expects.be:'equal? @[8 score "pinata"]
     ]
 
-    test.skip "empty input" [
-        result: score ""
-        assert -> 0 = result
+    it.skip "empty input" [
+        expects.be:'equal? @[0 score ""]
     ]
 
-    test.skip "entire alphabet available" [
-        result: score "abcdefghijklmnopqrstuvwxyz"
-        assert -> 87 = result
+    it.skip "entire alphabet available" [
+        expects.be:'equal? @[87 score "abcdefghijklmnopqrstuvwxyz"]
     ]
 ]
