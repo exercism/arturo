@@ -1,144 +1,200 @@
 import.version:2.0.1 {unitt}!
 import {src/roman-numerals}!
 
-suite "Roman Numerals" [
-    test "1 is I" [
-        result: stringify.roman 1
-        assert -> "I" = result
+describe "Roman Numerals" [
+    it "1 is I" [
+        expects.be:'equal? @[
+            express "I"
+            express stringify.roman 1
+        ]
     ]
 
-    test.skip "2 is II" [
-        result: stringify.roman 2
-        assert -> "II" = result
+    it.skip "2 is II" [
+        expects.be:'equal? @[
+            express "II"
+            express stringify.roman 2
+        ]
     ]
 
-    test.skip "3 is III" [
-        result: stringify.roman 3
-        assert -> "III" = result
+    it.skip "3 is III" [
+        expects.be:'equal? @[
+            express "III"
+            express stringify.roman 3
+        ]
     ]
 
-    test.skip "4 is IV" [
-        result: stringify.roman 4
-        assert -> "IV" = result
+    it.skip "4 is IV" [
+        expects.be:'equal? @[
+            express "IV"
+            express stringify.roman 4
+        ]
     ]
 
-    test.skip "5 is V" [
-        result: stringify.roman 5
-        assert -> "V" = result
+    it.skip "5 is V" [
+        expects.be:'equal? @[
+            express "V"
+            express stringify.roman 5
+        ]
     ]
 
-    test.skip "6 is VI" [
-        result: stringify.roman 6
-        assert -> "VI" = result
+    it.skip "6 is VI" [
+        expects.be:'equal? @[
+            express "VI"
+            express stringify.roman 6
+        ]
     ]
 
-    test.skip "9 is IX" [
-        result: stringify.roman 9
-        assert -> "IX" = result
+    it.skip "9 is IX" [
+        expects.be:'equal? @[
+            express "IX"
+            express stringify.roman 9
+        ]
     ]
 
-    test.skip "27 is XXVII" [
-        result: stringify.roman 27
-        assert -> "XXVII" = result
+    it.skip "27 is XXVII" [
+        expects.be:'equal? @[
+            express "XXVII"
+            express stringify.roman 27
+        ]
     ]
 
-    test.skip "48 is XLVIII" [
-        result: stringify.roman 48
-        assert -> "XLVIII" = result
+    it.skip "48 is XLVIII" [
+        expects.be:'equal? @[
+            express "XLVIII"
+            express stringify.roman 48
+        ]
     ]
 
-    test.skip "49 is XLIX" [
-        result: stringify.roman 49
-        assert -> "XLIX" = result
+    it.skip "49 is XLIX" [
+        expects.be:'equal? @[
+            express "XLIX"
+            express stringify.roman 49
+        ]
     ]
 
-    test.skip "59 is LIX" [
-        result: stringify.roman 59
-        assert -> "LIX" = result
+    it.skip "59 is LIX" [
+        expects.be:'equal? @[
+            express "LIX"
+            express stringify.roman 59
+        ]
     ]
 
-    test.skip "93 is XCIII" [
-        result: stringify.roman 93
-        assert -> "XCIII" = result
+    it.skip "93 is XCIII" [
+        expects.be:'equal? @[
+            express "XCIII"
+            express stringify.roman 93
+        ]
     ]
 
-    test.skip "141 is CXLI" [
-        result: stringify.roman 141
-        assert -> "CXLI" = result
+    it.skip "141 is CXLI" [
+        expects.be:'equal? @[
+            express "CXLI"
+            express stringify.roman 141
+        ]
     ]
 
-    test.skip "163 is CLXIII" [
-        result: stringify.roman 163
-        assert -> "CLXIII" = result
+    it.skip "163 is CLXIII" [
+        expects.be:'equal? @[
+            express "CLXIII"
+            express stringify.roman 163
+        ]
     ]
 
-    test.skip "402 is CDII" [
-        result: stringify.roman 402
-        assert -> "CDII" = result
+    it.skip "402 is CDII" [
+        expects.be:'equal? @[
+            express "CDII"
+            express stringify.roman 402
+        ]
     ]
 
-    test.skip "575 is DLXXV" [
-        result: stringify.roman 575
-        assert -> "DLXXV" = result
+    it.skip "575 is DLXXV" [
+        expects.be:'equal? @[
+            express "DLXXV"
+            express stringify.roman 575
+        ]
     ]
 
-    test.skip "911 is CMXI" [
-        result: stringify.roman 911
-        assert -> "CMXI" = result
+    it.skip "911 is CMXI" [
+        expects.be:'equal? @[
+            express "CMXI"
+            express stringify.roman 911
+        ]
     ]
 
-    test.skip "1024 is MXXIV" [
-        result: stringify.roman 1024
-        assert -> "MXXIV" = result
+    it.skip "1024 is MXXIV" [
+        expects.be:'equal? @[
+            express "MXXIV"
+            express stringify.roman 1024
+        ]
     ]
 
-    test.skip "3000 is MMM" [
-        result: stringify.roman 3000
-        assert -> "MMM" = result
+    it.skip "3000 is MMM" [
+        expects.be:'equal? @[
+            express "MMM"
+            express stringify.roman 3000
+        ]
     ]
 
-    test.skip "16 is XVI" [
-        result: stringify.roman 16
-        assert -> "XVI" = result
+    it.skip "16 is XVI" [
+        expects.be:'equal? @[
+            express "XVI"
+            express stringify.roman 16
+        ]
     ]
 
-    test.skip "66 is LXVI" [
-        result: stringify.roman 66
-        assert -> "LXVI" = result
+    it.skip "66 is LXVI" [
+        expects.be:'equal? @[
+            express "LXVI"
+            express stringify.roman 66
+        ]
     ]
 
-    test.skip "166 is CLXVI" [
-        result: stringify.roman 166
-        assert -> "CLXVI" = result
+    it.skip "166 is CLXVI" [
+        expects.be:'equal? @[
+            express "CLXVI"
+            express stringify.roman 166
+        ]
     ]
 
-    test.skip "666 is DCLXVI" [
-        result: stringify.roman 666
-        assert -> "DCLXVI" = result
+    it.skip "666 is DCLXVI" [
+        expects.be:'equal? @[
+            express "DCLXVI"
+            express stringify.roman 666
+        ]
     ]
 
-    test.skip "1666 is MDCLXVI" [
-        result: stringify.roman 1666
-        assert -> "MDCLXVI" = result
+    it.skip "1666 is MDCLXVI" [
+        expects.be:'equal? @[
+            express "MDCLXVI"
+            express stringify.roman 1666
+        ]
     ]
 
-    test.skip "3001 is MMMI" [
-        result: stringify.roman 3001
-        assert -> "MMMI" = result
+    it.skip "3001 is MMMI" [
+        expects.be:'equal? @[
+            express "MMMI"
+            express stringify.roman 3001
+        ]
     ]
 
-    test.skip "3888 is MMMDCCCLXXXVIII" [
-        result: stringify.roman 3888
-        assert -> "MMMDCCCLXXXVIII" = result
+    it.skip "3888 is MMMDCCCLXXXVIII" [
+        expects.be:'equal? @[
+            express "MMMDCCCLXXXVIII"
+            express stringify.roman 3888
+        ]
     ]
 
-    test.skip "3999 is MMMCMXCIX" [
-        result: stringify.roman 3999
-        assert -> "MMMCMXCIX" = result
+    it.skip "3999 is MMMCMXCIX" [
+        expects.be:'equal? @[
+            express "MMMCMXCIX"
+            express stringify.roman 3999
+        ]
     ]
 
-    test.skip "return unchanged number if no roman attribute set" [
-        result: stringify 3999
-        assert -> "3999" = result
+    it.skip "return unchanged number if no roman attribute set" [
+        expects.be:'equal? @[
+            express "3999"
+            express stringify 3999
+        ]
     ]
 ]
