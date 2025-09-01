@@ -1,9 +1,7 @@
+; sourced from https://exercism.org/tracks/arturo/exercises/sum-of-multiples/solutions/glennj
+
 sumOfMultiples: function [factors limit][
-    multiples: []
-    factors: select filter factors => zero? => [& < limit]
-
-    loop factors 'factor ->
-        loop factor..limit-1 .step:factor 'i -> 'multiples ++ i
-
-    sum unique multiples
+    fs: filter factors => zero?
+    hasfactor?: $[n] -> some? fs [f][zero? mod n f]
+    sum select 1..(limit - 1) => hasfactor?
 ]
