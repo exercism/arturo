@@ -1,6 +1,6 @@
 tally: function [input][
     fmt: function [team][
-        join.with:" | " @[
+        join.with:" ❙ " @[
             (pad.right team\name 30)
             (pad to :string team\mp 2)
             (pad to :string team\w 2)
