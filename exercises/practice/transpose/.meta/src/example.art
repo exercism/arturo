@@ -1,7 +1,7 @@
 transpose: function [data][
     if empty? data -> return ""
     
-    lines: split.lines lines
+    lines: split.lines data
     maxLength: max map lines 'line -> size line
     paddedLines: map lines 'line -> pad.right line maxLength
 
