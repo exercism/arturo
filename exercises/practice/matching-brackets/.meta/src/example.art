@@ -1,16 +1,14 @@
-paired?: function [str][
-    expected: []
+; sourced from https://exercism.org/tracks/arturo/exercises/matching-brackets/solutions/factor3
 
-    loop str [c][
-        switch c = '[' -> append 'expected ']' ->
-        switch c = '(' -> append 'expected ')' ->
-        switch c = '{' -> append 'expected '}' -> 
-        switch in? c [']' ')' '}'] [
-            if c <> last expected -> return false
-            chop 'expected
-         ]
-        -> []
+paired?: $[str][
+    if empty? str -> return true
+    stack: []
+    loop join match str {/[[\]{}()]/} 'ch [
+        switch ch ∈ "([{" [
+            'stack ++ ch
+        ][
+            if or? [empty? stack] [¬(sub do to [:integer] @[pop 'stack ch]) ∈ [1 2]] -> return false
+        ]
     ]
-
-    empty? expected
+    empty? stack
 ]
