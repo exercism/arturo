@@ -1,49 +1,76 @@
 import.version:2.0.1 {unitt}!
 import {src/acronym}!
 
-suite "Acronym" [
-    test "basic" [
-        result: abbreviate "Portable Network Graphics"
-        assert -> "PNG" = result
+describe "Acronym" [
+    it "basic" [
+        phrase: "Portable Network Graphics"
+        expects.be: 'equal? @[
+            express "PNG"
+            express abbreviate phrase 
+        ]
     ]
 
-    test.skip "lowercase words" [
-        result: abbreviate "Ruby on Rails"
-        assert -> "ROR" = result
+    it.skip "lowercase words" [
+        phrase: "Ruby on Rails"
+        expects.be: 'equal? @[
+            express "ROR"
+            express abbreviate phrase 
+        ]
     ]
 
-    test.skip "punctuation" [
-        result: abbreviate "First In, First Out"
-        assert -> "FIFO" = result
+    it.skip "punctuation" [
+        phrase: "First In, First Out"
+        expects.be: 'equal? @[
+            express "FIFO"
+            express abbreviate phrase 
+        ]
     ]
 
-    test.skip "all uppercase word" [
-        result: abbreviate "GNU Image Manipulation Program"
-        assert -> "GIMP" = result
+    it.skip "all uppercase word" [
+        phrase: "GNU Image Manipulation Program"
+        expects.be: 'equal? @[
+            express "GIMP"
+            express abbreviate phrase 
+        ]
     ]
 
-    test.skip "punctuation without whitespace" [
-        result: abbreviate "Complementary metal-oxide semiconductor"
-        assert -> "CMOS" = result
+    it.skip "punctuation without whitespace" [
+        phrase: "Complementary metal-oxide semiconductor"
+        expects.be: 'equal? @[
+            express "CMOS"
+            express abbreviate phrase 
+        ]
     ]
 
-    test.skip "very long abbreviation" [
-        result: abbreviate "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
-        assert -> "ROTFLSHTMDCOALM" = result
+    it.skip "very long abbreviation" [
+        phrase: "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
+        expects.be: 'equal? @[
+            express "ROTFLSHTMDCOALM"
+            express abbreviate phrase 
+        ]
     ]
 
-    test.skip "consecutive delimiters" [
-        result: abbreviate "Something - I made up from thin air"
-        assert -> "SIMUFTA" = result
+    it.skip "consecutive delimiters" [
+        phrase: "Something - I made up from thin air"
+        expects.be: 'equal? @[
+            express "SIMUFTA"
+            express abbreviate phrase 
+        ]
     ]
 
-    test.skip "apostrophes" [
-        result: abbreviate "Halley\'s Comet"
-        assert -> "HC" = result
+    it.skip "apostrophes" [
+        phrase: "Halley\'s Comet"
+        expects.be: 'equal? @[
+            express "HC"
+            express abbreviate phrase 
+        ]
     ]
 
-    test.skip "underscore emphasis" [
-        result: abbreviate "The Road _Not_ Taken"
-        assert -> "TRNT" = result
+    it.skip "underscore emphasis" [
+        phrase: "The Road _Not_ Taken"
+        expects.be: 'equal? @[
+            express "TRNT"
+            express abbreviate phrase 
+        ]
     ]
 ]

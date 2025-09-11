@@ -1,129 +1,179 @@
 import.version:2.0.1 {unitt}!
 import {src/bob}!
 
-suite "Bob" [
-    test "stating something" [
-        reply: response "Tom-ay-to, tom-aaaah-to."
-        assert -> "Whatever." = reply
+describe "Bob" [
+    it "stating something" [
+        expects.be:'equal? @[
+            express "Whatever."
+            express response "Tom-ay-to, tom-aaaah-to."
+        ]
     ]
 
-    test.skip "shouting" [
-        reply: response "WATCH OUT!"
-        assert -> "Whoa, chill out!" = reply
+    it.skip "shouting" [
+        expects.be:'equal? @[
+            express "Whoa, chill out!"
+            express response "WATCH OUT!"
+        ]
     ]
 
-    test.skip "shouting gibberish" [
-        reply: response "FCECDFCAAB"
-        assert -> "Whoa, chill out!" = reply
+    it.skip "shouting gibberish" [
+        expects.be:'equal? @[
+            express "Whoa, chill out!"
+            express response "FCECDFCAAB"
+        ]
     ]
 
-    test.skip "asking a question" [
-        reply: response "Does this cryogenic chamber make me look fat?"
-        assert -> "Sure." = reply
+    it.skip "asking a question" [
+        expects.be:'equal? @[
+            express "Sure."
+            express response "Does this cryogenic chamber make me look fat?"
+        ]
     ]
 
-    test.skip "asking a numeric question" [
-        reply: response "You are, what, like 15?"
-        assert -> "Sure." = reply
+    it.skip "asking a numeric question" [
+        expects.be:'equal? @[
+            express "Sure."
+            express response "You are, what, like 15?"
+        ]
     ]
 
-    test.skip "asking gibberish" [
-        reply: response "fffbbcbeab?"
-        assert -> "Sure." = reply
+    it.skip "asking gibberish" [
+        expects.be:'equal? @[
+            express "Sure."
+            express response "fffbbcbeab?"
+        ]
     ]
 
-    test.skip "talking forcefully" [
-        reply: response "Let's go make out behind the gym!"
-        assert -> "Whatever." = reply
+    it.skip "talking forcefully" [
+        expects.be:'equal? @[
+            express "Whatever."
+            express response "Let's go make out behind the gym!"
+        ]
     ]
 
-    test.skip "using acronyms in regular speech" [
-        reply: response "It's OK if you don't want to go to the DMV."
-        assert -> "Whatever." = reply
+    it.skip "using acronyms in regular speech" [
+        expects.be:'equal? @[
+            express "Whatever."
+            express response "It's OK if you don't want to go to the DMV."
+        ]
     ]
 
-    test.skip "forceful question" [
-        reply: response "WHAT THE HELL WERE YOU THINKING?"
-        assert -> "Calm down, I know what I'm doing!" = reply
+    it.skip "forceful question" [
+        expects.be:'equal? @[
+            express "Calm down, I know what I'm doing!"
+            express response "WHAT THE HELL WERE YOU THINKING?"
+        ]
     ]
 
-    test.skip "shouting numbers" [
-        reply: response "1, 2, 3 GO!"
-        assert -> "Whoa, chill out!" = reply
+    it.skip "shouting numbers" [
+        expects.be:'equal? @[
+            express "Whoa, chill out!"
+            express response "1, 2, 3 GO!"
+        ]
     ]
 
-    test.skip "no letters" [
-        reply: response "1, 2, 3"
-        assert -> "Whatever." = reply
+    it.skip "no letters" [
+        expects.be:'equal? @[
+            express "Whatever."
+            express response "1, 2, 3"
+        ]
     ]
 
-    test.skip "question with no letters" [
-        reply: response "4?"
-        assert -> "Sure." = reply
+    it.skip "question with no letters" [
+        expects.be:'equal? @[
+            express "Sure."
+            express response "4?"
+        ]
     ]
 
-    test.skip "shouting with special characters" [
-        reply: response "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"
-        assert -> "Whoa, chill out!" = reply
+    it.skip "shouting with special characters" [
+        expects.be:'equal? @[
+            express "Whoa, chill out!"
+            express response "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"
+        ]
     ]
 
-    test.skip "shouting with no exclamation mark" [
-        reply: response "I HATE YOU"
-        assert -> "Whoa, chill out!" = reply
+    it.skip "shouting with no exclamation mark" [
+        expects.be:'equal? @[
+            express "Whoa, chill out!"
+            express response "I HATE YOU"
+        ]
     ]
 
-    test.skip "statement containing question mark" [
-        reply: response "Ending with ? means a question."
-        assert -> "Whatever." = reply
+    it.skip "statement containing question mark" [
+        expects.be:'equal? @[
+            express "Whatever."
+            express response "Ending with ? means a question."
+        ]
     ]
 
-    test.skip "non-letters with question" [
-        reply: response ":) ?"
-        assert -> "Sure." = reply
+    it.skip "non-letters with question" [
+        expects.be:'equal? @[
+            express "Sure."
+            express response ":) ?"
+        ]
     ]
 
-    test.skip "prattling on" [
-        reply: response "Wait! Hang on. Are you going to be OK?"
-        assert -> "Sure." = reply
+    it.skip "prattling on" [
+        expects.be:'equal? @[
+            express "Sure."
+            express response "Wait! Hang on. Are you going to be OK?"
+        ]
     ]
 
-    test.skip "silence" [
-        reply: response ""
-        assert -> "Fine. Be that way!" = reply
+    it.skip "silence" [
+        expects.be:'equal? @[
+            express "Fine. Be that way!"
+            express response ""
+        ]
     ]
 
-    test.skip "prolonged silence" [
-        reply: response "    "
-        assert -> "Fine. Be that way!" = reply
+    it.skip "prolonged silence" [
+        expects.be:'equal? @[
+            express "Fine. Be that way!"
+            express response "    "
+        ]
     ]
 
-    test.skip "alternate silence" [
-        reply: response "\t\t\t\t\t\t\t\t\t\t"
-        assert -> "Fine. Be that way!" = reply
+    it.skip "alternate silence" [
+        expects.be:'equal? @[
+            express "Fine. Be that way!"
+            express response "\t\t\t\t\t\t\t\t\t\t"
+        ]
     ]
 
-    test.skip "starting with whitespace" [
-        reply: response "         hmmmmmmm..."
-        assert -> "Whatever." = reply
+    it.skip "starting with whitespace" [
+        expects.be:'equal? @[
+            express "Whatever."
+            express response "         hmmmmmmm..."
+        ]
     ]
 
-    test.skip "ending with whitespace" [
-        reply: response "Okay if like my  spacebar  quite a bit?   "
-        assert -> "Sure." = reply
+    it.skip "ending with whitespace" [
+        expects.be:'equal? @[
+            express "Sure."
+            express response "Okay if like my  spacebar  quite a bit?   "
+        ]
     ]
 
-    test.skip "other whitespace" [
-        reply: response "\n\r \t"
-        assert -> "Fine. Be that way!" = reply
+    it.skip "other whitespace" [
+        expects.be:'equal? @[
+            express "Fine. Be that way!"
+            express response "\n\r \t"
+        ]
     ]
 
-    test.skip "non-question ending with whitespace" [
-        reply: response "This is a statement ending with whitespace      "
-        assert -> "Whatever." = reply
+    it.skip "non-question ending with whitespace" [
+        expects.be:'equal? @[
+            express "Whatever."
+            express response "This is a statement ending with whitespace      "
+        ]
     ]
 
-    test.skip "multiple line question" [
-        reply: response "\nDoes this cryogenic chamber make\n me look fat?"
-        assert -> "Sure." = reply
+    it.skip "multiple line question" [
+        expects.be:'equal? @[
+            express "Sure."
+            express response "\nDoes this cryogenic chamber make\n me look fat?"
+        ]
     ]
 ]

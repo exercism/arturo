@@ -1,148 +1,132 @@
 import.version:2.0.1 {unitt}!
 import {src/anagram}!
 
-suite "Anagram" [
-    test "no matches" [
-        subject: "diaper"
-        candidates: ["hello" "world" "zombies" "pants"]
-        results: findAnagrams subject candidates
-        expected: []
-        assert -> expected = results
+describe "Anagram" [
+    it "no matches" [
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "diaper" ["hello" "world" "zombies" "pants"]
+        ]
     ]
 
-    test.skip "detects two anagrams" [
-        subject: "solemn"
-        candidates: ["lemons" "cherry" "melons"]
-        results: findAnagrams subject candidates
-        expected: ["lemons" "melons"]
-        assert -> expected = results
+    it.skip "detects two anagrams" [
+        expects.be:'equal? @[
+            express ["lemons" "melons"]
+            express findAnagrams "solemn" ["lemons" "cherry" "melons"]
+        ]
     ]
 
-    test.skip "does not detect anagram subsets" [
-        subject: "good"
-        candidates: ["dog" "goody"]
-        results: findAnagrams subject candidates
-        expected: []
-        assert -> expected = results
+    it.skip "does not detect anagram subsets" [
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "good" ["dog" "goody"]
+        ]
     ]
 
-    test.skip "detects anagram" [
-        subject: "listen"
-        candidates: ["enlists" "google" "inlets" "banana"]
-        results: findAnagrams subject candidates
-        expected: ["inlets"]
-        assert -> expected = results
+    it.skip "detects anagram" [
+        expects.be:'equal? @[
+            express ["inlets"]
+            express findAnagrams "listen" ["enlists" "google" "inlets" "banana"]
+        ]
     ]
     
-    test.skip "detects three anagrams" [
-        subject: "allergy"
-        candidates: ["gallery" "ballerina" "regally" "clergy" "largely" "leading"]
-        results: findAnagrams subject candidates
-        expected: ["gallery" "regally" "largely"]
-        assert -> expected = results
+    it.skip "detects three anagrams" [
+        expects.be:'equal? @[
+            express ["gallery" "regally" "largely"]
+            express findAnagrams "allergy" ["gallery" "ballerina"
+                                            "regally" "clergy" 
+                                            "largely" "leading"]
+        ]
     ]
 
-    test.skip "detects multiple anagrams with different case" [
-        subject: "nose"
-        candidates: ["Eons" "ONES"]
-        results: findAnagrams subject candidates
-        expected: ["Eons" "ONES"]
-        assert -> expected = results
+    it.skip "detects multiple anagrams with different case" [
+        expects.be:'equal? @[
+            express ["Eons" "ONES"]
+            express findAnagrams "nose" ["Eons" "ONES"]
+        ]
     ]
 
-    test.skip "does not detect non-anagrams with identical checksum" [
-        subject: "mass"
-        candidates: ["last"]
-        results: findAnagrams subject candidates
-        expected: []
-        assert -> expected = results
+    it.skip "does not detect non-anagrams with identical checksum" [
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "mass" ["last"]
+        ]
     ]
 
-    test.skip "detects anagrams case-insensitively" [
-        subject: "Orchestra"
-        candidates: ["cashregister" "Carthorse" "radishes"]
-        results: findAnagrams subject candidates
-        expected: ["Carthorse"]
-        assert -> expected = results
+    it.skip "detects anagrams case-insensitively" [
+        expects.be:'equal? @[
+            express ["Carthorse"]
+            express findAnagrams "Orchestra" ["cashregister" "Carthorse" "radishes"]
+        ]
     ]
 
-    test.skip "detects anagrams using case-insensitive subject" [
-        subject: "Orchestra"
-        candidates: ["cashregister" "carthorse" "radishes"]
-        results: findAnagrams subject candidates
-        expected: ["carthorse"]
-        assert -> expected = results
+    it.skip "detects anagrams using case-insensitive subject" [
+        expects.be:'equal? @[
+            express ["carthorse"]
+            express findAnagrams "Orchestra" ["cashregister" "carthorse" "radishes"]
+        ]
     ]
 
-    test.skip "detects anagrams using case-insensitive possible matches" [
-        subject: "orchestra"
-        candidates: ["cashregister" "Carthorse" "radishes"]
-        results: findAnagrams subject candidates
-        expected: ["Carthorse"]
-        assert -> expected = results
+    it.skip "detects anagrams using case-insensitive possible matches" [
+        expects.be:'equal? @[
+            express ["Carthorse"]
+            express findAnagrams "orchestra" ["cashregister" "Carthorse" "radishes"]
+        ]
     ]
 
-    test.skip "does not detect an anagram if the original word is repeated" [
-        subject: "go"
-        candidates: ["goGoGO"]
-        results: findAnagrams subject candidates
-        expected: []
-        assert -> expected = results
+    it.skip "does not detect an anagram if the original word is repeated" [
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "go" ["goGoGO"]
+        ]
     ]
 
-    test.skip "anagrams must use all letters exactly once" [
-        subject: "tapper"
-        candidates: ["patter"]
-        results: findAnagrams subject candidates
-        expected: []
-        assert -> expected = results
+    it.skip "anagrams must use all letters exactly once" [
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "tapper" ["patter"]
+        ]
     ]
 
-    test.skip "words are not anagrams of themselves" [
-        subject: "BANANA"
-        candidates: ["BANANA"]
-        results: findAnagrams subject candidates
-        expected: []
-        assert -> expected = results
+    it.skip "words are not anagrams of themselves" [
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "BANANA" ["BANANA"]
+        ]
     ]
 
-    test.skip "words are not anagrams of themselves even if letter case is partially different" [
-        subject: "BANANA"
-        candidates: ["Banana"]
-        results: findAnagrams subject candidates
-        expected: []
-        assert -> expected = results
+    it.skip "words are not anagrams of themselves even if letter case is partially different" [
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "BANANA" ["Banana"]
+        ]
     ]
 
-    test.skip "words are not anagrams of themselves even if letter case is completely different" [
-        subject: "BANANA"
-        candidates: ["banana"]
-        results: findAnagrams subject candidates
-        expected: []
-        assert -> expected = results
+    it.skip "words are not anagrams of themselves even if letter case is completely different" [
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "BANANA" ["banana"]
+        ]
     ]
 
-    test.skip "words other than themselves can be anagrams" [
-        subject: "LISTEN"
-        candidates: ["Listen" "Silent" "LISTEN"]
-        results: findAnagrams subject candidates
-        expected: ["Silent"]
-        assert -> expected = results
+    it.skip "words other than themselves can be anagrams" [
+        expects.be:'equal? @[
+            express ["Silent"]
+            express findAnagrams "LISTEN" ["Listen" "Silent" "LISTEN"]
+        ]
     ]
 
-    test.skip "handles case of greek letters" [
-        subject: "ΑΒΓ"
-        candidates: ["ΒΓΑ" "ΒΓΔ" "γβα" "αβγ"]
-        results: findAnagrams subject candidates
-        expected: ["ΒΓΑ" "γβα"]
-        assert -> expected = results
+    it.skip "handles case of greek letters" [
+        expects.be:'equal? @[
+            ["ΒΓΑ" "γβα"]
+            findAnagrams "ΑΒΓ" ["ΒΓΑ" "ΒΓΔ" "γβα" "αβγ"]
+        ]
     ]
 
-    test.skip "different characters may have the same bytes" [
-        subject: "a⬂"
-        candidates: ["€a"]
-        results: findAnagrams subject candidates
-        expected: []
-        assert -> expected = results
+    it.skip "different characters may have the same bytes" [
+        expects.be:'equal? @[
+            express []
+            express findAnagrams "a⬂" ["€a"]
+        ]
     ]
 ]
