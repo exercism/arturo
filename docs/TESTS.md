@@ -1,59 +1,31 @@
 # Tests
 
-This track uses the [Unitt unit-testing package][unitt].
-If not already installed, Arturo will download this package automatically at runtime.
+The Arturo track uses the [Unitt unit-testing package][unitt] for all exercise tests.
+This package provides a testng framework supporting both modern RSpec-inspired syntax and legacy XUnit-inspired syntax.
+Arturo will automatically download and install this package when you run the tests, requiring minimal setup.
 
-To run tests, navigate to the exercise folder in your terminal and run either `arturo tester.art` or `exercism test`.
+To begin running tests, you can use `arturo tester.art` or `exercism test` within the exercise folder.
+Only the first test will be run and reported back to you.
+Once that test passes, unskip the next one and run the tests again until each test passes.
+For both the RSpec and XUnit setups, that's as simple as removing `.skip` from `it.skip` or `test.skip` respectively.
+Once all tests pass, submit your solution, but be aware that the test runner runs all tests, even the skipped ones.
 
-Each exercise folder contains three key files:
-    `src/<exercise-name>.art` contains the solution to be tested.
-    `tests/test-<exercise-name>.art` contains the exercise tests 
-    `tester.art` is the testing entry-point which runs and reports the tests inside `tests/test-<exercise-name>.art`.
+## Getting Started
 
+Your downloaded exercise folder will have some files, but these are the three essential ones.
 
-## Test Structure
-
-
-`tests/test-<exercise-name>.art` contains the test cases for the exercise.
-These tests are organized into one or more test suites.
-Each test suite is defined with the `suite` word and contains one or more test cases defined with the `test` word.
-After the first test case, all test cases are initially skipped with the `skip` attribute.
-Replace `test.skip` with `test`, removing the `skip` attribute, for the test case you want to unskip.
-
-Withn each test case, there will be a descriptive message which is reported when the test case is run.
-There will also be one or more assertions comparing an expected value (on the left) to a value returned by your code (on the right).
-
-For example, the following code is a reduced test suite for the Leap exercise.
-
-```arturo
-import {unitt}!
-import {src/leap}!
-
-suite "Leap" [
-    test "a year not divisible by 4 is a common year" [
-        result: isLeap? 2015
-        assert -> false = result
-    ]
-
-    test.skip "a year divisible by 2 and not divisible by 4 is a common year" [
-        result: isLeap? 1970
-        assert -> false = result
-    ]
-
-    test.skip "a year divisible by 4 and not divisible by 100 is a leap year" [
-        result: isLeap? 1996
-        assert -> true = result
-    ]
-]
+```
+leap/
+├── src/leap.art         # Your solution file
+├── tests/test-leap.art  # Test cases for the exercise
+└── tester.art           # Test runner entry point
 ```
 
-After both `unitt` and your Leap solution is imported, Arturo evaluates the "Leap" suite, encountering three tests.
-Each test has a description and a message, but only the first one will be run.
+Running `arturo tester.art` will set up Unitt and then run the tests inside `tests/test-leap.art`.
+The tests will import `src/leap.art` which contains your solution and tben make a series of assertions about what your solution should return for specific inputs.
 
-## Test Output
 
-Looking at the Leap exercise, let's see what the output of running the test suite is.
-Let's use the following solution as a starting point.
+## Solution File
 
 ```arturo
 isLeap?: function [year][
@@ -61,85 +33,51 @@ isLeap?: function [year][
 ]
 ```
 
-If we run the tests now, Arturo will panic while evaluating the first test.
-Since it was unsuccessful in evaluating the first test, it will not continue to evaluate the other tests.
-It will also report 0 assertions encountered due to this issue, looking something like this:
-
-```plaintext
-===== tests\test-leap.art =====
-
-Suite: Leap 
+When starting an exercise, your solution file comes with a template containing the basic structure of what's expected.
+In this example from `Leap`, the file contains a barebones definition of the expected `isLeap?` function and notably a `panic` that stops test execution.
+Remove the `panic` line and then begin coding your implementation for `isLeap?`.
 
 
-══╡ Program Error ╞═════════════════════════════════════════════════ <script> ══
-
-  please implement the isLeap? function
-
-
-
-===== Statistics =====
-
-⏏️    TOTAL: 0 assertions
-✅  PASSED: 0 assertions
-⏩ SKIPPED: 0 assertions
-❌  FAILED: 0 assertions
-
-===== ========== =====
-```
-
-
-At this point, we need to remove the panic and replace it with some code that will pass the first test.
-
+## RSpec Test Structure
 
 ```arturo
-isLeap?: function [year][
-    false
+import.version:2.0.1 {unitt}!
+import {src/leap}!
+
+describe "Leap" [
+    it "a year not divisible by 4 is a common year" [
+        expects.be:'false? @[isLeap? 2015]
+    ]
+
+    it.skip "a year divisible by 4 and not divisible by 100 is a leap year" [
+        expects.be:'true? @[isLeap? 1996]
+    ]
 ]
 ```
 
-If we rerun the tests, we will see output (below) that the first test passes, but the other two tests are skipped.
-The test description and assertions are reported with a leading emoji denoting a passed test (✅), a failed test (❌), or a skipped test (⏩).
-Under the statistics section, the total number of passing or failed assertions is reported, followed by the number of passed assertions, the number of skipped assertions, and finally the number of failed assertions.
+* `describe` defines a block of test cases validating something in common. These can be nested.
+* `it` and `it.skip` both define a single test case which is either run or skipped respectively.
+* `expects` introduces the assertion that is at the heart of a test case. `expects.be` takes a predicate function which is used to make the assertion.
 
-```plaintext
-===== tests\test-leap.art =====
-
-Suite: Leap
-
-    ✅ - assert that a year not divisible by 4 is a common year
-         assertion: false = false
-
-    ⏩ - assert that a year divisible by 2 and not divisible by 4 is a common year 
-         skipped!
-
-    ⏩ - assert that a year divisible by 4 and not divisible by 100 is a leap year
-         skipped!
-
-===== Statistics =====
-
-⏏️    TOTAL: 1 assertions
-✅  PASSED: 1 assertions
-⏩ SKIPPED: 2 assertions
-❌  FAILED: 0 assertions
-
-===== ========== =====
+In `expects.be:'false? @[isLeap? 2015]`, the test suite is making an assertion that the function `isLeap?` should return `false` for the year 2015.
+Another way to write that is `expects.be:'equal? @[false isLeapYear? 2015]` where we're asserting the returned vaue of `isLeapYear? 2015` is equal to `false`.
+This longer form comparing two values is the most common type of assertion on the Arturo track.
+The expected value will always come first in the block before the result value.
+Notably, `express <value>` is used sometimes to add quotes at the beginning and end of strings, like `expects.be:'equal? @[express "reward" express reverseString "drawer"]`.
+To help readability, this will typically be split across multiple lines like this:
+```arturo
+expects.be:'equal? @[
+    express "reward"
+    express reverseString "drawer"
+]
 ```
 
-
-Unskipping the second test, we'll have the following tests:
+## XUnit Test Structure
 
 ```arturo
-import {unitt}!
-import {src/leap}!
-
 suite "Leap" [
     test "a year not divisible by 4 is a common year" [
         result: isLeap? 2015
-        assert -> false = result
-    ]
-
-    test "a year divisible by 2 and not divisible by 4 is a common year" [
-        result: isLeap? 1970
         assert -> false = result
     ]
 
@@ -150,101 +88,88 @@ suite "Leap" [
 ]
 ```
 
+The XUnit-like API introduced in v1 of Unitt is supported for backwards compatibility and is broadly equivalent to the modern RSpec-like API except for its less flexible assertions.
 
-If we rerun the tests again, the second test passes, but the third test is still skipped.
+* `suite` defines a block of test cases validating something in common. These can be nested.
+* `test` and `test.skip` both define a single test case which is either run or skipped respectively.
+* `assert` introduces the assertion that is at the heart of a test case. The expression on the right side of the following `->` must be true.
 
+With XUnit tests, typically variables representing the result and optionally the expected value are created before the `assert` line.
+
+## Test Output
+
+Whether you're using the RSpec or XUnit API, the test output will be broadly similar.
+The only difference will be what's printed beneath each test name.
+XUnit reports the assertion using the evaluated values so you'd see `false = false`.
+RSpec, however, reports it as `false? false` because we used the `false?` function with `expects`.
+
+Starting at the beginning, Arturo will report an error if the `panic` from the starting file hasm't been removed and not evaluate any tests.
+
+```
+===== tests/test-leap.art =====
+
+Description: Leap 
+ 
+
+══╡ Program Error ╞═════════════════════════════════════════════════════════════════════════════════════════════════ <script> ══
+
+  please implement the isLeap? function
+```
+
+Once the `panic` is replaced, Arturo will report the status for each assertion made within a test.
+Now the first test passes, but the second test is skipped.
 
 ```plaintext
-===== tests\test-leap.art =====
+===== tests/test-leap.art =====
 
-Suite: Leap
-
+Description: Leap 
+ 
     ✅ - assert that a year not divisible by 4 is a common year
-         assertion: false = false
-
-    ✅ - assert that a year divisible by 2 and not divisible by 4 is a common year 
-         assertion: false = false
+         ✅: false? false
 
     ⏩ - assert that a year divisible by 4 and not divisible by 100 is a leap year
          skipped!
 
+
+
 ===== Statistics =====
 
-⏏️    TOTAL: 2 assertions
-✅  PASSED: 2 assertions
+ ⏏️   TOTAL: 1 assertions
+✅  PASSED: 1 assertions
 ⏩ SKIPPED: 1 assertions
 ❌  FAILED: 0 assertions
 
 ===== ========== =====
 ```
 
-
-Let's unskip the third test and run the tests again.
-At this point, we'll encounter a failing test because the third test expects `true`, not `false`.
-
+After the second test is manually unskipped, both tests will be run.
+However, my code only returns `false` so the second test fails its assertion.
 
 ```plaintext
 ===== tests/test-leap.art =====
 
-Suite: Leap 
+Description: Leap 
  
-    ✅ - assert that a year not divisible by 4 is a common year 
-         assertion: false = false
+    ✅ - assert that a year not divisible by 4 is a common year
+         ✅: false? false
 
-    ✅ - assert that a year divisible by 2 and not divisible by 4 is a common year 
-         assertion: false = false
-
-    ❌ - assert that a year divisible by 4 and not divisible by 100 is a leap year 
-         assertion: true = false
-
+    ❌ - assert that a year divisible by 4 and not divisible by 100 is a leap year
+         ❌: true? false
 
 
 
 ===== Statistics =====
 
-⏏️    TOTAL: 3 assertions
-✅  PASSED: 2 assertions
+ ⏏️   TOTAL: 2 assertions
+✅  PASSED: 1 assertions
 ⏩ SKIPPED: 0 assertions
 ❌  FAILED: 1 assertions
 
 ===== ========== =====
-
-
-══╡ Program Error ╞══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ <script> ══
-
-  Some tests failed!
 ```
 
-At this point, we need to fix the code to pass the third test. Once that's done, we can rerun the tests and see that all tests pass.
-
-```plaintext
-===== tests/test-leap.art =====
-
-Suite: Leap 
- 
-    ✅ - assert that a year not divisible by 4 is a common year 
-         assertion: false = false
-
-    ✅ - assert that a year divisible by 2 and not divisible by 4 is a common year 
-         assertion: false = false
-
-    ✅ - assert that a year divisible by 4 and not divisible by 100 is a leap year 
-         assertion: false = false
-
-
-
-
-===== Statistics =====
-
-⏏️    TOTAL: 3 assertions
-✅  PASSED: 3 assertions
-⏩ SKIPPED: 0 assertions
-❌  FAILED: 0 assertions
-
-===== ========== =====
-```
-
-At this point, your solution can be submitted using `exercism submit` and the online test runner will test your code.
-The online test runner unskips and runs all the tests every time so make sure you're not skipping any tests before submitting.
+This process will continue as you unskip more tests.
+Once all tests pass, you're finished with the exercise and can submit the solution.
+Please note that the test runner will run all tests whether they're skipped or not localy.
 
 [unitt]: https://unitt.pkgr.art/
