@@ -1,28 +1,34 @@
+; sourced from https://exercism.org/tracks/arturo/exercises/game-of-life/solutions/glennj
+
 tick: function [matrix][
-    if empty? matrix -> return matrix
-    rows: size matrix
-    cols: size first matrix
-    state: new matrix
-    map 0..rows-1 'y ->
-        map 0..cols-1 'x [
-            liveNeighbors: 0
-            loop range neg 1 1 'dy [
-                loop range neg 1 1 'dx [
-                    if? all? @[zero? dx zero? dy] -> continue ; current cell
-                    ny: y + dy
-                    nx: x + dx
-                    if? all? @[ny>=0 ny<rows nx>=0 nx<cols] [
-                        if? one? matrix\[ny]\[nx] -> inc 'liveNeighbors
-                    ]
-                ]
-            ]
-            cell: matrix\[y]\[x]
-            state\[y]\[x]: when [
-                and? one? cell liveNeighbors=2 -> 1
-                liveNeighbors=3 -> 1
-                true -> 0
+    if empty? matrix -> return []
+
+    heightRange: 0..(dec size matrix)
+    widthRange: 0..(dec size matrix\0)
+    nextGeneration: new matrix
+
+    neighbours: function [i j][
+        count: 0
+        loop (neg 1)..1 'di [
+            if not? in? (i + di) heightRange -> continue
+            loop (neg 1)..1 'dj [
+                if not? in? (j + dj) widthRange -> continue
+                if and? [zero? di] [zero? dj] -> continue
+                'count + matrix\[i + di]\[j + dj]
             ]
         ]
+        count
+    ]
 
-    state
+    loop heightRange 'i [
+        loop widthRange 'j [
+            nextGeneration\[i]\[j]: case neighbours i j [
+                2   -> matrix\[i]\[j]
+                3   -> 1
+                any -> 0
+            ]
+        ]
+    ]
+
+    nextGeneration
 ]
