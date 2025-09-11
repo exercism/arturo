@@ -1,79 +1,92 @@
 import.version:2.0.1 {unitt}!
 import {src/change}!
 
-suite "Change" [
-    test "change for 1 cent" [
-        result: findFewestCoins [1 5 10 25] 1
-        expected: [1]
-        assert -> expected = result
+describe "Change" [
+    it "change for 1 cent" [
+        expects.be:'equal? @[
+            [1]
+            findFewestCoins [1 5 10 25] 1
+        ]
     ]
 
-    test.skip "single coin change" [
-        result: findFewestCoins [1 5 10 25 100] 25
-        expected: [25]
-        assert -> expected = result
+    it.skip "single coin change" [
+        expects.be:'equal? @[
+            [25]
+            findFewestCoins [1 5 10 25 100] 25
+        ]
     ]
 
-    test.skip "multiple coin change" [
-        result: findFewestCoins [1 5 10 25 100] 15
-        expected: [5 10]
-        assert -> expected = result
+    it.skip "multiple coin change" [
+        expects.be:'equal? @[
+            [5 10]
+            findFewestCoins [1 5 10 25 100] 15
+        ]
     ]
 
-    test.skip "change with Lilliputian Coins" [
-        result: findFewestCoins [1 4 15 20 50] 23
-        expected: [4 4 15]
-        assert -> expected = result
+    it.skip "change with Lilliputian Coins" [
+        expects.be:'equal? @[
+            [4 4 15]
+            findFewestCoins [1 4 15 20 50] 23
+        ]
     ]
 
-    test.skip "change with Lower Elbonia Coins" [
-        result: findFewestCoins [1 5 10 21 25] 63
-        expected: [21 21 21]
-        assert -> expected = result
+    it.skip "change with Lower Elbonia Coins" [
+        expects.be:'equal? @[
+            [21 21 21]
+            findFewestCoins [1 5 10 21 25] 63
+        ]
     ]
 
-    test.skip "large target values" [
-        result: findFewestCoins [1 2 5 10 20 50 100] 999
-        expected: [2 2 5 20 20 50 100 100 100 100 100 100 100 100 100]
-        assert -> expected = result
+    it.skip "large target values" [
+        expects.be:'equal? @[
+            [2 2 5 20 20 50 100 100 100 100 100 100 100 100 100]
+            findFewestCoins [1 2 5 10 20 50 100] 999
+        ]
     ]
 
-    test.skip "possible change without unit coins available" [
-        result: findFewestCoins [2 5 10 20 50] 21
-        expected: [2 2 2 5 10]
-        assert -> expected = result
+    it.skip "possible change without unit coins available" [
+        expects.be:'equal? @[
+            [2 2 2 5 10]
+            findFewestCoins [2 5 10 20 50] 21
+        ]
     ]
 
-    test.skip "another possible change without unit coins available" [
-        result: findFewestCoins [4 5] 27
-        expected: [4 4 4 5 5 5]
-        assert -> expected = result
+    it.skip "another possible change without unit coins available" [
+        expects.be:'equal? @[
+            [4 4 4 5 5 5]
+            findFewestCoins [4 5] 27
+        ]
     ]
 
-    test.skip "a greedy approach is not optimal" [
-        result: findFewestCoins [1 10 11] 20
-        expected: [10 10]
-        assert -> expected = result
+    it.skip "a greedy approach is not optimal" [
+        expects.be:'equal? @[
+            [10 10]
+            findFewestCoins [1 10 11] 20
+        ]
     ]
 
-    test.skip "no coins make 0 change" [
-        result: findFewestCoins [1 5 10 21 25] 0
-        expected: []
-        assert -> expected = result
+    it.skip "no coins make 0 change" [
+        expects.be:'equal? @[
+            []
+            findFewestCoins [1 5 10 21 25] 0
+        ]
     ]
 
-    test.skip "error test.skiping for change smaller than the smallest of coins" [
-        result: findFewestCoins [5 10] 3
-        assert -> null = result
+    it.skip "error testing for change smaller than the smallest of coins" [
+        expects.be:'null? @[
+            findFewestCoins [5 10] 3
+        ]
     ]
 
-    test.skip "error if no combination can add up to target" [
-        result: findFewestCoins [5 10] 94
-        assert -> null = result
+    it.skip "error if no combination can add up to target" [
+        expects.be:'null? @[
+            findFewestCoins [5 10] 94
+        ]
     ]
 
-    test.skip "cannot find negative change values" [
-        result: findFewestCoins [1 2 5] neg 5
-        assert -> null = result
+    it.skip "cannot find negative change values" [
+        expects.be:'null? @[
+            findFewestCoins [1 2 5] neg 5
+        ]
     ]
 ]
