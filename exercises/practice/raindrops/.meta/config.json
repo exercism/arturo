@@ -2,6 +2,9 @@
   "authors": [
     "erikschierboom"
   ],
+  "contributors": [
+    "BNAndras"
+  ],
   "files": {
     "solution": [
       "src/raindrops.art"
