@@ -1,7 +1,11 @@
+; sourced from https://exercism.org/tracks/arturo/exercises/perfect-numbers/solutions/drkameleon
+
 classify: function[n][
-    unless? positive? n -> return null
-    aliquotSum: sum chop factors n
-    switch aliquotSum < n -> 'deficient ->
-    switch aliquotSum > n -> 'abundant
-                          -> 'perfect
+    unless positive? n -> return null
+    aliquot: sum (factors n) -- n
+    when.has: n [
+        [= aliquot]-> 'perfect
+        [< aliquot]-> 'abundant
+        [> aliquot]-> 'deficient
+    ]
 ]
