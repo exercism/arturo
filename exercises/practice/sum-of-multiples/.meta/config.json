@@ -2,6 +2,9 @@
   "authors": [
     "erikschierboom"
   ],
+  "contributors": [
+    "glennj"
+  ],
   "files": {
     "solution": [
       "src/sum-of-multiples.art"
