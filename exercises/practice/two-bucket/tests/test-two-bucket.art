@@ -80,6 +80,32 @@ describe "Two Bucket" [
         ]
     ]
 
+    it.skip "Measure using bucket one much bigger than bucket two" [
+        result: measure #[
+            bucketOne: 5
+            bucketTwo: 1
+            goal: 2
+            startBucket: "one"
+        ]
+        expects.be:'equal? @[
+            express [6 "one" 1]
+            express @[result\moves result\goalBucket result\otherBucket]
+        ]
+    ]
+
+    it.skip "Measure using bucket one much smaller than bucket two" [
+        result: measure #[
+            bucketOne: 3
+            bucketTwo: 15
+            goal: 9
+            startBucket: "one"
+        ]
+        expects.be:'equal? @[
+            express [6 "two" 0]
+            express @[result\moves result\goalBucket result\otherBucket]
+        ]
+    ]
+
     it.skip "Not possible to reach the goal" [
         expects.be:'null? @[
             measure #[
