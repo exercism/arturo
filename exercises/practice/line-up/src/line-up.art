@@ -1,0 +1,3 @@
+formatMessage: function [name number][
+    panic "Please implement the formatMessage function"
+]

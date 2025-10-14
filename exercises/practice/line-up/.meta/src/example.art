@@ -1,0 +1,18 @@
+formatMessage: function [name number][
+    suffix: getSuffix number
+    return ~"|name|, you are the |number||suffix| customer we serve today. Thank you!"
+]
+
+getSuffix: function [number][
+    mod10: number % 10
+    mod100: number % 100
+
+    if? in? mod100 [11 12 13] -> "th"
+
+    case mod10 [
+        1 -> "st"
+        2 -> "nd"
+        3 -> "rd"
+        any -> "th"
+    ]
+]
