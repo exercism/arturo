@@ -4,134 +4,134 @@ import {src/line-up}!
 describe "Line Up" [
     it "format smallest non-exceptional ordinal numeral 4" [
         expects.be:'equal? @[
-            "Gianna, you are the 4th customer we serve today. Thank you!"
-            formatMessage "Gianna" 4
+            express "Gianna, you are the 4th customer we serve today. Thank you!"
+            express formatMessage "Gianna" 4
         ]
     ]
 
     it.skip "format greatest single digit non-exceptional ordinal numeral 9" [
         expects.be:'equal? @[
-            "Maarten, you are the 9th customer we serve today. Thank you!"
-            formatMessage "Maarten" 9
+            express "Maarten, you are the 9th customer we serve today. Thank you!"
+            express formatMessage "Maarten" 9
         ]
     ]
 
     it.skip "format non-exceptional ordinal numeral 5" [
         expects.be:'equal? @[
             "Petronila, you are the 5th customer we serve today. Thank you!"
-            formatMessage "Petronila" 5
+            express formatMessage "Petronila" 5
         ]
     ]
 
     it.skip "format non-exceptional ordinal numeral 6" [
         expects.be:'equal? @[
-            "Attakullakulla, you are the 6th customer we serve today. Thank you!"
-            formatMessage "Attakullakulla" 6
+            express "Attakullakulla, you are the 6th customer we serve today. Thank you!"
+            express formatMessage "Attakullakulla" 6
         ]
     ]
 
     it.skip "format non-exceptional ordinal numeral 7" [
         expects.be:'equal? @[
-            "Kate, you are the 7th customer we serve today. Thank you!"
-            formatMessage "Kate" 7
+            express "Kate, you are the 7th customer we serve today. Thank you!"
+            express formatMessage "Kate" 7
         ]
     ]
 
     it.skip "format non-exceptional ordinal numeral 8" [
         expects.be:'equal? @[
-            "Maximiliano, you are the 8th customer we serve today. Thank you!"
-            formatMessage "Maximiliano" 8
+            express "Maximiliano, you are the 8th customer we serve today. Thank you!"
+            express formatMessage "Maximiliano" 8
         ]
     ]
 
     it.skip "format exceptional ordinal numeral 1" [
         expects.be:'equal? @[
-            "Mary, you are the 1st customer we serve today. Thank you!"
-            formatMessage "Mary" 1
+            express "Mary, you are the 1st customer we serve today. Thank you!"
+            express formatMessage "Mary" 1
         ]
     ]
 
     it.skip "format exceptional ordinal numeral 2" [
         expects.be:'equal? @[
-            "Haruto, you are the 2nd customer we serve today. Thank you!"
-            formatMessage "Haruto" 2
+            express "Haruto, you are the 2nd customer we serve today. Thank you!"
+            express formatMessage "Haruto" 2
         ]
     ]
 
     it.skip "format exceptional ordinal numeral 3" [
         expects.be:'equal? @[
-            "Henriette, you are the 3rd customer we serve today. Thank you!"
-            formatMessage "Henriette" 3
+            express "Henriette, you are the 3rd customer we serve today. Thank you!"
+            express formatMessage "Henriette" 3
         ]
     ]
 
     it.skip "format smallest two digit non-exceptional ordinal numeral 10" [
         expects.be:'equal? @[
-            "Alvarez, you are the 10th customer we serve today. Thank you!"
-            formatMessage "Alvarez" 10
+            express "Alvarez, you are the 10th customer we serve today. Thank you!"
+            express formatMessage "Alvarez" 10
         ]
     ]
 
     it.skip "format non-exceptional ordinal numeral 11" [
         expects.be:'equal? @[
-            "Jacqueline, you are the 11th customer we serve today. Thank you!"
-            formatMessage "Jacqueline" 11
+            express "Jacqueline, you are the 11th customer we serve today. Thank you!"
+            express formatMessage "Jacqueline" 11
         ]
     ]
 
     it.skip "format non-exceptional ordinal numeral 12" [
         expects.be:'equal? @[
-            "Juan, you are the 12th customer we serve today. Thank you!"
-            formatMessage "Juan" 12
+            express "Juan, you are the 12th customer we serve today. Thank you!"
+            express formatMessage "Juan" 12
         ]
     ]
 
     it.skip "format non-exceptional ordinal numeral 13" [
         expects.be:'equal? @[
-            "Patricia, you are the 13th customer we serve today. Thank you!"
-            formatMessage "Patricia" 13
+            express "Patricia, you are the 13th customer we serve today. Thank you!"
+            express formatMessage "Patricia" 13
         ]
     ]
 
     it.skip "format exceptional ordinal numeral 21" [
         expects.be:'equal? @[
-            "Washi, you are the 21st customer we serve today. Thank you!"
-            formatMessage "Washi" 21
+            express "Washi, you are the 21st customer we serve today. Thank you!"
+            express formatMessage "Washi" 21
         ]
     ]
 
     it.skip "format exceptional ordinal numeral 62" [
         expects.be:'equal? @[
-            "Nayra, you are the 62nd customer we serve today. Thank you!"
-            formatMessage "Nayra" 62
+            express "Nayra, you are the 62nd customer we serve today. Thank you!"
+            express formatMessage "Nayra" 62
         ]
     ]
 
     it.skip "format exceptional ordinal numeral 100" [
         expects.be:'equal? @[
-            "John, you are the 100th customer we serve today. Thank you!"
-            formatMessage "John" 100
+            express "John, you are the 100th customer we serve today. Thank you!"
+            express formatMessage "John" 100
         ]
     ]
 
     it.skip "format exceptional ordinal numeral 101" [
         expects.be:'equal? @[
-            "Zeinab, you are the 101st customer we serve today. Thank you!"
-            formatMessage "Zeinab" 101
+            express "Zeinab, you are the 101st customer we serve today. Thank you!"
+            express formatMessage "Zeinab" 101
         ]
     ]
 
     it.skip "format non-exceptional ordinal numeral 112" [
         expects.be:'equal? @[
-            "Knud, you are the 112th customer we serve today. Thank you!"
-            formatMessage "Knud" 112
+            express "Knud, you are the 112th customer we serve today. Thank you!"
+            express formatMessage "Knud" 112
         ]
     ]
 
     it.skip "format exceptional ordinal numeral 123" [
         expects.be:'equal? @[
-            "Yma, you are the 123rd customer we serve today. Thank you!"
-            formatMessage "Yma" 123
+            express "Yma, you are the 123rd customer we serve today. Thank you!"
+            express formatMessage "Yma" 123
         ]
     ]
 ]
