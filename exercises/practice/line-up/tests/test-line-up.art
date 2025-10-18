@@ -18,7 +18,7 @@ describe "Line Up" [
 
     it.skip "format non-exceptional ordinal numeral 5" [
         expects.be:'equal? @[
-            "Petronila, you are the 5th customer we serve today. Thank you!"
+            express "Petronila, you are the 5th customer we serve today. Thank you!"
             express formatMessage "Petronila" 5
         ]
     ]
