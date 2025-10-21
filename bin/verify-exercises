@@ -22,7 +22,7 @@ required_tool() {
 required_tool jq
 required_tool arturo
 
-copy_example_or_examplar_to_solution() {
+copy_example_or_exemplar_to_solution() {
     jq -c '[.files.solution, .files.exemplar // .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' .meta/config.json \
     | while read -r src_and_dst; do
         cp "$(jq -r '.src' <<< "${src_and_dst}")" "$(jq -r '.dst' <<< "${src_and_dst}")"
@@ -36,7 +36,17 @@ unskip_tests() {
 }
 
 run_tests() {
-    arturo tester.art
+    set +e
+    test_output=$(arturo tester.art 2>&1)
+    result=$?
+    set -e
+    if [[ $result -eq 0 ]]; then
+        echo "All tests passed!"
+        return 0
+    else     
+        echo "${test_output}"
+        return 1
+    fi
 }
 
 verify_exercise() {
@@ -55,7 +65,7 @@ verify_exercise() {
         cp -r "${dir}/." "${tmp_dir}"
         cd "${tmp_dir}"
 
-        copy_example_or_examplar_to_solution
+        copy_example_or_exemplar_to_solution
         unskip_tests
         run_tests
     )
