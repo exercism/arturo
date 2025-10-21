@@ -57,7 +57,7 @@ panic.unstyled.code: code ""
 END_TESTER
 
 cat << END_TEST > "exercises/practice/${slug}/tests/test-${slug}.art"
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/${slug}}!
 
 $(curl --silent "https://raw.githubusercontent.com/exercism/problem-specifications/main/exercises/${slug}/canonical-data.json")
