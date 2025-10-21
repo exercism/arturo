@@ -1,46 +1,46 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/food-chain}!
 
 
 describe "Food Chain" [
     it "fly" [
         expects.be:'equal? @[
-            express {
+            {
                 I know an old lady who swallowed a fly.
                 I don't know why she swallowed the fly. Perhaps she'll die.         
             }
-            express recite 1 1
+            recite 1 1
         ]
     ]
 
     it.skip "spider" [
         expects.be:'equal? @[
-            express {
+            {
                 I know an old lady who swallowed a spider.
                 It wriggled and jiggled and tickled inside her.
                 She swallowed the spider to catch the fly.
                 I don't know why she swallowed the fly. Perhaps she'll die.
             }
-            express recite 2 2
+            recite 2 2
         ]
     ]
 
     it.skip "bird" [
         expects.be:'equal? @[
-            express {
+            {
                 I know an old lady who swallowed a bird.
                 How absurd to swallow a bird!
                 She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.
                 She swallowed the spider to catch the fly.
                 I don't know why she swallowed the fly. Perhaps she'll die.
             }
-            express recite 3 3
+            recite 3 3
         ]
     ]
 
     it.skip "cat" [
         expects.be:'equal? @[
-            express {
+            {
                 I know an old lady who swallowed a cat.
                 Imagine that, to swallow a cat!
                 She swallowed the cat to catch the bird.
@@ -48,13 +48,13 @@ describe "Food Chain" [
                 She swallowed the spider to catch the fly.
                 I don't know why she swallowed the fly. Perhaps she'll die.
             }
-            express recite 4 4
+            recite 4 4
         ]
     ]
 
     it.skip "dog" [
         expects.be:'equal? @[
-            express {
+            {
                 I know an old lady who swallowed a dog.
                 What a hog, to swallow a dog!
                 She swallowed the dog to catch the cat.
@@ -63,13 +63,13 @@ describe "Food Chain" [
                 She swallowed the spider to catch the fly.
                 I don't know why she swallowed the fly. Perhaps she'll die.
             }
-            express recite 5 5
+            recite 5 5
         ]
     ]
 
     it.skip "goat" [
         expects.be:'equal? @[
-            express {
+            {
                 I know an old lady who swallowed a goat.
                 Just opened her throat and swallowed a goat!
                 She swallowed the goat to catch the dog.
@@ -79,13 +79,13 @@ describe "Food Chain" [
                 She swallowed the spider to catch the fly.
                 I don't know why she swallowed the fly. Perhaps she'll die.
             }
-            express recite 6 6
+            recite 6 6
         ]
     ]
 
     it.skip "cow" [
         expects.be:'equal? @[
-            express {
+            {
                 I know an old lady who swallowed a cow.
                 I don't know how she swallowed a cow!
                 She swallowed the cow to catch the goat.
@@ -96,23 +96,23 @@ describe "Food Chain" [
                 She swallowed the spider to catch the fly.
                 I don't know why she swallowed the fly. Perhaps she'll die.
             }
-            express recite 7 7
+            recite 7 7
         ]
     ]
 
     it.skip "horse" [
         expects.be:'equal? @[
-            express {
+            {
                 I know an old lady who swallowed a horse.
                 She's dead, of course!
             }
-            express recite 8 8
+            recite 8 8
         ]
     ]
 
     it.skip "multiple verses" [
         expects.be:'equal? @[
-            express {
+            {
                 I know an old lady who swallowed a fly.
                 I don't know why she swallowed the fly. Perhaps she'll die.
 
@@ -127,13 +127,13 @@ describe "Food Chain" [
                 She swallowed the spider to catch the fly.
                 I don't know why she swallowed the fly. Perhaps she'll die.
             }
-            express recite 1 3
+            recite 1 3
         ]
     ]
 
     it.skip "full song" [
         expects.be:'equal? @[
-            express {
+            {
                 I know an old lady who swallowed a fly.
                 I don't know why she swallowed the fly. Perhaps she'll die.
                 
@@ -185,7 +185,7 @@ describe "Food Chain" [
                 I know an old lady who swallowed a horse.
                 She's dead, of course!
             }
-            express recite 1 8
+            recite 1 8
         ]
     ]
 ]

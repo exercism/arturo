@@ -25,5 +25,8 @@ jobs:
         with: 
           token: ${{ github.token }}
 
+      - name: Install Unitt testing framework
+        run: arturo -p install unitt 3.0.0
+
       - name: Verify all exercises
         run: bin/verify-exercises

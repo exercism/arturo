@@ -1,74 +1,74 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/rotational-cipher}!
 
 describe "Rotational Cipher" [
     it "rotate a by 0, same output as input" [
         expects.be:'equal? @[
-            express "a"
-            express rotateText "a" 0
+            "a"
+            rotateText "a" 0
         ]
     ]
 
     it.skip "rotate a by 1" [
         expects.be:'equal? @[
-            express "b"
-            express rotateText "a" 1
+            "b"
+            rotateText "a" 1
         ]
     ]
 
     it.skip "rotate a by 26, same output as input" [
         expects.be:'equal? @[
-            express "a"
-            express rotateText "a" 26
+            "a"
+            rotateText "a" 26
         ]
     ]
 
     it.skip "rotate m by 13" [
         expects.be:'equal? @[
-            express "z"
-            express rotateText "m" 13
+            "z"
+            rotateText "m" 13
         ]
     ]
 
     it.skip "rotate n by 13 with wrap around alphabet" [
         expects.be:'equal? @[
-            express "a"
-            express rotateText "n" 13
+            "a"
+            rotateText "n" 13
         ]
     ]
 
     it.skip "rotate capital letters" [
         expects.be:'equal? @[
-            express "TRL"
-            express rotateText "OMG" 5
+            "TRL"
+            rotateText "OMG" 5
         ]
     ]
 
     it.skip "rotate spaces" [
         expects.be:'equal? @[
-            express "T R L"
-            express rotateText "O M G" 5
+            "T R L"
+            rotateText "O M G" 5
         ]
     ]
 
     it.skip "rotate numbers" [
         expects.be:'equal? @[
-            express "Xiwxmrk 1 2 3 xiwxmrk"
-            express rotateText "Testing 1 2 3 testing" 4
+            "Xiwxmrk 1 2 3 xiwxmrk"
+            rotateText "Testing 1 2 3 testing" 4
         ]
     ]
 
     it.skip "rotate punctuation" [
         expects.be:'equal? @[
-            express "Gzo'n zvo, Bmviyhv!"
-            express rotateText "Let's eat, Grandma!" 21
+            "Gzo'n zvo, Bmviyhv!"
+            rotateText "Let's eat, Grandma!" 21
         ]
     ]
 
     it.skip "rotate all letters" [
         expects.be:'equal? @[
-            express "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
-            express rotateText "The quick brown fox jumps over the lazy dog." 13
+            "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
+            rotateText "The quick brown fox jumps over the lazy dog." 13
         ]
     ]
 ]

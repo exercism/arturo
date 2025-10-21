@@ -1,195 +1,195 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/protein-translation}!
 
 describe "Protein Translation" [
     it "Empty RNA sequence results in no proteins" [
         expects.be:'equal? @[
-            express []
-            express toProteins ""
+            []
+            toProteins ""
         ]
     ]
 
     it.skip "Methionine RNA sequence" [
         expects.be:'equal? @[
-            express ["Methionine"]
-            express toProteins "AUG"
+            ["Methionine"]
+            toProteins "AUG"
         ]
     ]
 
     it.skip "Phenylalanine RNA sequence 1" [
         expects.be:'equal? @[
-            express ["Phenylalanine"]
-            express toProteins "UUU"
+            ["Phenylalanine"]
+            toProteins "UUU"
         ]
     ]
 
     it.skip "Phenylalanine RNA sequence 2" [
         expects.be:'equal? @[
-            express ["Phenylalanine"]
-            express toProteins "UUC"
+            ["Phenylalanine"]
+            toProteins "UUC"
         ]
     ]
 
     it.skip "Leucine RNA sequence 1" [
         expects.be:'equal? @[
-            express ["Leucine"]
-            express toProteins "UUA"
+            ["Leucine"]
+            toProteins "UUA"
         ]
     ]
 
     it.skip "Leucine RNA sequence 2" [
         expects.be:'equal? @[
-            express ["Leucine"]
-            express toProteins "UUG"
+            ["Leucine"]
+            toProteins "UUG"
         ]
     ]
 
     it.skip "Serine RNA sequence 1" [
         expects.be:'equal? @[
-            express ["Serine"]
-            express toProteins "UCU"
+            ["Serine"]
+            toProteins "UCU"
         ]
     ]
 
     it.skip "Serine RNA sequence 2" [
         expects.be:'equal? @[
-            express ["Serine"]
-            express toProteins "UCC"
+            ["Serine"]
+            toProteins "UCC"
         ]
     ]
 
     it.skip "Serine RNA sequence 3" [
         expects.be:'equal? @[
-            express ["Serine"]
-            express toProteins "UCA"
+            ["Serine"]
+            toProteins "UCA"
         ]
     ]
 
     it.skip "Serine RNA sequence 4" [
         expects.be:'equal? @[
-            express ["Serine"]
-            express toProteins "UCG"
+            ["Serine"]
+            toProteins "UCG"
         ]
     ]
 
     it.skip "Tyrosine RNA sequence 1" [
         expects.be:'equal? @[
-            express ["Tyrosine"]
-            express toProteins "UAU"
+            ["Tyrosine"]
+            toProteins "UAU"
         ]
     ]
 
     it.skip "Tyrosine RNA sequence 2" [
         expects.be:'equal? @[
-            express ["Tyrosine"]
-            express toProteins "UAC"
+            ["Tyrosine"]
+            toProteins "UAC"
         ]
     ]
 
     it.skip "Cysteine RNA sequence 1" [
         expects.be:'equal? @[
-            express ["Cysteine"]
-            express toProteins "UGU"
+            ["Cysteine"]
+            toProteins "UGU"
         ]
     ]
 
     it.skip "Cysteine RNA sequence 2" [
         expects.be:'equal? @[
-            express ["Cysteine"]
-            express toProteins "UGC"
+            ["Cysteine"]
+            toProteins "UGC"
         ]
     ]
 
     it.skip "Tryptophan RNA sequence" [
         expects.be:'equal? @[
-            express ["Tryptophan"]
-            express toProteins "UGG"
+            ["Tryptophan"]
+            toProteins "UGG"
         ]
     ]
 
     it.skip "STOP codon RNA sequence 1" [
         expects.be:'equal? @[
-            express []
-            express toProteins "UAA"
+            []
+            toProteins "UAA"
 
         ]
     ]
 
     it.skip "STOP codon RNA sequence 2" [
         expects.be:'equal? @[
-            express []
-            express toProteins "UAG"
+            []
+            toProteins "UAG"
         ]
     ]
 
     it.skip "STOP codon RNA sequence 3" [
         expects.be:'equal? @[
-            express []
-            express toProteins "UGA"
+            []
+            toProteins "UGA"
         ]
     ]
 
     it.skip "Sequence of two protein codons translates into proteins" [
         expects.be:'equal? @[
-            express ["Phenylalanine" "Phenylalanine"]
-            express toProteins "UUUUUU"
+            ["Phenylalanine" "Phenylalanine"]
+            toProteins "UUUUUU"
         ]
     ]
 
     it.skip "Sequence of two different protein codons translates into proteins" [
         expects.be:'equal? @[
-            express ["Leucine" "Leucine"]
-            express toProteins "UUAUUG"
+            ["Leucine" "Leucine"]
+            toProteins "UUAUUG"
         ]
     ]
 
     it.skip "Translate RNA strand into correct protein list" [
         expects.be:'equal? @[
-            express ["Methionine" "Phenylalanine" "Tryptophan"]
-            express toProteins "AUGUUUUGG"
+            ["Methionine" "Phenylalanine" "Tryptophan"]
+            toProteins "AUGUUUUGG"
         ]
     ]
 
     it.skip "Translation stops if STOP codon at beginning of sequence" [
         expects.be:'equal? @[
-            express []
-            express toProteins "UAGUGG"
+            []
+            toProteins "UAGUGG"
 
         ]
     ]
 
     it.skip "Translation stops if STOP codon at end of two-codon sequence" [
         expects.be:'equal? @[
-            express ["Tryptophan"]
-            express toProteins "UGGUAG"
+            ["Tryptophan"]
+            toProteins "UGGUAG"
         ]
     ]
 
     it.skip "Translation stops if STOP codon at end of three-codon sequence" [
         expects.be:'equal? @[
-            express ["Methionine" "Phenylalanine"]
-            express toProteins "AUGUUUUAA"
+            ["Methionine" "Phenylalanine"]
+            toProteins "AUGUUUUAA"
         ]
     ]
 
     it.skip "Translation stops if STOP codon in middle of three-codon sequence" [
         expects.be:'equal? @[
-            express ["Tryptophan"]
-            express toProteins "UGGUAGUGG"
+            ["Tryptophan"]
+            toProteins "UGGUAGUGG"
         ]
     ]
 
     it.skip "Translation stops if STOP codon in middle of six-codon sequence" [
         expects.be:'equal? @[
-            express ["Tryptophan" "Cysteine" "Tyrosine"]
-            express toProteins "UGGUGUUAUUAAUGGUUU"
+            ["Tryptophan" "Cysteine" "Tyrosine"]
+            toProteins "UGGUGUUAUUAAUGGUUU"
         ]
     ]
 
     it.skip "Sequence of two non-STOP codons does not translate to a STOP codon" [
         expects.be:'equal? @[
-            express ["Methionine" "Methionine"]
-            express toProteins "AUGAUG"
+            ["Methionine" "Methionine"]
+            toProteins "AUGAUG"
         ]
     ]
 
@@ -207,8 +207,8 @@ describe "Protein Translation" [
 
     it.skip "Incomplete RNA sequence can translate if valid until a STOP codon" [
         expects.be:'equal? @[
-            express ["Phenylalanine" "Phenylalanine"]
-            express toProteins "UUCUUCUAAUGGU"
+            ["Phenylalanine" "Phenylalanine"]
+            toProteins "UUCUUCUAAUGGU"
         ]
     ]
 ]

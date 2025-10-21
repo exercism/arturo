@@ -1,25 +1,25 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/phone-number}!
 
 describe "Phone Number" [
     it "cleans the number" [
         expects.be:'equal? @[
-            express "2234567890"
-            express clean "(223) 456-7890"   
+            "2234567890"
+            clean "(223) 456-7890"   
         ]
     ]
 
     it.skip "cleans numbers with dots" [
         expects.be:'equal? @[
-            express "2234567890"
-            express clean "223.456.7890"
+            "2234567890"
+            clean "223.456.7890"
         ]
     ]
 
     it.skip "cleans numbers with multiple spaces" [
         expects.be:'equal? @[
-            express "2234567890"
-            express clean "223 456   7890   "
+            "2234567890"
+            clean "223 456   7890   "
         ]
     ]
 
@@ -33,15 +33,15 @@ describe "Phone Number" [
     
     it.skip "valid when 11 digits and starting with 1" [
         expects.be:'equal? @[
-            express "2234567890"
-            express clean "12234567890"
+            "2234567890"
+            clean "12234567890"
         ]
     ]
     
     it.skip "valid when 11 digits and starting with 1 even with punctuation" [
         expects.be:'equal? @[
-            express "2234567890"
-            express clean "+1 (223) 456-7890"
+            "2234567890"
+            clean "+1 (223) 456-7890"
         ]
     ]
 

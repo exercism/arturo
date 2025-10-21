@@ -1,46 +1,46 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/rna-transcription}!
 
 describe "RNA Transcription" [
     it "Empty RNA sequence" [
         expects.be:'equal? @[
-            express ""
-            express toRna ""
+            ""
+            toRna ""
         ]
     ]
 
     it.skip "RNA complement of cytosine is guanine" [
         expects.be:'equal? @[
-            express "G"
-            express toRna "C"
+            "G"
+            toRna "C"
         ]
     ]
 
     it.skip "RNA complement of guanine is cytosine" [
         expects.be:'equal? @[
-            express "C"
-            express toRna "G"
+            "C"
+            toRna "G"
         ]
     ]
 
     it.skip "RNA complement of thymine is adenine" [
         expects.be:'equal? @[
-            express "A"
-            express toRna "T"
+            "A"
+            toRna "T"
         ]
     ]
 
     it.skip "RNA complement of adenine is uracil" [
         expects.be:'equal? @[
-            express "U"
-            express toRna "A"
+            "U"
+            toRna "A"
         ]
     ]
 
     it.skip "RNA complement" [
         expects.be:'equal? @[
-            express "UGCACCAGAAUU"
-            express toRna "ACGTGGTCTTAA"
+            "UGCACCAGAAUU"
+            toRna "ACGTGGTCTTAA"
         ]
     ]
 ]

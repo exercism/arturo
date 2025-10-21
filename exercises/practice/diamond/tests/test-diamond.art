@@ -1,11 +1,11 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/diamond}!
 
 describe "Diamond" [
     it "Degenerate case with a single 'A' row" [
         expects.be:'equal? @[
-            express "A"
-            express diamond 'A'
+            "A"
+            diamond 'A'
         ]
     ]
 
@@ -16,8 +16,8 @@ describe "Diamond" [
             " A "
         ]
         expects.be:'equal? @[
-            express expected
-            express diamond 'B'
+            expected
+            diamond 'B'
         ]
     ]
 
@@ -30,8 +30,8 @@ describe "Diamond" [
             "  A  "
         ]
         expects.be:'equal? @[
-            express expected
-            express diamond 'C'
+            expected
+            diamond 'C'
         ]
     ]
 
@@ -46,8 +46,8 @@ describe "Diamond" [
             "   A   "
         ]
         expects.be:'equal? @[
-            express expected
-            express diamond 'D'
+            expected
+            diamond 'D'
         ]
     ]
 
@@ -106,8 +106,8 @@ describe "Diamond" [
             "                         A                         "
         ]
         expects.be:'equal? @[
-            express expected
-            express diamond 'Z'
+            expected
+            diamond 'Z'
         ]
     ]
 ]

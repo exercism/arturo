@@ -1,145 +1,145 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/clock}!
 
 describe "Clock" [
     describe "Clock - Create a new clock with an initial time" [
         it "on the hour" [
             expects.be:'equal? @[
-                express "08:00"
-                express to :string to :clock [8`hr 0`min]
+                "08:00"
+                to :string to :clock [8`hr 0`min]
             ]
         ]
 
         it.skip "past the hour" [
             expects.be:'equal? @[
-                express "11:09"
-                express to :string to :clock [11`hr 9`min]
+                "11:09"
+                to :string to :clock [11`hr 9`min]
             ]
         ]
 
         it.skip "midnight is zero hours" [
             expects.be:'equal? @[
-                express "00:00"
-                express to :string to :clock [24`hr 0`min]
+                "00:00"
+                to :string to :clock [24`hr 0`min]
             ]
         ]
 
         it.skip "hour rolls over" [
             expects.be:'equal? @[
-                express "01:00"
-                express to :string to :clock [25`hr 0`min]
+                "01:00"
+                to :string to :clock [25`hr 0`min]
             ]
         ]
 
         it.skip "hour rolls over continuously" [
             expects.be:'equal? @[
-                express "04:00"
-                express to :string to :clock [100`hr 0`min]
+                "04:00"
+                to :string to :clock [100`hr 0`min]
             ]
         ]
 
         it.skip "sixty minutes is next hour" [
             expects.be:'equal? @[
-                express "02:00"
-                express to :string to :clock [1`hr 60`min]
+                "02:00"
+                to :string to :clock [1`hr 60`min]
             ]
         ]
 
         it.skip "minutes roll over" [
             expects.be:'equal? @[
-                express "02:40"
-                express to :string to :clock [0`hr 160`min]
+                "02:40"
+                to :string to :clock [0`hr 160`min]
             ]
         ]
 
         it.skip "minutes roll over continuously" [
             expects.be:'equal? @[
-                express "04:43"
-                express to :string to :clock [0`hr 1723`min]
+                "04:43"
+                to :string to :clock [0`hr 1723`min]
             ]
         ]
 
         it.skip "hour and minutes roll over" [
             expects.be:'equal? @[
-                express "03:40"
-                express to :string to :clock [25`hr 160`min]
+                "03:40"
+                to :string to :clock [25`hr 160`min]
             ]
         ]
 
         it.skip "hour and minutes roll over continuously" [
             expects.be:'equal? @[
-                express "11:01"
-                express to :string to :clock [201`hr 3001`min]
+                "11:01"
+                to :string to :clock [201`hr 3001`min]
             ]
         ]
 
         it.skip "hour and minutes roll over to exactly midnight" [
             expects.be:'equal? @[
-                express "00:00"
-                express to :string to :clock [72`hr 8640`min]
+                "00:00"
+                to :string to :clock [72`hr 8640`min]
             ]
         ]
 
         it.skip "negative hour" [
             expects.be:'equal? @[
-                express "23:15"
-                express to :string to :clock @[neg 1`hr 15`min]
+                "23:15"
+                to :string to :clock @[neg 1`hr 15`min]
             ]
         ]
 
         it.skip "negative hour rolls over" [
             expects.be:'equal? @[
-                express "23:00"
-                express to :string to :clock @[neg 25`hr 0`min]
+                "23:00"
+                to :string to :clock @[neg 25`hr 0`min]
             ]
         ]
 
         it.skip "negative hour rolls over continuously" [
             expects.be:'equal? @[
-                express "05:00"
-                express to :string to :clock @[neg 91`hr 0`min]
+                "05:00"
+                to :string to :clock @[neg 91`hr 0`min]
             ]
         ]
 
         it.skip "negative minutes" [
             expects.be:'equal? @[
-                express "00:20"
-                express to :string to :clock @[1`hr neg 40`min]
+                "00:20"
+                to :string to :clock @[1`hr neg 40`min]
             ]
         ]
 
         it.skip "negative minutes roll over" [
             expects.be:'equal? @[
-                express "22:20"
-                express to :string to :clock @[1`hr neg 160`min]
+                "22:20"
+                to :string to :clock @[1`hr neg 160`min]
             ]
         ]
 
         it.skip "negative minutes roll over continuously" [
             expects.be:'equal? @[
-                express "16:40"
-                express to :string to :clock @[1`hr neg 4820`min]
+                "16:40"
+                to :string to :clock @[1`hr neg 4820`min]
             ]
         ]
 
         it.skip "negative sixty minutes is previous hour" [
             expects.be:'equal? @[
-                express "01:00"
-                express to :string to :clock @[2`hr neg 60`min]
+                "01:00"
+                to :string to :clock @[2`hr neg 60`min]
             ]
         ]
 
         it.skip "negative hour and minutes roll over" [
             expects.be:'equal? @[
-                express "20:20"
-                express to :string to :clock @[neg 25`hr neg 160`min]
+                "20:20"
+                to :string to :clock @[neg 25`hr neg 160`min]
             ]
         ]
 
         it.skip "negative hour and minutes roll over continuously" [
             expects.be:'equal? @[
-                express "22:10"
-                express to :string to :clock @[neg 121`hr neg 5810`min]
+                "22:10"
+                to :string to :clock @[neg 121`hr neg 5810`min]
             ]
         ]
     ]
@@ -149,8 +149,8 @@ describe "Clock" [
             c: to :clock [10`hr 0`min]
             do [c\increment 3`min]
             expects.be:'equal? @[
-                express "10:03"
-                express to :string c
+                "10:03"
+                to :string c
             ]
         ]
 
@@ -158,8 +158,8 @@ describe "Clock" [
             c: to :clock [6`hr 41`min]
             do [c\increment 0`min]
             expects.be:'equal? @[
-                express "06:41"
-                express to :string c
+                "06:41"
+                to :string c
             ]
         ]
 
@@ -167,8 +167,8 @@ describe "Clock" [
             c: to :clock [0`hr 45`min]
             do [c\increment 40`min]
             expects.be:'equal? @[
-                express "01:25"
-                express to :string c
+                "01:25"
+                to :string c
             ]
         ]
 
@@ -176,8 +176,8 @@ describe "Clock" [
             c: to :clock [10`hr 0`min]
             do [c\increment 61`min]
             expects.be:'equal? @[
-                express "11:01"
-                express to :string c
+                "11:01"
+                to :string c
             ]
         ]
 
@@ -185,8 +185,8 @@ describe "Clock" [
             c: to :clock [0`hr 45`min]
             do [c\increment 160`min]
             expects.be:'equal? @[
-                express "03:25"
-                express to :string c
+                "03:25"
+                to :string c
             ]
         ]
 
@@ -194,8 +194,8 @@ describe "Clock" [
             c: to :clock [23`hr 59`min]
             do [c\increment 2`min]
             expects.be:'equal? @[
-                express "00:01"
-                express to :string c
+                "00:01"
+                to :string c
             ]
         ]
 
@@ -203,8 +203,8 @@ describe "Clock" [
             c: to :clock [5`hr 32`min]
             do [c\increment 1500`min]
             expects.be:'equal? @[
-                express "06:32"
-                express to :string c
+                "06:32"
+                to :string c
             ]
         ]
 
@@ -212,8 +212,8 @@ describe "Clock" [
             c: to :clock [1`hr 1`min]
             do [c\increment 3500`min]
             expects.be:'equal? @[
-                express "11:21"
-                express to :string c
+                "11:21"
+                to :string c
             ]
         ]
     ]
@@ -224,8 +224,8 @@ describe "Clock" [
             c: to :clock [10`hr 3`min]
             do [c\decrement 3`min]
             expects.be:'equal? @[
-                express "10:00"
-                express to :string c
+                "10:00"
+                to :string c
             ]
         ]
 
@@ -233,8 +233,8 @@ describe "Clock" [
             c: to :clock [10`hr 3`min]
             do [c\decrement 30`min]
             expects.be:'equal? @[
-                express "09:33"
-                express to :string c
+                "09:33"
+                to :string c
             ]
         ]
 
@@ -242,8 +242,8 @@ describe "Clock" [
             c: to :clock [10`hr 3`min]
             do [c\decrement 70`min]
             expects.be:'equal? @[
-                express "08:53"
-                express to :string c
+                "08:53"
+                to :string c
             ]
         ]
 
@@ -251,8 +251,8 @@ describe "Clock" [
             c: to :clock [0`hr 3`min]
             do [c\decrement 4`min]
             expects.be:'equal? @[
-                express "23:59"
-                express to :string c
+                "23:59"
+                to :string c
             ]
         ]
 
@@ -260,8 +260,8 @@ describe "Clock" [
             c: to :clock [0`hr 0`min]
             do [c\decrement 160`min]
             expects.be:'equal? @[
-                express "21:20"
-                express to :string c
+                "21:20"
+                to :string c
             ]
         ]
 
@@ -269,8 +269,8 @@ describe "Clock" [
             c: to :clock [6`hr 15`min]
             do [c\decrement 160`min]
             expects.be:'equal? @[
-                express "03:35"
-                express to :string c
+                "03:35"
+                to :string c
             ]
         ]
 
@@ -278,8 +278,8 @@ describe "Clock" [
             c: to :clock [5`hr 32`min]
             do [c\decrement 1500`min]
             expects.be:'equal? @[
-                express "04:32"
-                express to :string c
+                "04:32"
+                to :string c
             ]
         ]
 
@@ -287,8 +287,8 @@ describe "Clock" [
             c: to :clock [2`hr 20`min]
             do [c\decrement 3000`min]
             expects.be:'equal? @[
-                express "00:20"
-                express to :string c
+                "00:20"
+                to :string c
             ]
         ]
     ]
@@ -296,57 +296,57 @@ describe "Clock" [
     describe "Clock - Compare two clocks for equality" [
         it "clocks with same time" [
             expects.be:'equal? @[
-                express to :string to :clock [15`hr 37`min]
-                express to :string to :clock [15`hr 37`min]
+                to :string to :clock [15`hr 37`min]
+                to :string to :clock [15`hr 37`min]
             ]
         ]
 
         it.skip "clocks a minute apart" [
             expects.be:'notEqual? @[
-                express to :string to :clock [15`hr 36`min]
-                express to :string to :clock [15`hr 37`min]
+                to :string to :clock [15`hr 36`min]
+                to :string to :clock [15`hr 37`min]
             ]
         ]
 
         it.skip "clocks an hour apart" [
             expects.be:'notEqual? @[
-                express to :string to :clock [14`hr 37`min]
-                express to :string to :clock [15`hr 37`min]
+                to :string to :clock [14`hr 37`min]
+                to :string to :clock [15`hr 37`min]
             ]
         ]
 
         it.skip "clocks with hour overflow" [
             expects.be:'equal? @[
-                express to :string to :clock [10`hr 37`min]
-                express to :string to :clock [34`hr 37`min]
+                to :string to :clock [10`hr 37`min]
+                to :string to :clock [34`hr 37`min]
             ]
         ]
 
         it.skip "clocks with hour overflow by several days" [
             expects.be:'equal? @[
-                express to :string to :clock [3`hr 11`min]
-                express to :string to :clock [99`hr 11`min]
+                to :string to :clock [3`hr 11`min]
+                to :string to :clock [99`hr 11`min]
             ]
         ]
 
         it.skip "clocks with negative hour" [
             expects.be:'equal? @[
-                express to :string to :clock [22`hr 40`min]
-                express to :string to :clock @[neg 2`hr 40`min]
+                to :string to :clock [22`hr 40`min]
+                to :string to :clock @[neg 2`hr 40`min]
             ]
         ]
 
         it.skip "clocks with negative hour that wraps" [
             expects.be:'equal? @[
-                express to :string to :clock [17`hr 3`min]
-                express to :string to :clock @[neg 31`hr 3`min]
+                to :string to :clock [17`hr 3`min]
+                to :string to :clock @[neg 31`hr 3`min]
             ]
         ]
 
         it.skip "clocks with negative hour that wraps multiple times" [
             expects.be:'equal? @[
-                express to :string to :clock [13`hr 49`min]
-                express to :string to :clock @[neg 83`hr 49`min]
+                to :string to :clock [13`hr 49`min]
+                to :string to :clock @[neg 83`hr 49`min]
             ]
         ]
 
@@ -354,58 +354,58 @@ describe "Clock" [
             c1: to :clock [0`hr 1`min]
             c2: to :clock [0`hr 1441`min]
             expects.be:'equal? @[
-                express to :string to :clock [0`hr 1`min]
-                express to :string to :clock [0`hr 1441`min]
+                to :string to :clock [0`hr 1`min]
+                to :string to :clock [0`hr 1441`min]
             ]
         ]
 
         it.skip "clocks with minute overflow by several days" [
             expects.be:'equal? @[
-                express to :string to :clock [2`hr 2`min]
-                express to :string to :clock [2`hr 4322`min]
+                to :string to :clock [2`hr 2`min]
+                to :string to :clock [2`hr 4322`min]
             ]
         ]
 
         it.skip "clocks with negative minute" [
             expects.be:'equal? @[
-                express to :string to :clock [2`hr 40`min]
-                express to :string to :clock @[3`hr neg 20`min]
+                to :string to :clock [2`hr 40`min]
+                to :string to :clock @[3`hr neg 20`min]
             ]
         ]
 
         it.skip "clocks with negative minute that wraps" [
             expects.be:'equal? @[
-                express to :string to :clock [4`hr 10`min]
-                express to :string to :clock @[5`hr neg 1490`min]
+                to :string to :clock [4`hr 10`min]
+                to :string to :clock @[5`hr neg 1490`min]
             ]
         ]
 
         it.skip "clocks with negative minute that wraps multiple times" [
             expects.be:'equal? @[
-                express to :string to :clock [6`hr 15`min]
-                express to :string to :clock @[6`hr neg 4305`min]
+                to :string to :clock [6`hr 15`min]
+                to :string to :clock @[6`hr neg 4305`min]
             ]
         ]
 
         it.skip "clocks with negative hours and minutes" [
             expects.be:'equal? @[
-                express to :string to :clock [7`hr 32`min]
-                express to :string to :clock @[neg 12`hr neg 268`min]
+                to :string to :clock [7`hr 32`min]
+                to :string to :clock @[neg 12`hr neg 268`min]
             ]
         ]
 
         it.skip "clocks with negative hours and minutes that wrap" [
 
             expects.be:'equal? @[
-                express to :string to :clock [18`hr 7`min]
-                express to :string to :clock @[neg 54`hr neg 11513`min]
+                to :string to :clock [18`hr 7`min]
+                to :string to :clock @[neg 54`hr neg 11513`min]
             ]
         ]
 
         it.skip "full clock and zeroed clock" [
             expects.be:'equal? @[
-                express to :string to :clock [24`hr 0`min]
-                express to :string to :clock [0`hr 0`min]
+                to :string to :clock [24`hr 0`min]
+                to :string to :clock [0`hr 0`min]
             ]
         ]
     ]
