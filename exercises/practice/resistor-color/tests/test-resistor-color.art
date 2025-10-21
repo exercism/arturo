@@ -16,8 +16,8 @@ describe "Resistor Color" [
 
     it.skip "colors" [
         expects.be:'equal? @[
-            express ["black" "brown" "red" "orange" "yellow" "green" "blue" "violet" "grey" "white"] 
-            express colors
+            ["black" "brown" "red" "orange" "yellow" "green" "blue" "violet" "grey" "white"] 
+            colors
         ]
     ]
 ]

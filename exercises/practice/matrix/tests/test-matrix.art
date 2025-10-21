@@ -5,8 +5,8 @@ describe "Matrix" [
     describe "Matrix - Row" [
         it "extract row fron one number matrix" [
             expects.be:'equal? @[
-                express [1]
-                express row "1" 1
+                [1]
+                row "1" 1
             ]
         ]
 
@@ -16,8 +16,8 @@ describe "Matrix" [
                 3 4
             }
             expects.be:'equal? @[
-                express [3 4]
-                express row matrix 2
+                [3 4]
+                row matrix 2
             ]
         ]
 
@@ -27,8 +27,8 @@ describe "Matrix" [
                 10 20
             }
             expects.be:'equal? @[
-                express [10 20]
-                express row matrix 2
+                [10 20]
+                row matrix 2
             ]
         ]
 
@@ -40,8 +40,8 @@ describe "Matrix" [
                 8 7 6
             }
             expects.be:'equal? @[
-                express [8 7 6]
-                express row matrix 4
+                [8 7 6]
+                row matrix 4
             ]
         ]
     ]
@@ -49,8 +49,8 @@ describe "Matrix" [
     describe "Matrix - Column" [
         it.skip "extract column from one number matrix" [
             expects.be:'equal? @[
-                express [1]
-                express column "1" 1
+                [1]
+                column "1" 1
             ]
         ]
 
@@ -61,8 +61,8 @@ describe "Matrix" [
                 7 8 9
             }
             expects.be:'equal? @[
-                express [3 6 9]
-                express column matrix 3
+                [3 6 9]
+                column matrix 3
             ]
         ]
 
@@ -73,8 +73,8 @@ describe "Matrix" [
                 9 8 7 6
             }
             expects.be:'equal? @[
-                express [4 8 6]
-                express column matrix 4
+                [4 8 6]
+                column matrix 4
             ]
         ]
 
@@ -85,8 +85,8 @@ describe "Matrix" [
                 9 4 800
             }
             expects.be:'equal? @[
-                express [1903 3 4]
-                express column matrix 2
+                [1903 3 4]
+                column matrix 2
             ]
         ]
     ]

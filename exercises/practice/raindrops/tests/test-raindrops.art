@@ -4,127 +4,127 @@ import {src/raindrops}!
 describe "Raindrops" [
     it "the sound of 1 is 1" [
         expects.be:'equal? @[
-            express "1"
-            express raindrops 1
+            "1"
+            raindrops 1
         ]
     ]
 
     it.skip "the sound for 3 is Pling" [
         expects.be:'equal? @[
-            express "Pling"
-            express raindrops 3
+            "Pling"
+            raindrops 3
         ]
     ]
 
     it.skip "the sound for 5 is Plang" [
         expects.be:'equal? @[
-            express "Plang"
-            express raindrops 5
+            "Plang"
+            raindrops 5
         ]
     ]
 
     it.skip "the sound of 7 is Plong" [
         expects.be:'equal? @[
-            express "Plong"
-            express raindrops 7
+            "Plong"
+            raindrops 7
         ]
     ]
 
     it.skip "the sound for 6 is Pling as it has a factor of 3" [
         expects.be:'equal? @[
-            express "Pling"
-            express raindrops 6
+            "Pling"
+            raindrops 6
         ]
     ]
 
     it.skip "2 to the power 3 does not make a raindrop sound as 3 is the exponent not the base" [
         expects.be:'equal? @[
-            express "8"
-            express raindrops 8
+            "8"
+            raindrops 8
         ]
     ]
 
     it.skip "the sound of 9 is Pling as it has a factor of 3" [
         expects.be:'equal? @[
-            express "Pling"
-            express raindrops 9
+            "Pling"
+            raindrops 9
         ]
     ]
 
     it.skip "the sound for 10 is Plang as it has a factor of 5" [
         expects.be:'equal? @[
-            express "Plang"
-            express raindrops 10
+            "Plang"
+            raindrops 10
         ]
     ]
 
     it.skip "the sound for 14 is Plong as it has a factor of 7" [
         expects.be:'equal? @[
-            express "Plong"
-            express raindrops 14
+            "Plong"
+            raindrops 14
         ]
     ]
 
     it.skip "the sound for 15 is PlingPlang as it has factors 3 and 5" [
         expects.be:'equal? @[
-            express "PlingPlang"
-            express raindrops 15
+            "PlingPlang"
+            raindrops 15
         ]
     ]
 
     it.skip "the sound for 21 is PlingPlong as it has factors 3 and 7" [
         expects.be:'equal? @[
-            express "PlingPlong"
-            express raindrops 21
+            "PlingPlong"
+            raindrops 21
         ]
     ]
 
     it.skip "the sound for 25 is Plang as it has a factor of 5" [
         expects.be:'equal? @[
-            express "Plang"
-            express raindrops 25
+            "Plang"
+            raindrops 25
         ]
     ]
 
     it.skip "the sound for 27 is Pling as it has a factor of 3" [
         expects.be:'equal? @[
-            express "Pling"
-            express raindrops 27
+            "Pling"
+            raindrops 27
         ]
     ]
 
     it.skip "the sound for 35 is PlangPlong as it has factors 5 and 7" [
         expects.be:'equal? @[
-            express "PlangPlong"
-            express raindrops 35
+            "PlangPlong"
+            raindrops 35
         ]
     ]
 
     it.skip "the sound for 49 is Plong as it has a factor of 7" [
         expects.be:'equal? @[
-            express "Plong"
-            express raindrops 49
+            "Plong"
+            raindrops 49
         ]
     ]
 
     it.skip "the sound for 52 is 52" [
         expects.be:'equal? @[
-            express "52"
-            express raindrops 52
+            "52"
+            raindrops 52
         ]
     ]
 
     it.skip "the sound for 105 is PlingPlangPlong as it has factors 3, 5 and 7" [
         expects.be:'equal? @[
-            express "PlingPlangPlong"
-            express raindrops 105
+            "PlingPlangPlong"
+            raindrops 105
         ]
     ]
 
     it.skip "the sound for 3125 is Plang as it has a factor of 5" [
         expects.be:'equal? @[
-            express "Plang"
-            express raindrops 3125
+            "Plang"
+            raindrops 3125
         ]
     ]
 ]

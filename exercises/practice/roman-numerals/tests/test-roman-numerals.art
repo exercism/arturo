@@ -4,197 +4,197 @@ import {src/roman-numerals}!
 describe "Roman Numerals" [
     it "1 is I" [
         expects.be:'equal? @[
-            express "I"
-            express stringify.roman 1
+            "I"
+            stringify.roman 1
         ]
     ]
 
     it.skip "2 is II" [
         expects.be:'equal? @[
-            express "II"
-            express stringify.roman 2
+            "II"
+            stringify.roman 2
         ]
     ]
 
     it.skip "3 is III" [
         expects.be:'equal? @[
-            express "III"
-            express stringify.roman 3
+            "III"
+            stringify.roman 3
         ]
     ]
 
     it.skip "4 is IV" [
         expects.be:'equal? @[
-            express "IV"
-            express stringify.roman 4
+            "IV"
+            stringify.roman 4
         ]
     ]
 
     it.skip "5 is V" [
         expects.be:'equal? @[
-            express "V"
-            express stringify.roman 5
+            "V"
+            stringify.roman 5
         ]
     ]
 
     it.skip "6 is VI" [
         expects.be:'equal? @[
-            express "VI"
-            express stringify.roman 6
+            "VI"
+            stringify.roman 6
         ]
     ]
 
     it.skip "9 is IX" [
         expects.be:'equal? @[
-            express "IX"
-            express stringify.roman 9
+            "IX"
+            stringify.roman 9
         ]
     ]
 
     it.skip "27 is XXVII" [
         expects.be:'equal? @[
-            express "XXVII"
-            express stringify.roman 27
+            "XXVII"
+            stringify.roman 27
         ]
     ]
 
     it.skip "48 is XLVIII" [
         expects.be:'equal? @[
-            express "XLVIII"
-            express stringify.roman 48
+            "XLVIII"
+            stringify.roman 48
         ]
     ]
 
     it.skip "49 is XLIX" [
         expects.be:'equal? @[
-            express "XLIX"
-            express stringify.roman 49
+            "XLIX"
+            stringify.roman 49
         ]
     ]
 
     it.skip "59 is LIX" [
         expects.be:'equal? @[
-            express "LIX"
-            express stringify.roman 59
+            "LIX"
+            stringify.roman 59
         ]
     ]
 
     it.skip "93 is XCIII" [
         expects.be:'equal? @[
-            express "XCIII"
-            express stringify.roman 93
+            "XCIII"
+            stringify.roman 93
         ]
     ]
 
     it.skip "141 is CXLI" [
         expects.be:'equal? @[
-            express "CXLI"
-            express stringify.roman 141
+            "CXLI"
+            stringify.roman 141
         ]
     ]
 
     it.skip "163 is CLXIII" [
         expects.be:'equal? @[
-            express "CLXIII"
-            express stringify.roman 163
+            "CLXIII"
+            stringify.roman 163
         ]
     ]
 
     it.skip "402 is CDII" [
         expects.be:'equal? @[
-            express "CDII"
-            express stringify.roman 402
+            "CDII"
+            stringify.roman 402
         ]
     ]
 
     it.skip "575 is DLXXV" [
         expects.be:'equal? @[
-            express "DLXXV"
-            express stringify.roman 575
+            "DLXXV"
+            stringify.roman 575
         ]
     ]
 
     it.skip "911 is CMXI" [
         expects.be:'equal? @[
-            express "CMXI"
-            express stringify.roman 911
+            "CMXI"
+            stringify.roman 911
         ]
     ]
 
     it.skip "1024 is MXXIV" [
         expects.be:'equal? @[
-            express "MXXIV"
-            express stringify.roman 1024
+            "MXXIV"
+            stringify.roman 1024
         ]
     ]
 
     it.skip "3000 is MMM" [
         expects.be:'equal? @[
-            express "MMM"
-            express stringify.roman 3000
+            "MMM"
+            stringify.roman 3000
         ]
     ]
 
     it.skip "16 is XVI" [
         expects.be:'equal? @[
-            express "XVI"
-            express stringify.roman 16
+            "XVI"
+            stringify.roman 16
         ]
     ]
 
     it.skip "66 is LXVI" [
         expects.be:'equal? @[
-            express "LXVI"
-            express stringify.roman 66
+            "LXVI"
+            stringify.roman 66
         ]
     ]
 
     it.skip "166 is CLXVI" [
         expects.be:'equal? @[
-            express "CLXVI"
-            express stringify.roman 166
+            "CLXVI"
+            stringify.roman 166
         ]
     ]
 
     it.skip "666 is DCLXVI" [
         expects.be:'equal? @[
-            express "DCLXVI"
-            express stringify.roman 666
+            "DCLXVI"
+            stringify.roman 666
         ]
     ]
 
     it.skip "1666 is MDCLXVI" [
         expects.be:'equal? @[
-            express "MDCLXVI"
-            express stringify.roman 1666
+            "MDCLXVI"
+            stringify.roman 1666
         ]
     ]
 
     it.skip "3001 is MMMI" [
         expects.be:'equal? @[
-            express "MMMI"
-            express stringify.roman 3001
+            "MMMI"
+            stringify.roman 3001
         ]
     ]
 
     it.skip "3888 is MMMDCCCLXXXVIII" [
         expects.be:'equal? @[
-            express "MMMDCCCLXXXVIII"
-            express stringify.roman 3888
+            "MMMDCCCLXXXVIII"
+            stringify.roman 3888
         ]
     ]
 
     it.skip "3999 is MMMCMXCIX" [
         expects.be:'equal? @[
-            express "MMMCMXCIX"
-            express stringify.roman 3999
+            "MMMCMXCIX"
+            stringify.roman 3999
         ]
     ]
 
     it.skip "return unchanged number if no roman attribute set" [
         expects.be:'equal? @[
-            express "3999"
-            express stringify 3999
+            "3999"
+            stringify 3999
         ]
     ]
 ]

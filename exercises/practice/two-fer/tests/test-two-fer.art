@@ -4,22 +4,22 @@ import {src/two-fer}!
 describe "Two Fer" [
     it "no name given" [
         expects.be:'equal? @[
-            express "One for you, one for me."
-            express twoFer ""
+            "One for you, one for me."
+            twoFer ""
         ]
     ]
 
     it.skip "a name given" [
         expects.be:'equal? @[
-            express "One for Alice, one for me."
-            express twoFer "Alice"
+            "One for Alice, one for me."
+            twoFer "Alice"
         ]
     ]
     
     it.skip "another name given" [
         expects.be:'equal? @[
-            express "One for Bob, one for me."
-            express twoFer "Bob"
+            "One for Bob, one for me."
+            twoFer "Bob"
         ]
     ]
 ]
