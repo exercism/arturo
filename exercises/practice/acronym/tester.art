@@ -1,7 +1,3 @@
-exe: switch "windows" = sys\os 
-    -> "unitt.bat" 
-    -> "unitt"
+import.version:2.0.1 {unitt}!
 
-fullpath: normalize ~"|path\home|/.arturo/packages/bin/|exe|"
-code: execute.code.directly ~"|fullpath|"
-panic.unstyled.code: code ""
+runTests.failFast findTests "tests"
