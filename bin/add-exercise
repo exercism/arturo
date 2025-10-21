@@ -47,9 +47,13 @@ fi
 ./bin/configlet create --practice-exercise "${slug}" --author "${author}" --difficulty "${difficulty}"
 
 cat << END_TESTER > "exercises/practice/${slug}/tester.art"
-import.version:2.0.1 {unitt}!
+exe: switch "windows" = sys\os 
+    -> "unitt.bat" 
+    -> "unitt"
 
-runTests.failFast findTests "tests"
+fullpath: normalize ~"|path\home|/.arturo/packages/bin/|exe|"
+code: execute.code.directly ~"|fullpath|"
+panic.unstyled.code: code ""
 END_TESTER
 
 cat << END_TEST > "exercises/practice/${slug}/tests/test-${slug}.art"
