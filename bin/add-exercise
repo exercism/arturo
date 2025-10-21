@@ -46,6 +46,13 @@ fi
 ./bin/fetch-configlet
 ./bin/configlet create --practice-exercise "${slug}" --author "${author}" --difficulty "${difficulty}"
 
+cat << END_UNITT_TOML > "exercises/practice/${slug}/unitt.toml"
+# unitt.toml - Configuration for unitt
+
+path = "tests"
+suffix = ".art"
+END_UNITT_TOML
+
 cat << END_TESTER > "exercises/practice/${slug}/tester.art"
 exe: switch "windows" = sys\os 
     -> "unitt.bat" 
