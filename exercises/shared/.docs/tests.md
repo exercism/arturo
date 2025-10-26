@@ -98,24 +98,29 @@ RSpec, however, reports it as `false? false` because we used the `false?` functi
 Starting at the beginning, Arturo will report an error if the `panic` from the starting file hasm't been removed and not evaluate any tests.
 
 ```
-===== tests/test-leap.art =====
+Uncaught error in tests/test-leap.art:
+#[
+        output: {
+                
+                ══╡ Program Error ╞═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════ <script> ══
+                
+                  Please implement the isLeap? function
+                
+                
+        }
+        code: 1
+]
 
-Description: Leap 
- 
-
-══╡ Program Error ╞═════════════════════════════════════════════════════════════════════════════════════════════════ <script> ══
-
-  please implement the isLeap? function
 ```
 
 Once the `panic` is replaced, Arturo will report the status for each assertion made within a test.
 Now the first test passes, but the second test is skipped.
 
 ```plaintext
-===== tests/test-leap.art =====
+======== .unitt/tests/test-leap.art ========
 
-Description: Leap 
- 
+Describe: Leap
+
     ✅ - assert that a year not divisible by 4 is a common year
          ✅: false? false
 
@@ -123,25 +128,24 @@ Description: Leap
          skipped!
 
 
+========== Summary ==========
 
-===== Statistics =====
+⏏️   TOTAL: 2 assertions
+✅  PASSED: 1 assertion
+⏩ SKIPPED: 1 assertion
+❌  FAILED: 0 assertion
 
- ⏏️   TOTAL: 1 assertions
-✅  PASSED: 1 assertions
-⏩ SKIPPED: 1 assertions
-❌  FAILED: 0 assertions
-
-===== ========== =====
+========== ======= ==========
 ```
 
 After the second test is manually unskipped, both tests will be run.
-However, my code only returns `false` so the second test fails its assertion.
+However, the current isLeap? code implementation only returns `false` so the second test fails its assertion.
 
 ```plaintext
-===== tests/test-leap.art =====
+======== .unitt/tests/test-leap.art ========
 
-Description: Leap 
- 
+Describe: Leap
+
     ✅ - assert that a year not divisible by 4 is a common year
          ✅: false? false
 
@@ -149,15 +153,14 @@ Description: Leap
          ❌: true? false
 
 
+========== Summary ==========
 
-===== Statistics =====
+⏏️   TOTAL: 2 assertions
+✅  PASSED: 1 assertion
+⏩ SKIPPED: 0 assertion
+❌  FAILED: 1 assertion
 
- ⏏️   TOTAL: 2 assertions
-✅  PASSED: 1 assertions
-⏩ SKIPPED: 0 assertions
-❌  FAILED: 1 assertions
-
-===== ========== =====
+========== ======= ==========
 ```
 
 This process will continue as you unskip more tests.
