@@ -41,7 +41,7 @@ Remove the `panic` line and then begin coding your implementation for `isLeap?`.
 ## RSpec Test Structure
 
 ```arturo
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}!
 import {src/leap}!
 
 describe "Leap" [
@@ -63,14 +63,6 @@ In `expects.be:'false? @[isLeap? 2015]`, the test suite is making an assertion t
 Another way to write that is `expects.be:'equal? @[false isLeapYear? 2015]` where we're asserting the returned vaue of `isLeapYear? 2015` is equal to `false`.
 This longer form comparing two values is the most common type of assertion on the Arturo track.
 The expected value will always come first in the block before the result value.
-Notably, `express <value>` is used sometimes to add quotes at the beginning and end of strings, like `expects.be:'equal? @[express "reward" express reverseString "drawer"]`.
-To help readability, this will typically be split across multiple lines like this:
-```arturo
-expects.be:'equal? @[
-    express "reward"
-    express reverseString "drawer"
-]
-```
 
 ## XUnit Test Structure
 
