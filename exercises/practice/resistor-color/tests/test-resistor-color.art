@@ -1,4 +1,4 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/resistor-color}!
 
 describe "Resistor Color" [
@@ -16,8 +16,8 @@ describe "Resistor Color" [
 
     it.skip "colors" [
         expects.be:'equal? @[
-            express ["black" "brown" "red" "orange" "yellow" "green" "blue" "violet" "grey" "white"] 
-            express colors
+            ["black" "brown" "red" "orange" "yellow" "green" "blue" "violet" "grey" "white"] 
+            colors
         ]
     ]
 ]

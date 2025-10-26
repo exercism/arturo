@@ -1,39 +1,39 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/gigasecond}!
 
 describe "Gigasecond" [
     it "date only specification of time" [
         expects.be:'equal? @[
-            express to :date.format: "yyyy-MM-dd hh:mm:sszz" "2043-01-01 01:46:40+00"
-            express gigasecond to :date.format: "yyyy-MM-ddzz" "2011-04-25+00"
+            to :date.format: "yyyy-MM-dd hh:mm:sszz" "2043-01-01 01:46:40+00"
+            gigasecond to :date.format: "yyyy-MM-ddzz" "2011-04-25+00"
         ]
     ]
 
     it.skip "second test for date only specification of time" [
         expects.be:'equal? @[
-            express to :date.format: "yyyy-MM-dd hh:mm:sszz" "2009-02-19 01:46:40+00"
-            express gigasecond to :date.format: "yyyy-MM-ddzz" "1977-06-13+00"
+            to :date.format: "yyyy-MM-dd hh:mm:sszz" "2009-02-19 01:46:40+00"
+            gigasecond to :date.format: "yyyy-MM-ddzz" "1977-06-13+00"
         ]
     ]
 
     it.skip "third test for date only specification of time" [
         expects.be:'equal? @[
-            express to :date.format: "yyyy-MM-dd hh:mm:sszz" "1991-03-27 01:46:40+00"
-            express gigasecond to :date.format: "yyyy-MM-ddzz" "1959-07-19+00"
+            to :date.format: "yyyy-MM-dd hh:mm:sszz" "1991-03-27 01:46:40+00"
+            gigasecond to :date.format: "yyyy-MM-ddzz" "1959-07-19+00"
         ]
     ]
 
     it.skip "full time specified" [
         expects.be:'equal? @[
-            express to :date.format: "yyyy-MM-dd hh:mm:sszz" "2046-10-02 23:46:40+00"
-            express gigasecond to :date.format: "yyyy-MM-dd hh:mm:sszz" "2015-01-24 22:00:00+00"
+            to :date.format: "yyyy-MM-dd hh:mm:sszz" "2046-10-02 23:46:40+00"
+            gigasecond to :date.format: "yyyy-MM-dd hh:mm:sszz" "2015-01-24 22:00:00+00"
         ]
     ]
 
     it.skip "full time with day roll-over" [
         expects.be:'equal? @[
-            express to :date.format: "yyyy-MM-dd hh:mm:sszz" "2046-10-03 01:46:39+00"
-            express gigasecond to :date.format: "yyyy-MM-dd hh:mm:sszz" "2015-01-24 23:59:59+00"
+            to :date.format: "yyyy-MM-dd hh:mm:sszz" "2046-10-03 01:46:39+00"
+            gigasecond to :date.format: "yyyy-MM-dd hh:mm:sszz" "2015-01-24 23:59:59+00"
         ]
     ]
 ]

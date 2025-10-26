@@ -1,20 +1,20 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/house}!
 
 
 describe "House" [
     it "verse one - the house that Jack built" [
         expects.be:'equal? @[
-            express "This is the house that Jack built."
-            express recite 1 1
+            "This is the house that Jack built."
+            recite 1 1
         ]
     ]
 
     it.skip "verse two - the malt that lay" [
 
         expects.be:'equal? @[
-            express "This is the malt that lay in the house that Jack built."
-            express recite 2 2
+            "This is the malt that lay in the house that Jack built."
+            recite 2 2
         ]
     ]
 
@@ -26,8 +26,8 @@ describe "House" [
             "the house that Jack built."
         ]
         expects.be:'equal? @[
-            express expected
-            express recite 3 3
+            expected
+            recite 3 3
         ]
     ]
 
@@ -40,8 +40,8 @@ describe "House" [
             "the house that Jack built."
         ]
         expects.be:'equal? @[
-            express expected
-            express recite 4 4
+            expected
+            recite 4 4
         ]
     ]
 
@@ -55,8 +55,8 @@ describe "House" [
             "the house that Jack built."
         ]
         expects.be:'equal? @[
-            express expected
-            express recite 5 5
+            expected
+            recite 5 5
         ]
     ]
 
@@ -71,8 +71,8 @@ describe "House" [
             "the house that Jack built."
         ]
         expects.be:'equal? @[
-            express expected
-            express recite 6 6
+            expected
+            recite 6 6
         ]
     ]
 
@@ -88,8 +88,8 @@ describe "House" [
             "the house that Jack built."
         ]
         expects.be:'equal? @[
-            express expected
-            express recite 7 7
+            expected
+            recite 7 7
         ]
     ]
 
@@ -106,8 +106,8 @@ describe "House" [
             "the house that Jack built."
         ]
         expects.be:'equal? @[
-            express expected
-            express recite 8 8
+            expected
+            recite 8 8
         ]
     ]
 
@@ -125,8 +125,8 @@ describe "House" [
             "the house that Jack built."
         ]
         expects.be:'equal? @[
-            express expected
-            express recite 9 9
+            expected
+            recite 9 9
         ]
     ]
 
@@ -145,8 +145,8 @@ describe "House" [
             "the house that Jack built."
         ]
         expects.be:'equal? @[
-            express expected
-            express recite 10 10
+            expected
+            recite 10 10
         ]
     ]
 
@@ -166,8 +166,8 @@ describe "House" [
             "the house that Jack built."
         ]
         expects.be:'equal? @[
-            express expected
-            express recite 11 11
+            expected
+            recite 11 11
         ]
     ]
 
@@ -188,8 +188,8 @@ describe "House" [
             "the house that Jack built."
         ]
         expects.be:'equal? @[
-            express expected
-            express recite 12 12
+            expected
+            recite 12 12
         ]
     ]
 
@@ -242,8 +242,8 @@ describe "House" [
             ]                  
         ]
         expects.be:'equal? @[
-            express expected
-            express recite 4 8
+            expected
+            recite 4 8
         ]
     ]
 
@@ -363,8 +363,8 @@ describe "House" [
         ]
     
         expects.be:'equal? @[
-            express expected
-            express recite 1 12
+            expected
+            recite 1 12
         ]
     ]
 ]

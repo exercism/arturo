@@ -1,45 +1,45 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/series}!
 
 describe "Series" [
     it "slices of one from one" [
         expects.be:'equal? @[
-            express ["1"]
-            express slices "1" 1
+            ["1"]
+            slices "1" 1
         ]
     ]
 
     it.skip "slices of one from two" [
         expects.be:'equal? @[
-            express ["1" "2"]
-            express slices "12" 1
+            ["1" "2"]
+            slices "12" 1
         ]
     ]
 
     it.skip "slices of two" [
         expects.be:'equal? @[
-            express ["35"]
-            express slices "35" 2
+            ["35"]
+            slices "35" 2
         ]
     ]
 
     it.skip "slices of two overlap" [
         expects.be:'equal? @[
-            express ["91" "14" "42"]
-            express slices "9142" 2
+            ["91" "14" "42"]
+            slices "9142" 2
         ]
     ]
 
     it.skip "slices can include duplicates" [
         expects.be:'equal? @[
-            express ["777" "777" "777" "777"]
-            express slices "777777" 3
+            ["777" "777" "777" "777"]
+            slices "777777" 3
         ]
     ]
 
     it.skip "slices of a long series" [
         expects.be:'equal? @[
-            express [
+            [
                 "91849"
                 "18493"
                 "84939"
@@ -49,7 +49,7 @@ describe "Series" [
                 "90424"
                 "04243"
             ]
-            express slices "918493904243" 5
+            slices "918493904243" 5
         ]
     ]
 

@@ -46,14 +46,25 @@ fi
 ./bin/fetch-configlet
 ./bin/configlet create --practice-exercise "${slug}" --author "${author}" --difficulty "${difficulty}"
 
-cat << END_TESTER > "exercises/practice/${slug}/tester.art"
-import.version:2.0.1 {unitt}!
+cat << END_UNITT_TOML > "exercises/practice/${slug}/unitt.toml"
+# unitt.toml - Configuration for unitt
 
-runTests.failFast findTests "tests"
+path = "tests"
+suffix = ".art"
+END_UNITT_TOML
+
+cat << END_TESTER > "exercises/practice/${slug}/tester.art"
+exe: switch "windows" = sys\os 
+    -> "unitt.bat" 
+    -> "unitt"
+
+fullpath: normalize ~"|path\home|/.arturo/packages/bin/|exe|"
+code: execute.code.directly ~"|fullpath|"
+panic.unstyled.code: code ""
 END_TESTER
 
 cat << END_TEST > "exercises/practice/${slug}/tests/test-${slug}.art"
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/${slug}}!
 
 $(curl --silent "https://raw.githubusercontent.com/exercism/problem-specifications/main/exercises/${slug}/canonical-data.json")

@@ -1,11 +1,11 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/transpose}!
 
 describe "Transpose" [
     it "empty string" [
         expects.be:'equal? @[
-            express ""
-            express transpose ""
+            ""
+            transpose ""
         ]
     ]
 
@@ -15,8 +15,8 @@ describe "Transpose" [
             "1"
         ]
         expects.be:'equal? @[
-            express expected
-            express transpose "A1"
+            expected
+            transpose "A1"
         ]
     ]
 
@@ -26,8 +26,8 @@ describe "Transpose" [
             "1"
         ]
         expects.be:'equal? @[
-            express "A1"
-            express transpose lines
+            "A1"
+            transpose lines
         ]
     ]
 
@@ -42,8 +42,8 @@ describe "Transpose" [
             "C3"
         ]
         expects.be:'equal? @[
-            express expected
-            express transpose lines
+            expected
+            transpose lines
         ]
     ]
 
@@ -63,8 +63,8 @@ describe "Transpose" [
             "."
         ]
         expects.be:'equal? @[
-            express expected
-            express transpose "Single line."
+            expected
+            transpose "Single line."
         ]
     ]
 
@@ -92,8 +92,8 @@ describe "Transpose" [
             "."
         ]
         expects.be:'equal? @[
-            express expected
-            express transpose lines
+            expected
+            transpose lines
         ]
     ]
 
@@ -121,8 +121,8 @@ describe "Transpose" [
             " ."
         ]
         expects.be:'equal? @[
-            express expected
-            express transpose lines
+            expected
+            transpose lines
         ]
     ]
 
@@ -153,8 +153,8 @@ describe "Transpose" [
             "."
         ]
         expects.be:'equal? @[
-            express expected
-            express transpose lines
+            expected
+            transpose lines
         ]
     ]
 
@@ -174,8 +174,8 @@ describe "Transpose" [
             "TREND"
         ]
         expects.be:'equal? @[
-            express expected
-            express transpose lines
+            expected
+            transpose lines
         ]
     ]
 
@@ -197,8 +197,8 @@ describe "Transpose" [
             "EDGE"
         ]
         expects.be:'equal? @[
-            express expected
-            express transpose lines
+            expected
+            transpose lines
         ]
     ]
 
@@ -220,8 +220,8 @@ describe "Transpose" [
             "     R"
         ]
         expects.be:'equal? @[
-            express expected
-            express transpose lines
+            expected
+            transpose lines
         ]
     ]
 
@@ -243,8 +243,8 @@ describe "Transpose" [
             "    5"
         ]
         expects.be:'equal? @[
-            express expected
-            express transpose lines
+            expected
+            transpose lines
         ]
     ]
 ]

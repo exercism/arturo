@@ -1,47 +1,47 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/run-length-encoding}!
 
 describe "Run-Length Encoding" [
     describe "Run-Length Encoding - Encode" [
         it "encode empty string" [
             expects.be:'equal? @[
-                express ""
-                express encode ""
+                ""
+                encode ""
             ]
         ]
 
         it.skip "encode single characters only are encoded without count" [
             expects.be:'equal? @[
-                express "XYZ"
-                express encode "XYZ"
+                "XYZ"
+                encode "XYZ"
             ]
         ]
 
         it.skip "encode string with no single characters" [
             expects.be:'equal? @[
-                express "2A3B4C"
-                express encode "AABBBCCCC"
+                "2A3B4C"
+                encode "AABBBCCCC"
             ]
         ]
 
         it.skip "encode single characters mixed with repeated characters" [
             expects.be:'equal? @[
-                express "12WB12W3B24WB"
-                express encode "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"
+                "12WB12W3B24WB"
+                encode "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"
             ]
         ]
 
         it.skip "encode multiple whitespace mixed in string" [
             expects.be:'equal? @[
-                express "2 hs2q q2w2 "
-                express encode "  hsqq qww  "
+                "2 hs2q q2w2 "
+                encode "  hsqq qww  "
             ]
         ]
 
         it.skip "encode lowercase characters" [
             expects.be:'equal? @[
-                express "2a3b4c"
-                express encode "aabbbcccc"
+                "2a3b4c"
+                encode "aabbbcccc"
             ]
         ]
     ]
@@ -50,50 +50,50 @@ describe "Run-Length Encoding" [
     describe "Run-Length Encoding - Decode" [
         it.skip "decode empty string" [
             expects.be:'equal? @[
-                express ""
-                express decode ""
+                ""
+                decode ""
             ]
         ]
 
         it.skip "decode single characters only" [
             expects.be:'equal? @[
-                express "XYZ"
-                express decode "XYZ"
+                "XYZ"
+                decode "XYZ"
             ]
         ]
 
         it.skip "decode string with no single characters" [
             expects.be:'equal? @[
-                express "AABBBCCCC"
-                express decode "2A3B4C"
+                "AABBBCCCC"
+                decode "2A3B4C"
             ]
         ]
 
         it.skip "decode single characters with repeated characters" [
             expects.be:'equal? @[
-                express "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"
-                express decode "12WB12W3B24WB"
+                "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"
+                decode "12WB12W3B24WB"
             ]
         ]
 
         it.skip "decode multiple whitespace mixed in string" [
             expects.be:'equal? @[
-                express "  hsqq qww  "
-                express decode "2 hs2q q2w2 "
+                "  hsqq qww  "
+                decode "2 hs2q q2w2 "
             ]
         ]
 
         it.skip "decode lowercase string" [
             expects.be:'equal? @[
-                express "aabbbcccc"
-                express decode "2a3b4c"
+                "aabbbcccc"
+                decode "2a3b4c"
             ]
         ]
 
         it.skip "encode followed by decode gives original string" [
             expects.be:'equal? @[
-                express "zzz ZZ  zZ"
-                express decode encode "zzz ZZ  zZ"
+                "zzz ZZ  zZ"
+                decode encode "zzz ZZ  zZ"
             ]
         ]
     ]

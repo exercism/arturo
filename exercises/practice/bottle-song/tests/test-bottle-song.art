@@ -1,4 +1,4 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/bottle-song}!
 
 describe "Bottle Song" [
@@ -11,8 +11,8 @@ describe "Bottle Song" [
                 There'll be nine green bottles hanging on the wall.
             }
             expects.be:'equal? @[
-                express expected
-                express recite 10 1
+                expected
+                recite 10 1
             ]
         ]
 
@@ -24,8 +24,8 @@ describe "Bottle Song" [
                 There'll be two green bottles hanging on the wall.
             }
             expects.be:'equal? @[
-                express expected
-                express recite 3 1
+                expected
+                recite 3 1
             ]
         ]
 
@@ -37,8 +37,8 @@ describe "Bottle Song" [
                 There'll be one green bottle hanging on the wall.
             }
             expects.be:'equal? @[
-                express expected
-                express recite 2 1
+                expected
+                recite 2 1
             ]
         ]
 
@@ -50,8 +50,8 @@ describe "Bottle Song" [
                 There'll be no green bottles hanging on the wall.
             }
             expects.be:'equal? @[
-                express expected
-                express recite 1 1
+                expected
+                recite 1 1
             ]
         ]
     ]
@@ -70,8 +70,8 @@ describe "Bottle Song" [
                 There'll be eight green bottles hanging on the wall.
             }
             expects.be:'equal? @[
-                express expected
-                express recite 10 2
+                expected
+                recite 10 2
             ]
         ]
 
@@ -93,8 +93,8 @@ describe "Bottle Song" [
                 There'll be no green bottles hanging on the wall.
             }
             expects.be:'equal? @[
-                express expected
-                express recite 3 3
+                expected
+                recite 3 3
             ]
         ]
 
@@ -151,8 +151,8 @@ describe "Bottle Song" [
                 There'll be no green bottles hanging on the wall.
             }
             expects.be:'equal? @[
-                express expected
-                express recite 10 10
+                expected
+                recite 10 10
             ]
         ]
     ]

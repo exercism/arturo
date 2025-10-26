@@ -1,4 +1,4 @@
-import.version:2.0.1 {unitt}!
+import.version:3.0.0 {unitt}! 
 import {src/robot-simulator}!
 
 describe "Robot Simulator" [
@@ -7,8 +7,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "north"]
         do [r\simulate "R"]
         expects.be:'equal? @[
-            express [0 0 "east"]
-            express @[r\x r\y r\direction]
+            [0 0 "east"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -16,8 +16,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "east"]
         do [r\simulate "R"]
         expects.be:'equal? @[
-            express [0 0 "south"]
-            express @[r\x r\y r\direction]
+            [0 0 "south"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -25,8 +25,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "south"]
         do [r\simulate "R"]
         expects.be:'equal? @[
-            express [0 0 "west"]
-            express @[r\x r\y r\direction]
+            [0 0 "west"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -34,8 +34,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "west"]
         do [r\simulate "R"]
         expects.be:'equal? @[
-            express [0 0 "north"]
-            express @[r\x r\y r\direction]
+            [0 0 "north"]
+            @[r\x r\y r\direction]
         ]
     ]
   ]
@@ -45,8 +45,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "north"]
         do [r\simulate "L"]
         expects.be:'equal? @[
-            express [0 0 "west"]
-            express @[r\x r\y r\direction]
+            [0 0 "west"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -54,8 +54,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "west"]
         do [r\simulate "L"]
         expects.be:'equal? @[
-            express [0 0 "south"]
-            express @[r\x r\y r\direction]
+            [0 0 "south"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -64,8 +64,8 @@ describe "Robot Simulator" [
         do [r\simulate "L"]
         [x y direction]: @[r\x r\y r\direction]
         expects.be:'equal? @[
-            express [0 0 "east"]
-            express @[r\x r\y r\direction]
+            [0 0 "east"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -73,8 +73,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "east"]
         do [r\simulate "L"]
         expects.be:'equal? @[
-            express [0 0 "north"]
-            express @[r\x r\y r\direction]
+            [0 0 "north"]
+            @[r\x r\y r\direction]
         ]
     ]
   ]
@@ -84,8 +84,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "north"]
         do [r\simulate "A"]
         expects.be:'equal? @[
-            express [0 1 "north"]
-            express @[r\x r\y r\direction]
+            [0 1 "north"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -93,8 +93,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "south"]
         do [r\simulate "A"]
         expects.be:'equal? @[
-            express @[0 neg 1 "south"]
-            express @[r\x r\y r\direction]
+            @[0 neg 1 "south"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -102,8 +102,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "east"]
         do [r\simulate "A"]
         expects.be:'equal? @[
-            express [1 0 "east"]
-            express @[r\x r\y r\direction]
+            [1 0 "east"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -111,8 +111,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "west"]
         do [r\simulate "A"]
         expects.be:'equal? @[
-            express @[neg 1 0 "west"]
-            express @[r\x r\y r\direction]
+            @[neg 1 0 "west"]
+            @[r\x r\y r\direction]
         ]
     ]
   ]
@@ -122,8 +122,8 @@ describe "Robot Simulator" [
         r: to :robot @[7 3 "north"]
         do [r\simulate "RAALAL"]
         expects.be:'equal? @[
-            express @[9 4 "west"]
-            express @[r\x r\y r\direction]
+            @[9 4 "west"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -131,8 +131,8 @@ describe "Robot Simulator" [
         r: to :robot @[0 0 "north"]
         do [r\simulate "LAAARALA"]
         expects.be:'equal? @[
-            express @[neg 4 1 "west"]
-            express @[r\x r\y r\direction]
+            @[neg 4 1 "west"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -140,8 +140,8 @@ describe "Robot Simulator" [
         r: to :robot [2 neg 7 "east"]
         do [r\simulate "RRAAAAALA"]
         expects.be:'equal? @[
-            express @[neg 3 neg 8 "south"]
-            express @[r\x r\y r\direction]
+            @[neg 3 neg 8 "south"]
+            @[r\x r\y r\direction]
         ]
     ]
 
@@ -149,8 +149,8 @@ describe "Robot Simulator" [
         r: to :robot [8 4 "south"]
         do [r\simulate "LAAARRRALLLL"]
         expects.be:'equal? @[
-            express @[11 5 "north"]
-            express @[r\x r\y r\direction]
+            @[11 5 "north"]
+            @[r\x r\y r\direction]
         ]
     ]
   ]
