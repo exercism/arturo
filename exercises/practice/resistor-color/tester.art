@@ -5,3 +5,4 @@ exe: switch "windows" = sys\os
 fullpath: normalize ~"|path\home|/.arturo/packages/bin/|exe|"
 code: execute.code.directly ~"|fullpath|"
 panic.unstyled.code: code ""
+; A comment that once removed will be used to invalidate existing Unitt 2.x solutions so students can upgrade to the updated Unitt 3.x files.
