@@ -12,6 +12,11 @@
 
 set -eo pipefail
 
+usage() {
+    echo "usage: ${0##*/} [-h] [-v] [exercise-slug]"
+    echo "where: -v is verbose: show test output even for passing tests"
+}
+
 die() { echo "$*" >&2; exit 1; }
 
 required_tool() {
@@ -30,9 +35,11 @@ copy_example_or_exemplar_to_solution() {
 }
 
 unskip_tests() {
-    jq -r '.files.test[]' .meta/config.json | while read -r test_file; do
-        sed -i -E 's/(test|it).skip/\1/g' "${test_file}"
-    done
+    while read -r test_file; do
+        perl -i -pe 's/(test|it).skip/\1/g' "${test_file}"
+    done < <(
+        jq -r '.files.test[]' .meta/config.json
+    )
 }
 
 run_tests() {
@@ -40,7 +47,14 @@ run_tests() {
     test_output=$(arturo tester.art 2>&1)
     result=$?
     set -e
+
+    # unitt v3 bug workaround
+    if [[ $result -eq 0 && $test_output == "Uncaught error in tests"* ]]; then
+        result=1
+    fi
+
     if [[ $result -eq 0 ]]; then
+        $verbose && echo "${test_output}" && echo
         echo "All tests passed!"
         return 0
     else     
@@ -86,6 +100,16 @@ verify_exercises() {
     done
     ((count > 0)) || die 'no matching exercises found!'
 }
+
+verbose=false
+while getopts :hv opt; do
+    case $opt in
+        h) usage; exit 0;;
+        v) verbose=true ;;
+        *) usage; exit 1;;
+    esac
+done
+shift $((OPTIND - 1))
 
 exercise_slug="${1:-*}"
 verify_exercises "${exercise_slug}"
