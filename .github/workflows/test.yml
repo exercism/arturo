@@ -22,15 +22,11 @@ jobs:
 
       - name: Install Arturo
         run: |
-          curl -L -o arturo.zip https://github.com/arturo-lang/nightly/releases/download/2025-04-01/arturo-nightly.2025-03-31-amd64-linux-full.zip
+          curl -L -o arturo.zip https://github.com/arturo-lang/nightly/releases/download/2025-10-14/arturo-nightly.2025-10-13-amd64-linux-full.zip
           sudo unzip arturo.zip -d /usr/local/bin/
           rm arturo.zip
           sudo chmod +x /usr/local/bin/arturo
           sudo ldconfig
-
-      - name: Install unitt
-        run: |
-          arturo --package install unitt 2.0.1
 
       - name: Install Unitt testing framework
         run: arturo -p install unitt 3.0.0
