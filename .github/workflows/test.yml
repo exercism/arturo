@@ -18,12 +18,15 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install libgtk-3-dev libwebkit2gtk-4.1-dev libmpfr-dev
+          sudo apt-get install libmpfr6 libwebkit2gtk-4.1-0 libpcre3 
 
       - name: Install Arturo
-        uses: arturo-lang/arturo-action@main
-        with: 
-          token: ${{ github.token }}
+        run: |
+          curl -L -o arturo.zip https://github.com/arturo-lang/nightly/releases/download/2025-10-14/arturo-nightly.2025-10-13-amd64-linux-full.zip
+          sudo unzip arturo.zip -d /usr/local/bin/
+          rm arturo.zip
+          sudo chmod +x /usr/local/bin/arturo
+          sudo ldconfig
 
       - name: Install Unitt testing framework
         run: arturo -p install unitt 3.0.0
