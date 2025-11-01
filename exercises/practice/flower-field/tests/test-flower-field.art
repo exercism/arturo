@@ -187,4 +187,11 @@ describe "Flower Field"[
       annotate garden
     ]
   ]
+
+  it.skip "multiple adjacent flowers" [
+    expects.be:'equal? @[
+      ["1**1"]
+      annotate [" ** "]
+    ]
+  ]
 ]
