@@ -1,9 +1,9 @@
 # Tests
 
-The Arturo track uses the [Unitt unit-testing package][unitt] for all exercise tests.
-This package provides a testng framework supporting both modern RSpec-inspired syntax and legacy XUnit-inspired syntax.
-Locally, you must first install Unitt 3 by running `arturo --package install unitt 3.0.0`.
-At that point, you can use `arturo tester.art` or `exercism test` to run your tests within the exercise folder.
+The Arturo track uses the [Unitt 3.0.0 unit-testing package][unitt] for all exercise tests.
+This package provides a testing framework supporting both modern RSpec-inspired syntax and legacy XUnit-inspired syntax.
+Running `arturo tester.art` or `exercism test` from within your local exercise folder should install the package from the Internet on first run.
+Alternatively, you can install Unitt by running `arturo --package install unitt 3.0.0`.
 Only the first test will be run and reported back to you.
 Once that test passes, unskip the next one and run the tests again until each test passes.
 For both the RSpec and XUnit setups, that's as simple as removing `.skip` from `it.skip` or `test.skip` respectively.
