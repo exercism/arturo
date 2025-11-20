@@ -60,7 +60,7 @@ exe: switch "windows" = sys\os
     -> "unitt"
 
 fullpath: normalize ~"|path\home|/.arturo/packages/bin/|exe|"
-code: execute.code.directly ~"|fullpath|"
+code: execute.code.directly fullpath
 panic.unstyled.code: code ""
 END_TESTER
 
