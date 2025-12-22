@@ -21,7 +21,7 @@ leap/
 ```
 
 Running `arturo tester.art` will set up Unitt and then run the tests inside `tests/test-leap.art`.
-The tests will import `src/leap.art` which contains your solution and tben make a series of assertions about what your solution should return for specific inputs.
+The tests will import `src/leap.art` which contains your solution and then make a series of assertions about what your solution should return for specific inputs.
 
 
 ## Solution File
