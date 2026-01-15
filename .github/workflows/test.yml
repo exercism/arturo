@@ -15,11 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
 
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install libmpfr6 libwebkit2gtk-4.1-0 libpcre3 
-
       - name: Install Arturo
         uses: arturo-lang/setup-arturo@v2
         with: 
