@@ -9,8 +9,9 @@ annotate: function [garden][
         newRow: []
         loop range 0 dec cols 'j [
             cell: garden\[i]\[j]
-            if? cell='*' -> 'newRow ++ '*'
-            else [
+            switch cell='*' [
+                'newRow ++ '*'
+            ][
                 count: 0
                 minRow: max @[0 dec i]
                 maxRow: min @[dec rows inc i]
@@ -22,8 +23,8 @@ annotate: function [garden][
                         if garden\[ni]\[nj]='*' -> inc 'count
                     ]
                 ]
-                if? zero? count -> 'newRow ++ ' '
-                else -> 'newRow ++ to :string count
+                'newRow ++ (zero? count)? -> ' '
+                                          -> to :string count
             ]
         ]
         'result ++ join newRow
