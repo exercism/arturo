@@ -6,7 +6,7 @@
 # We currently install the nightly version as that has features we use.
 # Once the next stable version has been released, we can use that.
 
-curl -sSL https://get.arturo-lang.io | sh -s -- --nightly
+curl -sSL https://get.arturo-lang.io | sh
 
 function update_shell {
     local install_dir="${1}"
