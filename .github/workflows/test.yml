@@ -21,12 +21,9 @@ jobs:
           sudo apt-get install libmpfr6 libwebkit2gtk-4.1-0 libpcre3 
 
       - name: Install Arturo
-        run: |
-          curl -L -o arturo.zip https://github.com/arturo-lang/nightly/releases/download/2025-10-14/arturo-nightly.2025-10-13-amd64-linux-full.zip
-          sudo unzip arturo.zip -d /usr/local/bin/
-          rm arturo.zip
-          sudo chmod +x /usr/local/bin/arturo
-          sudo ldconfig
+        uses: arturo-lang/setup-arturo@v2
+        with: 
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Unitt testing framework
         run: arturo -p install unitt 3.0.0
