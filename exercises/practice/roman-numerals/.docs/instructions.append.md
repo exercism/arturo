@@ -47,5 +47,5 @@ If you need to refer back to attributes, capture them at the start of your funct
 [createAttrsStack]: https://github.com/arturo-lang/arturo/blob/2ef0081570feb6ab752404c32bbf85132df379fb/src/vm/stack.nim#L136
 ~~~~
 
-[attributes]: https://arturo-lang.io/master/documentation/language/#attributes
-[attr]: https://arturo-lang.io/master/documentation/library/reflection/attr/
+[attributes]: https://arturo-lang.io/latest/documentation/language/#attributes
+[attr]: https://arturo-lang.io/latest/documentation/library/reflection/attr/

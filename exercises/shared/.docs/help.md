@@ -6,6 +6,6 @@ Here are some resources for getting help if you run into trouble
 * [Arturo Discord][discord] is Arturo's official Discord server.
 * [Rosetta Code][rosetta-code] has over 770+ Arturo code examples for many different tasks.
 
-[official-docs]: https://arturo-lang.io/master/documentation/
+[official-docs]: https://arturo-lang.io/latest/documentation/
 [discord]: https://discord.gg/YdVK2CB
 [rosetta-code]: https://rosettacode.org/wiki/Category:Arturo
