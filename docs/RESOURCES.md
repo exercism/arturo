@@ -5,7 +5,7 @@
 * [Rosetta Code][rosetta-code] has over 770+ Arturo code examples for many different tasks.
 * [Packager][packager] is Arturo's official package registry.
 
-[official-docs]: https://arturo-lang.io/master/documentation/
+[official-docs]: https://arturo-lang.io/latest/documentation/
 [discord]: https://discord.gg/YdVK2CB
 [packager]: https://pkgr.art/
 [rosetta-code]: https://rosettacode.org/wiki/Category:Arturo
