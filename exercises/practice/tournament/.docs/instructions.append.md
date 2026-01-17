@@ -9,8 +9,8 @@ You'll see some syntax in the tests that may be new to you: multiline strings en
 * [`:string` type][string] in the Language reference.
 * [Basic Usage][usage] documentation in the Strings module.
 
-[string]: https://arturo-lang.io/latest/documentation/language/#string
-[usage]: https://arturo-lang.io/latest/documentation/library/strings/#basic-usage
+[string]: https://arturo-lang.io/documentation/language/#string
+[usage]: https://arturo-lang.io/documentation/library/strings/#basic-usage
 
 ### Arturo string literals
 

@@ -38,7 +38,7 @@ length: convert 1`m `ft ; 1250/381 ft
 to :floating length ; 3.280839895013123
 ```
 
-[to]: https://arturo-lang.io/latest/documentation/library/types/to/
+[to]: https://arturo-lang.io/documentation/library/types/to/
 ~~~~
 
 Arturo also allows us to [specify] our own units for quantities.
@@ -54,5 +54,5 @@ convert depth `km ; 111355.7993425152 km
 
 [physical-quantities]: https://en.wikipedia.org/wiki/Physical_quantity
 [unit-of-measurement]: https://en.wikipedia.org/wiki/Unit_of_measurement
-[convert]: https://arturo-lang.io/latest/documentation/library/quantities/convert/
-[specify]: https://arturo-lang.io/latest/documentation/library/quantities/specify/
+[convert]: https://arturo-lang.io/documentation/library/quantities/convert/
+[specify]: https://arturo-lang.io/documentation/library/quantities/specify/
