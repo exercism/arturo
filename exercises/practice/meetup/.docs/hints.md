@@ -7,7 +7,7 @@
 * Examples of [formatting and parsing][example] dates.
 * The [`to`][to] function in the Types module is key.
 
-[lang]: https://arturo-lang.io/latest/documentation/language/#date
-[dates]: https://arturo-lang.io/latest/documentation/library/dates/
-[example]: https://arturo-lang.io/latest/documentation/library/dates/#date-formatting-and-parsing
-[to]: https://arturo-lang.io/latest/documentation/library/types/to/
+[lang]: https://arturo-lang.io/documentation/language/#date
+[dates]: https://arturo-lang.io/documentation/library/dates/
+[example]: https://arturo-lang.io/documentation/library/dates/#date-formatting-and-parsing
+[to]: https://arturo-lang.io/documentation/library/types/to/
