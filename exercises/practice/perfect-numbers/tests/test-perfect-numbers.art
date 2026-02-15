@@ -26,6 +26,10 @@ describe "Perfect Numbers" [
         expects.be:'equal? @['abundant classify 33550335]
     ]
 
+    it.skip "Perfect square abundant number is classified correctly" [
+        expects.be:'equal? @['abundant classify 196]
+    ]
+
     it.skip "Smallest prime deficient number is classified correctly" [
         expects.be:'equal? @['deficient classify 2]
     ]
