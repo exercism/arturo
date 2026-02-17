@@ -462,6 +462,14 @@
         "difficulty": 5
       },
       {
+        "slug": "prism",
+        "name": "Prism",
+        "uuid": "e14eaa53-6f1d-4670-94ae-c58606d36f19",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "prime-factors",
         "name": "Prime Factors",
         "uuid": "57e5d645-4759-4b4b-8d33-ebe8c74b9c87",

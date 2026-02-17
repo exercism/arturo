@@ -1,0 +1,42 @@
+findSequence: function [start prisms][
+    x: start\x
+    y: start\y
+    angle: start\angle
+    sequence: []
+
+    while [true] [
+        rad: angle * pi / 180
+        dirX: cos rad
+        dirY: sin rad
+
+        nearest: null
+        nearestDist: infinite
+
+        loop prisms 'prism [
+            dx: prism\x - x
+            dy: prism\y - y
+
+            dist: (dx * dirX) + (dy * dirY)
+
+            baseTolerance: 1e-6
+            if dist > baseTolerance [
+                crossProductSquared: ((dx * dirY) - (dy * dirX)) ^ 2
+
+                relativeTolerance: baseTolerance * max @[dist ^ 2, 1]
+                
+                if and? crossProductSquared < relativeTolerance dist < nearestDist [
+                    nearestDist: dist
+                    nearest: prism
+                ]
+            ]
+        ]
+
+        if? null? nearest -> break
+        'sequence ++ nearest\id
+        x: nearest\x
+        y: nearest\y
+        angle: (angle + nearest\angle) % 360
+    ]
+
+    sequence
+]

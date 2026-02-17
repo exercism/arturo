@@ -1,0 +1,3 @@
+findSequence: function [start prisms][
+    panic "Please implement the findSequence function"
+]
