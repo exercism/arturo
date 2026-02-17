@@ -31,7 +31,7 @@ findSequence: function [start prisms][
             ]
         ]
 
-        if? null? nearest -> break
+        if null? nearest -> break
         'sequence ++ nearest\id
         x: nearest\x
         y: nearest\y
