@@ -3,7 +3,7 @@ import {src/hello-world}!
 
 describe "Hello World!" [
     it "hello returns 'Hello, World!'" [
-        expected: "Hello, World"
+        expected: "Hello, World!"
         expects.be:'equal? @[expected hello]
     ]
 ]
