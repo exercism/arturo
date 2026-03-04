@@ -1,0 +1,57 @@
+spiralMatrix: function [size] [
+    if zero? size -> return []
+
+    matrix: map 0..(dec size) 'i -> array.of: size 0
+
+    currRow: 0
+    currCol: 0
+    minRow: 0
+    minCol: 0
+    maxRow: dec size
+    maxCol: dec size
+    num: 1
+    total: size * size
+
+    while [num =< total] [
+        ; move left to right across top side
+        if minCol =< maxCol [
+            loop minCol..maxCol 'col [
+                matrix\[currRow]\[col]: new num
+                inc 'num
+            ]
+            inc 'currRow
+        ]
+        if num > total -> break
+
+        ; move top to bottom along right side
+        if currRow =< maxRow [
+            loop currRow..maxRow 'row [
+                matrix\[row]\[maxCol]: new num
+                inc 'num
+            ]
+            dec 'maxCol
+        ]
+        if num > total -> break
+
+        ; move right to left across bottom side
+        if minCol =< maxCol [
+            loop maxCol..minCol 'col [
+                matrix\[maxRow]\[col]: new num
+                inc 'num
+            ]
+            dec 'maxRow
+        ]
+        if num > total -> break
+
+        ; move bottom to top along left side
+        if currRow =< maxRow [
+            loop maxRow..currRow 'row [
+                matrix\[row]\[minCol]: new num
+                inc 'num
+            ]
+            inc 'minCol
+        ]
+    ]
+
+    matrix
+]
