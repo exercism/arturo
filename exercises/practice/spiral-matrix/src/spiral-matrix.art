@@ -1,0 +1,3 @@
+spiralMatrix: function [size] [
+    panic "Please implement the spiralMatrix function"
+]
