@@ -494,6 +494,14 @@
         "difficulty": 5
       },
       {
+        "slug": "relative-distance",
+        "name": "Relative Distance",
+        "uuid": "68b5ea2b-fd31-4208-99f8-82e09859fd9f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "beae3683-46fc-4d4d-bacf-e3bd453d9c17",
