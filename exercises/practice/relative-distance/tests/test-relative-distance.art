@@ -11,7 +11,7 @@ describe "Relative Distance" [
         expects.be:'equal? @[1 result]
     ]
 
-    it "Sibling relationship" [
+    it.skip "Sibling relationship" [
         familyTree: #[
             Dalia: ["Olga" "Yassin"]
         ]
@@ -19,7 +19,7 @@ describe "Relative Distance" [
         expects.be:'equal? @[1 result]
     ]
 
-    it "Two degrees of separation, grandchild" [
+    it.skip "Two degrees of separation, grandchild" [
         familyTree: #[
             Khadija: ["Mateo"]
             Mateo: ["Rami"]
@@ -28,7 +28,7 @@ describe "Relative Distance" [
         expects.be:'equal? @[2 result]
     ]
 
-    it "Unrelated individuals" [
+    it.skip "Unrelated individuals" [
         familyTree: #[
             Priya: ["Rami"]
             Kaito: ["Elif"]
@@ -37,7 +37,7 @@ describe "Relative Distance" [
         expects.be:'equal? @[null result]
     ]
 
-    it "Complex graph, cousins" [
+    it.skip "Complex graph, cousins" [
         familyTree: #[
             Aiko: ["Bao" "Carlos"]
             Bao: ["Dalia" "Elias"]
@@ -96,7 +96,7 @@ describe "Relative Distance" [
         expects.be:'equal? @[9 result]
     ]
 
-    it "Complex graph, no shortcut, far removed nephew" [
+    it.skip "Complex graph, no shortcut, far removed nephew" [
         familyTree: #[
             Aiko: ["Bao" "Carlos"]
             Bao: ["Dalia" "Elias"]
@@ -155,7 +155,7 @@ describe "Relative Distance" [
         expects.be:'equal? @[14 result]
     ]
 
-    it "Complex graph, some shortcuts, cross-down and cross-up, cousins several times removed, with unrelated family tree" [
+    it.skip "Complex graph, some shortcuts, cross-down and cross-up, cousins several times removed, with unrelated family tree" [
         familyTree: #[
             Aiko: ["Bao" "Carlos"]
             Bao: ["Dalia"]
