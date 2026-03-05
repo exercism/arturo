@@ -1,0 +1,96 @@
+import.version:3.0.0 {unitt}! 
+import {src/pig-latin}!
+
+describe "Pig Latin" [
+    it "word beginning with a" [
+        expects.be:'equal? @["appleay" translate "apple"]
+    ]
+
+    it.skip "word beginning with e" [
+        expects.be:'equal? @["earay" translate "ear"]
+    ]
+
+    it.skip "word beginning with i" [
+        expects.be:'equal? @["iglooay" translate "igloo"]
+    ]
+
+    it.skip "word beginning with o" [
+        expects.be:'equal? @["objectay" translate "object"]
+    ]
+
+    it.skip "word beginning with u" [
+        expects.be:'equal? @["underay" translate "under"]
+    ]
+
+    it.skip "word beginning with a vowel and followed by a qu" [
+        expects.be:'equal? @["equalay" translate "equal"]
+    ]
+
+    it.skip "word beginning with p" [
+        expects.be:'equal? @["igpay" translate "pig"]
+    ]
+
+    it.skip "word beginning with k" [
+        expects.be:'equal? @["oalakay" translate "koala"]
+    ]
+
+    it.skip "word beginning with x" [
+        expects.be:'equal? @["enonxay" translate "xenon"]
+    ]
+
+    it.skip "word beginning with q without a following u" [
+        expects.be:'equal? @["atqay" translate "qat"]
+    ]
+
+    it.skip "word beginning with consonant and vowel containing qu" [
+        expects.be:'equal? @["iquidlay" translate "liquid"]
+    ]
+
+    it.skip "word beginning with ch" [
+        expects.be:'equal? @["airchay" translate "chair"]
+    ]
+
+    it.skip "word beginning with qu" [
+        expects.be:'equal? @["eenquay" translate "queen"]
+    ]
+
+    it.skip "word beginning with qu and a preceding consonant" [
+        expects.be:'equal? @["aresquay" translate "square"]
+    ]
+
+    it.skip "word beginning with th" [
+        expects.be:'equal? @["erapythay" translate "therapy"]
+    ]
+
+    it.skip "word beginning with thr" [
+        expects.be:'equal? @["ushthray" translate "thrush"]
+    ]
+
+    it.skip "word beginning with sch" [
+        expects.be:'equal? @["oolschay" translate "school"]
+    ]
+
+    it.skip "word beginning with yt" [
+        expects.be:'equal? @["yttriaay" translate "yttria"]
+    ]
+
+    it.skip "word beginning with xr" [
+        expects.be:'equal? @["xrayay" translate "xray"]
+    ]
+
+    it.skip "y is treated like a consonant at the beginning of a word" [
+        expects.be:'equal? @["ellowyay" translate "yellow"]
+    ]
+
+    it.skip "y is treated like a vowel at the end of a consonant cluster" [
+        expects.be:'equal? @["ythmrhay" translate "rhythm"]
+    ]
+
+    it.skip "y as second letter in two letter word" [
+        expects.be:'equal? @["ymay" translate "my"]
+    ]
+
+    it.skip "a whole phrase" [
+        expects.be:'equal? @["ickquay astfay unray" translate "quick fast run"]
+    ]
+]

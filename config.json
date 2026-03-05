@@ -462,6 +462,14 @@
         "difficulty": 5
       },
       {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "7da88e3e-8a1c-4a31-b845-57c91dbe13d0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "prism",
         "name": "Prism",
         "uuid": "e14eaa53-6f1d-4670-94ae-c58606d36f19",

@@ -1,0 +1,15 @@
+shift: function [word] [
+    vowelSound: {/^([aeiou]|xr|yt)/}
+    consonantCluster: {/^([^aeiou]+(?=y)|[^aeiou]?qu|[^aeiou]+)/}
+
+    if not? empty? match word vowelSound ->
+        return word ++ "ay"
+
+    cluster: first match word consonantCluster
+    rest: slice word (size cluster) (dec size word)
+    rest ++ cluster ++ "ay"
+]
+
+translate: function [phrase] [
+    join.with: " " map split.by: " " phrase 'word -> shift word
+]
