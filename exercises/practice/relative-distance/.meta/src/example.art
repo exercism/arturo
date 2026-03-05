@@ -1,0 +1,52 @@
+degreeOfSeparation: function [familyTree personA personB] [
+    connections: #[]
+    loop familyTree [parent children] [
+        if not? key? connections parent ->
+            set connections parent []
+
+        loop children 'child [
+            if not? key? connections child ->
+                set connections child []
+
+            neighbors: get connections parent
+            siblings: get connections child
+            if not? in? child neighbors -> 'neighbors ++ child
+            if not? in? parent siblings -> 'siblings ++ parent
+            set connections parent neighbors
+            set connections child siblings
+        ]
+
+        loop children 'childA [
+            loop children 'childB [
+                if childA <> childB [
+                    siblings: get connections childA
+                    if not? in? childB siblings -> 'siblings ++ childB
+                    set connections childA siblings
+                ]
+            ]
+        ]
+    ]
+
+    if not? key? connections personA -> return null
+    if not? key? connections personB -> return null
+
+    ; BFS from personA to personB
+    visited: #[personA]
+    queue: @[@[personA 0]]
+
+    while [not? empty? queue] [
+        [node dist]: queue\0
+        drop 'queue
+        if node = personB -> return dist
+
+        neighbors: get connections node
+        loop neighbors 'neighbor [
+            if not? key? visited neighbor [
+                set visited neighbor true
+                'queue ++ @[@[neighbor inc dist]]
+            ]
+        ]
+    ]
+
+    null
+]
