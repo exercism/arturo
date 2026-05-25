@@ -366,6 +366,14 @@
         "difficulty": 5
       },
       {
+        "slug": "grep",
+        "name": "Grep",
+        "uuid": "b94ad28d-3b21-4d98-9a81-8d7e1e4439f1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "house",
         "name": "House",
         "uuid": "03887d7d-0635-4175-8753-b06efb8a424b",

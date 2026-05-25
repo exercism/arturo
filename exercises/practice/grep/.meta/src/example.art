@@ -1,0 +1,48 @@
+commandArgs: args\values
+
+pattern: first commandArgs
+files: drop commandArgs
+flags: keys args
+
+numbered?: contains? flags "n"
+namesOnly?: contains? flags "l"
+insensitive?: contains? flags "i"
+inverted?: contains? flags "v"
+wholeLine?: contains? flags "x"
+multipleFiles?: (size files) > 1
+
+pattern: switch insensitive?
+    -> lower pattern
+    -> pattern
+
+results: []
+loop files 'file [
+    matches: fold.seed:[].with:'i read.lines file [acc line] [
+        target: switch insensitive?
+            -> lower line
+            -> line
+
+        matches?: switch wholeLine?
+            -> same? target pattern
+            -> contains? target pattern
+
+        if inverted? -> matches?: not? matches?
+
+        switch matches? [
+            output: line
+            if numbered? -> output: ~"|i+1|:|output|"
+            if multipleFiles? -> output: ~"|file|:|output|"
+            acc ++ output
+        ][
+            acc
+        ]
+    ]
+
+    switch namesOnly?
+        -> if not? empty? matches [ 'results ++ file ]
+        -> 'results ++ matches
+]
+
+if not? empty? results [
+    print join.lines results
+]
