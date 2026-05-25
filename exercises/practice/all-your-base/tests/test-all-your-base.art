@@ -1,0 +1,125 @@
+import.version:3.0.0 {unitt}!
+import {src/all-your-base}!
+
+describe "All Your Base" [
+    it.skip "single bit one to decimal" [
+        expects.be:'equal? @[
+            [1]
+            rebase 2 [1] 10
+        ]
+    ]
+
+    it.skip "binary to single decimal" [
+        expects.be:'equal? @[
+            [5]
+            rebase 2 [1 0 1] 10
+        ]
+    ]
+
+    it.skip "single decimal to binary" [
+        expects.be:'equal? @[
+            [1 0 1]
+            rebase 10 [5] 2
+        ]
+    ]
+
+    it.skip "binary to multiple decimal" [
+        expects.be:'equal? @[
+            [4 2]
+            rebase 2 [1 0 1 0 1 0] 10
+        ]
+    ]
+
+    it.skip "decimal to binary" [
+        expects.be:'equal? @[
+            [1 0 1 0 1 0]
+            rebase 10 [4 2] 2
+        ]
+    ]
+
+    it.skip "trinary to hexadecimal" [
+        expects.be:'equal? @[
+            [2 10]
+            rebase 3 [1 1 2 0] 16
+        ]
+    ]
+
+    it.skip "hexadecimal to trinary" [
+        expects.be:'equal? @[
+            [1 1 2 0]
+            rebase 16 [2 10] 3
+        ]
+    ]
+
+    it.skip "15-bit integer" [
+        expects.be:'equal? @[
+            [6 10 45]
+            rebase 97 [3 46 60] 73
+        ]
+    ]
+
+    it.skip "empty list" [
+        actual: rebase 2 @[] 10
+        expects.be:'equal? @[
+            [0]
+            actual
+        ]
+    ]
+
+    it.skip "single zero" [
+        expects.be:'equal? @[
+            [0]
+            rebase 10 [0] 2
+        ]
+    ]
+
+    it.skip "multiple zeros" [
+        expects.be:'equal? @[
+            [0]
+            rebase 10 [0 0 0] 2
+        ]
+    ]
+
+    it.skip "leading zeros" [
+        expects.be:'equal? @[
+            [4 2]
+            rebase 7 [0 6 0] 10
+        ]
+    ]
+
+    it.skip "input base is one" [
+        expects.be:'null? @[rebase 1 [0] 10]
+    ]
+
+    it.skip "input base is zero" [
+        expects.be:'null? @[rebase 0 [] 10]
+    ]
+
+    it.skip "input base is negative" [
+        expects.be:'null? @[rebase neg 2 [1] 10]
+    ]
+
+    it.skip "negative digit" [
+        expects.be:'null? @[rebase 2 @[1 neg 1 1 0 1 0] 10]
+    ]
+
+    it.skip "invalid positive digit" [
+        expects.be:'null? @[rebase 2 [1 2 1 0 1 0] 10]
+    ]
+
+    it.skip "output base is one" [
+        expects.be:'null? @[rebase 2 [1 0 1 0 1 0] 1]
+    ]
+
+    it.skip "output base is zero" [
+        expects.be:'null? @[rebase 10 [7] 0]
+    ]
+
+    it.skip "output base is negative" [
+        expects.be:'null? @[rebase 2 [1] neg 7]
+    ]
+
+    it.skip "both bases are negative" [
+        expects.be:'null? @[rebase neg 2 [1] neg 7]
+    ]
+]

@@ -1,0 +1,13 @@
+rebase: function [inputBase inputDigits outputBase][
+    if inputBase < 2 -> return null
+    if outputBase < 2 -> return null
+
+    unless every? inputDigits 'digit [and? [not? negative? digit] [digit < inputBase]] ->
+        return null
+
+    value: fold.seed:0 inputDigits [acc digit] [
+        (acc * inputBase) + digit
+    ]
+
+    digits.base:outputBase value
+]

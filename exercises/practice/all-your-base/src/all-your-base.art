@@ -1,0 +1,3 @@
+rebase: function [inputBase inputDigits outputBase][
+    panic "Please implement the rebase function"
+]
