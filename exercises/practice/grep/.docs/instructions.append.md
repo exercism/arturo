@@ -1,4 +1,5 @@
 # Instructions append
+## Arturo-specific Instructions
 
 Unlike most Arturo exercises, `src/grep.art` will not be directly imported by the test suite.
 Instead, your solution will be run as a standalone Arturo script, receiving a series of command-line arguments.
