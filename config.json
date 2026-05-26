@@ -230,6 +230,14 @@
         "difficulty": 2
       },
       {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "0a088dcf-a62b-41fb-85e6-90c55e79b05f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "5ef8ccc8-c0ce-46cb-b46e-2ae636f357c9",

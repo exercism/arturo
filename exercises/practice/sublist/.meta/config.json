@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "src/sublist.art"
+    ],
+    "test": [
+      "tests/test-sublist.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
+    ]
+  },
+  "blurb": "Write a function to determine if a list is a sublist of another list."
+}

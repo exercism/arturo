@@ -1,0 +1,112 @@
+import.version:3.0.0 {unitt}!
+import {src/sublist}!
+
+describe "Sublist" [
+    it "empty lists" [
+        listOne: []
+        listTwo: []
+        expects.be:'equal? @["equal" sublist listOne listTwo]
+    ]
+
+    it.skip "empty list within non empty list" [
+        listOne: []
+        listTwo: [1 2 3]
+        expects.be:'equal? @["sublist" sublist listOne listTwo]
+    ]
+
+    it.skip "non empty list contains empty list" [
+        listOne: [1 2 3]
+        listTwo: []
+        expects.be:'equal? @["superlist" sublist listOne listTwo]
+    ]
+
+    it.skip "list equals itself" [
+        listOne: [1 2 3]
+        listTwo: [1 2 3]
+        expects.be:'equal? @["equal" sublist listOne listTwo]
+    ]
+
+    it.skip "different lists" [
+        listOne: [1 2 3]
+        listTwo: [2 3 4]
+        expects.be:'equal? @["unequal" sublist listOne listTwo]
+    ]
+
+    it.skip "false start" [
+        listOne: [1 2 5]
+        listTwo: [0 1 2 3 1 2 5 6]
+        expects.be:'equal? @["sublist" sublist listOne listTwo]
+    ]
+
+    it.skip "consecutive" [
+        listOne: [1 1 2]
+        listTwo: [0 1 1 1 2 1 2]
+        expects.be:'equal? @["sublist" sublist listOne listTwo]
+    ]
+
+    it.skip "sublist at start" [
+        listOne: [0 1 2]
+        listTwo: [0 1 2 3 4 5]
+        expects.be:'equal? @["sublist" sublist listOne listTwo]
+    ]
+
+    it.skip "sublist in middle" [
+        listOne: [2 3 4]
+        listTwo: [0 1 2 3 4 5]
+        expects.be:'equal? @["sublist" sublist listOne listTwo]
+    ]
+
+    it.skip "sublist at end" [
+        listOne: [3 4 5]
+        listTwo: [0 1 2 3 4 5]
+        expects.be:'equal? @["sublist" sublist listOne listTwo]
+    ]
+
+    it.skip "at start of superlist" [
+        listOne: [0 1 2 3 4 5]
+        listTwo: [0 1 2]
+        expects.be:'equal? @["superlist" sublist listOne listTwo]
+    ]
+
+    it.skip "in middle of superlist" [
+        listOne: [0 1 2 3 4 5]
+        listTwo: [2 3]
+        expects.be:'equal? @["superlist" sublist listOne listTwo]
+    ]
+
+    it.skip "at end of superlist" [
+        listOne: [0 1 2 3 4 5]
+        listTwo: [3 4 5]
+        expects.be:'equal? @["superlist" sublist listOne listTwo]
+    ]
+
+    it.skip "first list missing element from second list" [
+        listOne: [1 3]
+        listTwo: [1 2 3]
+        expects.be:'equal? @["unequal" sublist listOne listTwo]
+    ]
+
+    it.skip "second list missing element from first list" [
+        listOne: [1 2 3]
+        listTwo: [1 3]
+        expects.be:'equal? @["unequal" sublist listOne listTwo]
+    ]
+
+    it.skip "first list missing additional digits from second list" [
+        listOne: [1 2]
+        listTwo: [1 22]
+        expects.be:'equal? @["unequal" sublist listOne listTwo]
+    ]
+
+    it.skip "order matters to a list" [
+        listOne: [1 2 3]
+        listTwo: [3 2 1]
+        expects.be:'equal? @["unequal" sublist listOne listTwo]
+    ]
+
+    it.skip "same digits but different numbers" [
+        listOne: [1 0 1]
+        listTwo: [10 1]
+        expects.be:'equal? @["unequal" sublist listOne listTwo]
+    ]
+]

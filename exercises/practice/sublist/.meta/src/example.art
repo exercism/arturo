@@ -1,0 +1,18 @@
+sublist: function [listOne listTwo][
+    when [
+        equal? listOne listTwo -> "equal"
+        containsSublist? listOne listTwo -> "sublist"
+        containsSublist? listTwo listOne -> "superlist"
+        true -> "unequal"
+    ]
+]
+
+containsSublist?: function [sublist lst][
+    if empty? sublist -> return true
+    if greater? size sublist size lst -> return false
+
+    lastStartPossible: sub size lst size sublist
+    some? 0..lastStartPossible 'n [
+        equal? sublist take drop.times:n lst size sublist
+    ]
+]
