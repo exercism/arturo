@@ -1,5 +1,5 @@
 execute ~{|sys\binary| -p install unitt 3.0.0}
-exe: switch "windows" = sys\os 
+exe: switch 'windows = sys\os 
     -> "unitt.bat" 
     -> "unitt"
 
