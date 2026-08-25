@@ -100,10 +100,45 @@ describe "Line Up" [
         ]
     ]
 
+    it.skip "format exceptional ordinal numeral 22 ending in nd even though it is a multiple of 11" [
+        expects.be:'equal? @[
+            "Ingrid, you are the 22nd customer we serve today. Thank you!"
+            formatMessage "Ingrid" 22
+        ]
+    ]
+
+    it.skip "format exceptional ordinal numeral 33 ending in rd even though it is a multiple of 11" [
+        expects.be:'equal? @[
+            "Mario, you are the 33rd customer we serve today. Thank you!"
+            formatMessage "Mario" 33
+        ]
+    ]
+
+    it.skip "format exceptional ordinal numeral 52 ending in nd even though it is a multiple of 13" [
+        expects.be:'equal? @[
+            "Quentin, you are the 52nd customer we serve today. Thank you!"
+            formatMessage "Quentin" 52
+        ]
+    ]
+
     it.skip "format exceptional ordinal numeral 62" [
         expects.be:'equal? @[
             "Nayra, you are the 62nd customer we serve today. Thank you!"
             formatMessage "Nayra" 62
+        ]
+    ]
+
+    it.skip "format non-exceptional ordinal numeral 72 ending in nd even though it is a multiple of 12" [
+        expects.be:'equal? @[
+            "Ugo, you are the 72nd customer we serve today. Thank you!"
+            formatMessage "Ugo" 72
+        ]
+    ]
+
+    it.skip "format exceptional ordinal numeral 91 ending in st even though it is a multiple of 13" [
+        expects.be:'equal? @[
+            "Boris, you are the 91st customer we serve today. Thank you!"
+            formatMessage "Boris" 91
         ]
     ]
 
@@ -132,6 +167,13 @@ describe "Line Up" [
         expects.be:'equal? @[
             "Yma, you are the 123rd customer we serve today. Thank you!"
             formatMessage "Yma" 123
+        ]
+    ]
+
+    it.skip "format large number 972 ending in nd even though it is a multiple of 12" [
+        expects.be:'equal? @[
+            "Elias, you are the 972nd customer we serve today. Thank you!"
+            formatMessage "Elias" 972
         ]
     ]
 ]

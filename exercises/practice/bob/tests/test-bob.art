@@ -1,11 +1,11 @@
-import.version:3.0.0 {unitt}! 
+import.version:3.0.0 {unitt}!
 import {src/bob}!
 
 describe "Bob" [
-    it "stating something" [
+    it "asking a question" [
         expects.be:'equal? @[
-            "Whatever."
-            response "Tom-ay-to, tom-aaaah-to."
+            "Sure."
+            response "Does this cryogenic chamber make me look fat?"
         ]
     ]
 
@@ -16,17 +16,24 @@ describe "Bob" [
         ]
     ]
 
-    it.skip "shouting gibberish" [
+    it.skip "forceful question" [
         expects.be:'equal? @[
-            "Whoa, chill out!"
-            response "FCECDFCAAB"
+            "Calm down, I know what I'm doing!"
+            response "WHAT'S GOING ON?"
         ]
     ]
 
-    it.skip "asking a question" [
+    it.skip "silence" [
         expects.be:'equal? @[
-            "Sure."
-            response "Does this cryogenic chamber make me look fat?"
+            "Fine. Be that way!"
+            response ""
+        ]
+    ]
+
+    it.skip "stating something" [
+        expects.be:'equal? @[
+            "Whatever."
+            response "Tom-ay-to, tom-aaaah-to."
         ]
     ]
 
@@ -44,66 +51,10 @@ describe "Bob" [
         ]
     ]
 
-    it.skip "talking forcefully" [
-        expects.be:'equal? @[
-            "Whatever."
-            response "Let's go make out behind the gym!"
-        ]
-    ]
-
-    it.skip "using acronyms in regular speech" [
-        expects.be:'equal? @[
-            "Whatever."
-            response "It's OK if you don't want to go to the DMV."
-        ]
-    ]
-
-    it.skip "forceful question" [
-        expects.be:'equal? @[
-            "Calm down, I know what I'm doing!"
-            response "WHAT THE HELL WERE YOU THINKING?"
-        ]
-    ]
-
-    it.skip "shouting numbers" [
-        expects.be:'equal? @[
-            "Whoa, chill out!"
-            response "1, 2, 3 GO!"
-        ]
-    ]
-
-    it.skip "no letters" [
-        expects.be:'equal? @[
-            "Whatever."
-            response "1, 2, 3"
-        ]
-    ]
-
     it.skip "question with no letters" [
         expects.be:'equal? @[
             "Sure."
             response "4?"
-        ]
-    ]
-
-    it.skip "shouting with special characters" [
-        expects.be:'equal? @[
-            "Whoa, chill out!"
-            response "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"
-        ]
-    ]
-
-    it.skip "shouting with no exclamation mark" [
-        expects.be:'equal? @[
-            "Whoa, chill out!"
-            response "I HATE YOU"
-        ]
-    ]
-
-    it.skip "statement containing question mark" [
-        expects.be:'equal? @[
-            "Whatever."
-            response "Ending with ? means a question."
         ]
     ]
 
@@ -121,17 +72,59 @@ describe "Bob" [
         ]
     ]
 
-    it.skip "silence" [
+    it.skip "ending with whitespace" [
         expects.be:'equal? @[
-            "Fine. Be that way!"
-            response ""
+            "Sure."
+            response "Okay if like my  spacebar  quite a bit?   "
+        ]
+    ]
+
+    it.skip "multiple line question" [
+        expects.be:'equal? @[
+            "Sure."
+            response "\nDoes this cryogenic chamber make\n me look fat?"
+        ]
+    ]
+
+    it.skip "shouting gibberish" [
+        expects.be:'equal? @[
+            "Whoa, chill out!"
+            response "FCECDFCAAB"
+        ]
+    ]
+
+    it.skip "shouting a statement containing a question mark" [
+        expects.be:'equal? @[
+            "Whoa, chill out!"
+            response "DO LIONS EAT PEOPLE? AHHHHH."
+        ]
+    ]
+
+    it.skip "shouting numbers" [
+        expects.be:'equal? @[
+            "Whoa, chill out!"
+            response "1, 2, 3 GO!"
+        ]
+    ]
+
+    it.skip "shouting with special characters" [
+        expects.be:'equal? @[
+            "Whoa, chill out!"
+            response "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"
+        ]
+    ]
+
+    it.skip "shouting with no exclamation mark" [
+        expects.be:'equal? @[
+            "Whoa, chill out!"
+            response "I HATE THE DENTIST"
         ]
     ]
 
     it.skip "prolonged silence" [
         expects.be:'equal? @[
             "Fine. Be that way!"
-            response "    "
+            response "          "
         ]
     ]
 
@@ -142,20 +135,6 @@ describe "Bob" [
         ]
     ]
 
-    it.skip "starting with whitespace" [
-        expects.be:'equal? @[
-            "Whatever."
-            response "         hmmmmmmm..."
-        ]
-    ]
-
-    it.skip "ending with whitespace" [
-        expects.be:'equal? @[
-            "Sure."
-            response "Okay if like my  spacebar  quite a bit?   "
-        ]
-    ]
-
     it.skip "other whitespace" [
         expects.be:'equal? @[
             "Fine. Be that way!"
@@ -163,17 +142,45 @@ describe "Bob" [
         ]
     ]
 
+    it.skip "talking forcefully" [
+        expects.be:'equal? @[
+            "Whatever."
+            response "Hi there!"
+        ]
+    ]
+
+    it.skip "using acronyms in regular speech" [
+        expects.be:'equal? @[
+            "Whatever."
+            response "It's OK if you don't want to go work for NASA."
+        ]
+    ]
+
+    it.skip "no letters" [
+        expects.be:'equal? @[
+            "Whatever."
+            response "1, 2, 3"
+        ]
+    ]
+
+    it.skip "statement containing question mark" [
+        expects.be:'equal? @[
+            "Whatever."
+            response "Ending with ? means a question."
+        ]
+    ]
+
+    it.skip "starting with whitespace" [
+        expects.be:'equal? @[
+            "Whatever."
+            response "         hmmmmmmm..."
+        ]
+    ]
+
     it.skip "non-question ending with whitespace" [
         expects.be:'equal? @[
             "Whatever."
             response "This is a statement ending with whitespace      "
-        ]
-    ]
-
-    it.skip "multiple line question" [
-        expects.be:'equal? @[
-            "Sure."
-            response "\nDoes this cryogenic chamber make\n me look fat?"
         ]
     ]
 ]
