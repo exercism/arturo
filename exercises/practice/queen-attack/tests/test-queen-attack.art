@@ -2,7 +2,7 @@ import.version:3.0.0 {unitt}!
 import {src/queen-attack}!
 
 
-suite "Queen Attack" [
+describe "Queen Attack" [
     it "cannot attack" [
         white: to :queen @[2 4]
         black: to :queen @[6 6]

@@ -1,7 +1,7 @@
 import.version:3.0.0 {unitt}! 
 import {src/nth-prime}!
 
-suite "Nth Prime" [
+describe "Nth Prime" [
     it "first prime" [
         expects.be:'equal? @[2 prime 1]
     ]
