@@ -1,0 +1,14 @@
+mostCommonWord: function [text][
+    counts: #[]
+    best: ""
+    bestCount: 0
+    loop split.words lower text 'word [
+        if not? key? counts word -> counts\[word]: 0
+        counts\[word]: inc counts\[word]
+        if counts\[word] > bestCount [
+            best: word
+            bestCount: counts\[word]
+        ]
+    ]
+    ~{"|best|" appears |bestCount| times}
+]
